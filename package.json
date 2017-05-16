@@ -1,0 +1,23 @@
+{
+  "name": "colorido_node",
+  "author": "Stella Gaeun Lee @ Colorido Studio",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "*",
+    "consolidate": "^0.14.5",
+    "express": "^3.4.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-uglify": "^3.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jade": "*",
+    "matchdep": "^1.0.1",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "swig": "^1.4.2"
+  }
+}
