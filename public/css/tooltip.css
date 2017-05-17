@@ -28,15 +28,10 @@ a{
     color: transparent;
     height: 2vh;
 }
-.cbp-tm-submenu
-
-
-
-
-
-
-
-
+/*.veggie_a{*/
+    /*font-size: .5em;*/
+    /*font-weight: 400;*/
+/*}*/
 
 
 
@@ -78,7 +73,9 @@ a{
 
 .no-touch .cbp-tm-menu > li > a:hover,
 .no-touch .cbp-tm-menu > li > a:active {
-    color: #02639d;
+   /*transform: scale(1.2);*/
+   font-weight: 400;
+    color: white;
 }
 
 /* sumbenu with transitions */
@@ -194,7 +191,8 @@ the right position for the arrow
 .cbp-tm-submenu > li > a {
     /*padding: 5px 2.3em 5px 0.6em; !* top/bottom paddings in 'em' cause a tiny "jump" in Chrome on Win *!*/
     display: inline-block;
-    font-size: 1.2em;
+    font-size: .9em;
+    font-weight: 400;
     position: relative;
     color: lightgray;
     /*border: 4px solid #fff;*/
@@ -242,7 +240,7 @@ the right position for the arrow
     .cbp-tm-menu > li {
         display: block;
         margin: 0;
-        border-bottom: 4px solid #3793ca;
+        border-bottom: 4px solid red;
     }
 
     .cbp-tm-menu > li:first-child {
@@ -269,7 +267,7 @@ the right position for the arrow
     .cbp-tm-submenu > li > a {
         padding: 0.6em 2.3em 0.6em 0.6em;
         border: none;
-        border-bottom: 2px solid #6fbbe9;
+        border-bottom: 2px solid red;
     }
 
     .cbp-tm-submenu:after {
@@ -379,7 +377,7 @@ a:hover {
     width: 30px;
     height: 30px;
     left: -12px;
-    font-size: 50%;
+    /*font-size: 50%;*/
     top: -8px;
     font-size: 75%;
     position: relative;
@@ -399,7 +397,7 @@ a:hover {
     margin-left: 4px;
     position: absolute;
     color: #fff;
-    background: #47a3da;
+    /*background: #47a3da;*/
 }
 
 .container > header nav {
@@ -425,7 +423,7 @@ a:hover {
 
 .container > header nav a:hover:before {
     content: attr(data-info);
-    color: #47a3da;
+    color: red;
     position: absolute;
     width: 600%;
     top: 120%;
@@ -435,20 +433,8 @@ a:hover {
 }
 
 .container > header nav a:hover {
-    background: #47a3da;
+    /*background: red;*/
 }
-
-/*.bp-icon:after {*/
-/*font-family: 'bpicons';*/
-/*speak: none;*/
-/*!*font-style: normal;*!*/
-/*!*font-weight: normal;*!*/
-/*!*font-variant: normal;*!*/
-/*text-transform: none;*/
-/*text-align: center;*/
-/*color: #47a3da;*/
-/*-webkit-font-smoothing: antialiased;*/
-/*}*/
 
 .container > header nav .bp-icon:after {
     position: absolute;

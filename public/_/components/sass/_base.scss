@@ -48,66 +48,62 @@ footer {
 .pep-nav__utility-item {
   position: absolute;
   display: block;
-  height: 43px;
-  width: 43px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 2px solid #168dc2;
-  background-color: #004767;
-  border-radius: 43px;
-  top: 20px;
+  height: 40px;
+  width: 40px;
+  //-webkit-box-sizing: border-box;
+  //-moz-box-sizing: border-box;
+  //-ms-box-sizing: border-box;
+  //-o-box-sizing: border-box;
+  //box-sizing: border-box;
+  //border: 2px solid #168dc2;
+  background-color: grey;
+  //border-radius: 43px;
+  top: 0px;
   overflow: hidden;
 }
-/* line 105, ../../scss/1024_up.scss */
 .pep-nav__utility-item:hover {
-  background-color: #00557b;
+  //background-color: #00557b;
 }
-/* line 109, ../../scss/1024_up.scss */
 .pep-nav__utility-item.utility--search {
-  right: 114px;
+  right: -100px;
+  top: -25px;
 }
-/* line 113, ../../scss/1024_up.scss */
 .pep-nav__utility-item.utility--global {
   right: 67px;
 }
-/* line 117, ../../scss/1024_up.scss */
 .pep-nav__utility-item.utility--share {
   right: 20px;
 }
 
-/* line 122, ../../scss/1024_up.scss */
 .pep-nav__utility-item-icon {
   position: absolute;
   display: block;
-  background-image: url(../img/icon__utilities-sprite.png);
-  background-size: auto 43px;
-  top: 0;
+  background-image: url(../img/SEARCH.png);
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  top: 7px;
   right: 0;
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   background-color: transparent;
   border: 0;
   outline: 0;
   cursor: pointer;
 }
-/* line 134, ../../scss/1024_up.scss */
+
+// search bar control
 .utility--search .pep-nav__utility-item-icon {
-  left: 0;
+  left: 7px;
   background-position: -87px -2px;
 }
-/* line 138, ../../scss/1024_up.scss */
+
 .utility--global .pep-nav__utility-item-icon {
   background-position: -44px -2px;
 }
-/* line 141, ../../scss/1024_up.scss */
 .utility--share .pep-nav__utility-item-icon {
   background-position: 0px -2px;
 }
 
-/* line 146, ../../scss/1024_up.scss */
 .pep-nav__utility--search__input {
   position: relative;
   display: none;
@@ -120,12 +116,10 @@ footer {
   color: white;
   font-size: 1rem;
 }
-/* line 157, ../../scss/1024_up.scss */
 .pep-nav__utility--search__input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* line 162, ../../scss/1024_up.scss */
 .pep-nav__utility__close {
   position: absolute;
   display: none;
@@ -140,6 +134,149 @@ footer {
   background-position: center;
   background-repeat: no-repeat;
 }
+//
+//// global language ----------------------------------
+//.container {
+//  position: relative;
+//  display: block;
+//  margin-left: auto;
+//  margin-right: auto;
+//  width: 90%;
+//}
+//
+//.pep-languages {
+//  position: absolute;
+//  display: block;
+//  overflow: hidden;
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  background-color: red;
+//  height: auto;
+//  color: white;
+//  max-height: 0;
+//  -webkit-transition: 0.7s ease max-height;
+//  -moz-transition: 0.7s ease max-height;
+//  -ms-transition: 0.7s ease max-height;
+//  -o-transition: 0.7s ease max-height;
+//  transition: 0.7s ease max-height;
+//}
+//
+//.pep-languages.open {
+//  max-height: 600px;
+//}
+//
+//.pep-languages__container {
+//  margin-top: 120px;
+//}
+//
+//.pep-languages-list {
+//  position: relative;
+//  display: inline-block;
+//  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+//  opacity: 0;
+//  vertical-align: top;
+//  margin-right: 3%;
+//  margin-top: 20px;
+//}
+//
+//.pep-languages-list.pep-languages-list--americas {
+//  width: 18%;
+//}
+//
+//.pep-languages-list.pep-languages-list--europe {
+//  width: 40%;
+//}
+//
+//.pep-languages-list.pep-languages-list--europe .pep-languages-set {
+//  position: relative;
+//  display: inline-block;
+//  vertical-align: top;
+//  width: 30%;
+//  margin: 0;
+//}
+//.pep-languages-list.pep-languages-list--asia-africa {
+//  width: 36%;
+//  margin-right: 0;
+//}
+//
+//.pep-languages__header {
+//  padding-bottom: 0.8rem;
+//  margin-bottom: 1.2rem;
+//  text-transform: uppercase;
+//  border-bottom: 1px solid #0080b9;
+//}
+//.pep-languages__header * {
+//  margin: 0;
+//}
+//
+//.pep-languages-list__item {
+//  height: 1.6rem;
+//  line-height: 1.6rem;
+//  cursor: pointer;
+//}
+//
+//.pep-languages-list__item:hover {
+//  color: #0080b9;
+//}
+//
+//.pep-languages__image {
+//  position: relative;
+//  display: block;
+//  width: 100%;
+//  height: 200px;
+//  background-image: url(/img/global-menu-map.png);
+//  background-size: contain;
+//  background-position: right top;
+//  background-repeat: no-repeat;
+//  margin: -50px 0 30px 0;
+//}
+//
+///* line 89, ../../scss/partials/pep-languages.scss */
+//.pep-languages__close {
+//  position: absolute;
+//  display: block;
+//  right: 0;
+//  top: 0;
+//  width: 20px;
+//  height: 20px;
+//  background-image: url(/img/icon__close--white.png);
+//  background-size: contain;
+//  background-position: center;
+//  background-repeat: no-repeat;
+//  cursor: pointer;
+//}
+// -------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
