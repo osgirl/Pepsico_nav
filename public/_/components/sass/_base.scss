@@ -136,116 +136,116 @@ footer {
 }
 //
 //// global language ----------------------------------
-//.container {
-//  position: relative;
-//  display: block;
-//  margin-left: auto;
-//  margin-right: auto;
-//  width: 90%;
-//}
-//
-//.pep-languages {
-//  position: absolute;
-//  display: block;
-//  overflow: hidden;
-//  top: 0;
-//  left: 0;
-//  width: 100%;
-//  background-color: red;
-//  height: auto;
-//  color: white;
-//  max-height: 0;
-//  -webkit-transition: 0.7s ease max-height;
-//  -moz-transition: 0.7s ease max-height;
-//  -ms-transition: 0.7s ease max-height;
-//  -o-transition: 0.7s ease max-height;
-//  transition: 0.7s ease max-height;
-//}
-//
-//.pep-languages.open {
-//  max-height: 600px;
-//}
-//
-//.pep-languages__container {
-//  margin-top: 120px;
-//}
-//
-//.pep-languages-list {
-//  position: relative;
-//  display: inline-block;
-//  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-//  opacity: 0;
-//  vertical-align: top;
-//  margin-right: 3%;
-//  margin-top: 20px;
-//}
-//
-//.pep-languages-list.pep-languages-list--americas {
-//  width: 18%;
-//}
-//
-//.pep-languages-list.pep-languages-list--europe {
-//  width: 40%;
-//}
-//
-//.pep-languages-list.pep-languages-list--europe .pep-languages-set {
-//  position: relative;
-//  display: inline-block;
-//  vertical-align: top;
-//  width: 30%;
-//  margin: 0;
-//}
-//.pep-languages-list.pep-languages-list--asia-africa {
-//  width: 36%;
-//  margin-right: 0;
-//}
-//
-//.pep-languages__header {
-//  padding-bottom: 0.8rem;
-//  margin-bottom: 1.2rem;
-//  text-transform: uppercase;
-//  border-bottom: 1px solid #0080b9;
-//}
-//.pep-languages__header * {
-//  margin: 0;
-//}
-//
-//.pep-languages-list__item {
-//  height: 1.6rem;
-//  line-height: 1.6rem;
-//  cursor: pointer;
-//}
-//
-//.pep-languages-list__item:hover {
-//  color: #0080b9;
-//}
-//
-//.pep-languages__image {
-//  position: relative;
-//  display: block;
-//  width: 100%;
-//  height: 200px;
-//  background-image: url(/img/global-menu-map.png);
-//  background-size: contain;
-//  background-position: right top;
-//  background-repeat: no-repeat;
-//  margin: -50px 0 30px 0;
-//}
-//
-///* line 89, ../../scss/partials/pep-languages.scss */
-//.pep-languages__close {
-//  position: absolute;
-//  display: block;
-//  right: 0;
-//  top: 0;
-//  width: 20px;
-//  height: 20px;
-//  background-image: url(/img/icon__close--white.png);
-//  background-size: contain;
-//  background-position: center;
-//  background-repeat: no-repeat;
-//  cursor: pointer;
-//}
+.container {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.pep-languages {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #9e5f04;
+  height: auto;
+  color: white;
+  max-height: 0;
+  -webkit-transition: 0.7s ease max-height;
+  -moz-transition: 0.7s ease max-height;
+  -ms-transition: 0.7s ease max-height;
+  -o-transition: 0.7s ease max-height;
+  transition: 0.7s ease max-height;
+}
+
+.pep-languages.open {
+  max-height: 600px;
+}
+
+.pep-languages__container {
+  margin-top: 120px;
+}
+
+.pep-languages-list {
+  position: relative;
+  display: inline-block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  vertical-align: top;
+  margin-right: 3%;
+  margin-top: 20px;
+}
+
+.pep-languages-list.pep-languages-list--americas {
+  width: 18%;
+}
+
+.pep-languages-list.pep-languages-list--europe {
+  width: 40%;
+}
+
+.pep-languages-list.pep-languages-list--europe .pep-languages-set {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0;
+}
+.pep-languages-list.pep-languages-list--asia-africa {
+  width: 36%;
+  margin-right: 0;
+}
+
+.pep-languages__header {
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #0080b9;
+}
+.pep-languages__header * {
+  margin: 0;
+}
+
+.pep-languages-list__item {
+  height: 1.6rem;
+  line-height: 1.6rem;
+  cursor: pointer;
+}
+
+.pep-languages-list__item:hover {
+  color: #0080b9;
+}
+
+.pep-languages__image {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-image: url(/img/global-menu-map.png);
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+  margin: -50px 0 30px 0;
+}
+
+/* line 89, ../../scss/partials/pep-languages.scss */
+.pep-languages__close {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/icon__close--white.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 // -------------------------------
 
 
