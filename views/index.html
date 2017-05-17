@@ -2,27 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Title</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/tooltip.css" type="text/css">
 </head>
-<body>
-<div id="header">
-    <img src="img/pepsico_logo.png" id="pepsico_logo"/>
-</div>
-<nav id="nav">
-    <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Sustainability</a></li>
-        <li><a href="#">Brands</a></li>
-        <li><a href="#">Newsroom</a></li>
-        <li><a href="#">Investors</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#"><img src="img/GLOBAL.png"></a></li>
-        <li><a href="#"><img src="img/SEARCH.png"></a></li>
-    </ul>
-</nav>
 
-<script src="js/script.js"></script>
-<script src="http://localhost:35729/livereload.js"></script>
+
+<body>
+<header>
+    <div class="hero">
+        <img src="img/pepsico_logo.png" id="pepsico_logo" style="width: 8vw; height: 4vh"/>
+    </div><!-- hero -->
+</header>
+
+<div class="container" id="menu_container">
+    <ul id="cbp-tm-menu" class="cbp-tm-menu">
+        <li>
+            <a href="#" id="veggie_title">About</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: 0;" id="veggie_submenu">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Sustainability</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: -180px;">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Brands</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: -360px;">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Newsroom</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: -540px;">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Investors</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: -720px;">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">contact</a>
+            <ul class="cbp-tm-submenu" style="width: 100vw; left: -900px;">
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Brands</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Global Division</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our History</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Our Leadership</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Division & Engagement</a></li>
+                <li class="veggie_li"><a href="#" class="veggie_a">Awards and Recognition</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" id="global">
+                <img src="img/GLOBAL.png" style="width: 1.5vw;height: 2.5vh;"></a>
+        </li>
+
+        <div class="pep-nav__utility">
+            <div class="pep-nav__utility-item utility--search" id="pep-nav__utility--search">
+                <span class="pep-nav__utility__close" id="pep-nav__utility__search-close"></span>
+                <form action="/nav1" id="pep-nav__utility__search-form">
+                    <input type="submit" class="pep-nav__utility-item-icon" value="">
+                    <input class="pep-nav__utility--search__input" name="search-string" type="text" placeholder="How can we help you?" id="pep-nav__utility--search__input">
+                </form>
+            </div>
+
+
+
+            <div class="pep-nav__utility-item utility--global" id="pep-nav__utility--global">
+                <span class="pep-nav__utility-item-icon"></span>
+            </div>
+        </div>
+
+
+
+
+
+        <li>
+            <a href="#">
+            <img src="img/SEARCH.png" style="width: 1.5vw;height: 2.5vh;"></a>
+        </li>
+    </ul>
+
+
+
+
+
+
+
+
+    <!--<div class="filler-below"></div>-->
+    </div>
+
+
+    <!--<div class="content" id="leadership">-->
+    <!--<section class="layout">-->
+    <!--<h1 class="header">thogutht<span>leadership</span></h1>-->
+    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab hic officia quia quibusdam. Aspernatur autem-->
+    <!--blanditiis dolor et, exercitationem, facere facilis fugit id labore nisi, nulla odio perferendis-->
+    <!--similique-->
+    <!--voluptates.-->
+    <!--</p>-->
+    <!--</section>-->
+    <!--<section class="layout">video-->
+    <!--<video></video>-->
+    <!--</section>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;option: sticky footer &ndash;&gt;-->
+    <!--<footer>-->
+    <!--<section class="layout">-->
+    <!--<div class="socialmediaicons">-->
+    <!--<ul>-->
+    <!--<li><a href="#">site map</a></li>-->
+    <!--<li><a href="#">careers </a></li>-->
+    <!--<li><a href="#">site map </a></li>-->
+    <!--<li><a href="#">legal </a></li>-->
+    <!--<li><a href="http://twitter.com"><img src="img/social_media.png" alt="icon for social media"-->
+    <!--class="icon"></a></li>-->
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash; socialmediaicons &ndash;&gt;-->
+    <!--</section>&lt;!&ndash; layout &ndash;&gt;-->
+    <!--</footer>&lt;!&ndash; footer &ndash;&gt;-->
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <script src="js/script.js"></script>
+    <script>
+        var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+    </script>
+    <script src="http://localhost:35729/livereload.js"></script>
 </body>
+
+
 </html>

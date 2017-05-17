@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i|Oswald:300,400,700');
+
+body {
+  font-family: $font-secondary;
+  font-size: 1rem;
+  line-height: 160%;
+  background-color: #9b9389;
+  color: $darkblue;
+  font-weight: 300;
+}
+
+////whole heading tags
+//#{headings()} {
+//  display: block;
+//  position: relative;
+//  font-family: $font-secondary;
+//  text-transform: uppercase;
+//  font-size: 2rem;
+//}
+
+footer {
+  @include clearfix;
+  .socialmediaicons {
+    li {
+      padding-right: 40px;
+      &:last-child {
+        display: block;
+        float: right;
+      }
+    }
+  }
+}
+
+//-----------------------------------------
+//----------- search & global--------------
+//-----------------------------------------
+
+.pep-nav__utility {
+  position: absolute;
+  display: block;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+
+/* line 94, ../../scss/1024_up.scss */
+.pep-nav__utility-item {
+  position: absolute;
+  display: block;
+  height: 43px;
+  width: 43px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 2px solid #168dc2;
+  background-color: #004767;
+  border-radius: 43px;
+  top: 20px;
+  overflow: hidden;
+}
+/* line 105, ../../scss/1024_up.scss */
+.pep-nav__utility-item:hover {
+  background-color: #00557b;
+}
+/* line 109, ../../scss/1024_up.scss */
+.pep-nav__utility-item.utility--search {
+  right: 114px;
+}
+/* line 113, ../../scss/1024_up.scss */
+.pep-nav__utility-item.utility--global {
+  right: 67px;
+}
+/* line 117, ../../scss/1024_up.scss */
+.pep-nav__utility-item.utility--share {
+  right: 20px;
+}
+
+/* line 122, ../../scss/1024_up.scss */
+.pep-nav__utility-item-icon {
+  position: absolute;
+  display: block;
+  background-image: url(../img/icon__utilities-sprite.png);
+  background-size: auto 43px;
+  top: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+/* line 134, ../../scss/1024_up.scss */
+.utility--search .pep-nav__utility-item-icon {
+  left: 0;
+  background-position: -87px -2px;
+}
+/* line 138, ../../scss/1024_up.scss */
+.utility--global .pep-nav__utility-item-icon {
+  background-position: -44px -2px;
+}
+/* line 141, ../../scss/1024_up.scss */
+.utility--share .pep-nav__utility-item-icon {
+  background-position: 0px -2px;
+}
+
+/* line 146, ../../scss/1024_up.scss */
+.pep-nav__utility--search__input {
+  position: relative;
+  display: none;
+  height: 37px;
+  width: calc(100% - 80px);
+  margin: 0 0 0 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+}
+/* line 157, ../../scss/1024_up.scss */
+.pep-nav__utility--search__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* line 162, ../../scss/1024_up.scss */
+.pep-nav__utility__close {
+  position: absolute;
+  display: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  height: 40px;
+  width: 40px;
+  right: 0;
+  top: 0;
+  background-image: url(../img/icon__close--white.png);
+  background-size: 15px 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+
+
+
