@@ -50,7 +50,8 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         Timelines['search'].addCallback(this.setToggleState);
         Timelines['search'].to(this.primaryNav, 0.5, { opacity: 0 });
         Timelines['search'].set(this.primaryNav, { display: 'none' });
-        Timelines['search'].to(this.searchContainer, 0.3, { width: 750, ease: Expo.easeOut }, "-=0.5");
+        //width of the search bar
+        Timelines['search'].to(this.searchContainer, 0.3, { width: 1000, ease: Expo.easeOut }, "-=0.5");
         Timelines['search'].set(this.searchInput, { display: 'block' });
         Timelines['search'].set(this.searchClose, { display: 'block' });
         Timelines['search'].to(this.searchClose, 0.2, { opacity: 1 });
@@ -132,6 +133,7 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         this.languages = $('#pep-languages');
         this.languagesList = $('.pep-languages-list');
 
+
         this.toggleOpenClass = function () {
             _this3.languages.toggleClass('open');
         };
@@ -168,5 +170,75 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         var SOCIAL = new Social();
         var GLOBAL = new Global();
     });
+//    ----------------------------------------------------
+//     var Global2 = function Global2() {
+//         var _this3 = this;
+//
+//
+//         this.globalToggleState = false;
+//
+//         this.languagesList = $('.pep-languages-list2');
+//
+//         //-------------------------------------------
+//         this.globalClose = $('#pep-languages__close2');
+//         this.globalBtn = $('#pep-nav__utility--global2');
+//         this.languages = $('#pep-languages2');
+//         // --------------------------------------------
+//
+//
+//         this.toggleOpenClass = function () {
+//             _this3.languages.toggleClass('open');
+//         };
+//
+//         Timelines['global'] = new TimelineMax({ delay: 0 }).pause();
+//         Timelines['global'].addCallback(this.toggleOpenClass);
+//         Timelines['global'].to(this.languagesList, 0.4, { opacity: 1 }, "+=0.2");
+//
+//         this.toggleGlobalMenu = function () {
+//             if (!_this3.globalToggleState) {
+//
+//                 if (Timelines['search'].progress() !== 0) {
+//                     Timelines['search'].reverse(0.2);
+//                 }
+//                 if (Timelines['social'].progress() !== 0) {
+//                     Timelines['social'].tweenTo(0).duration(0.15);
+//                 }
+//
+//                 Timelines['global'].play();
+//                 _this3.globalToggleState = true;
+//             } else {
+//                 Timelines['global'].reverse(0.5);
+//                 _this3.globalToggleState = false;
+//             }
+//         };
+//
+//         this.globalBtn.on('click', this.toggleGlobalMenu);
+//         this.globalClose.on('click', this.toggleGlobalMenu);
+//     };
+
+
+
+
+
+    $(window).on('load', function () {
+
+        var SEARCH = new Search();
+        var SOCIAL = new Social();
+        var GLOBAL = new Global();
+        // var GLOBAL2 = new Global2();
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
 })();
 //# sourceMappingURL=main.js.map

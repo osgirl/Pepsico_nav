@@ -5,21 +5,31 @@ a{
 }
 .hero {
     margin: auto;
-    width: 50%;
+    width: 100%;
     padding: 30px 12px 12px 12px;
 }
-
+.hero_mask{
+    background: black;
+    position: relative;
+    opacity: .3;
+    height: 124px;
+    top: -71px;
+    overflow: overlay;
+    z-index: -1;
+}
 #pepsico_logo {
     display: block;
     margin: auto;
     width: 40%;
+    max-width: 8vw;
+    height: 5vh;
 }
 
 #menu_container {
     display: block;
     float: left;
-    width: 90%;
-    height: 5vh;
+    width: 100%;
+    height: 8vh;
 }
 
 
@@ -48,7 +58,8 @@ a{
     display: block;
     position:relative;
     z-index: 1000;
-    bottom: 0;
+    top: -150px;
+    font-size: 1.2em;
     /*background: white;*/
     text-align: center;
     padding: 0 2em;
@@ -78,27 +89,40 @@ a{
     color: white;
 }
 
-/* sumbenu with transitions */
+
+
+
+/* submenu with transitions */
 .cbp-tm-submenu {
+    width: 900px;
+    font-size:.8em;
+    justify-content: center;
     left: 0;
     position: absolute;
     float: left;
-    background-color: white;
     display: block;
     visibility: hidden;
     opacity: 0;
-    padding-left: 240px;
-    text-align: left;
+    padding: 7px 120px;
+    text-align: center;
     pointer-events: none;
     -webkit-transition: visibility 0s, opacity 0s;
     -moz-transition: visibility 0s, opacity 0s;
     transition: visibility 0s, opacity 0s;
+    background: linear-gradient(to right, rgba(240,240,240,.5) 5%, rgba(240,240,240,1),rgba(240,240,240,.5) 95%);
 }
+
+
+
+
+
 
 .cbp-tm-show .cbp-tm-submenu {
     /*width: 16em;*/
     /*left: 50%;*/
-    margin: 0 0 0 -8em;
+    /*arrow*/
+    /*margin: 0 0 0 0;*/
+    /*margin: auto;*/
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -129,7 +153,9 @@ a{
 .cbp-tm-nospace-left .cbp-tm-submenu {
     left: 0;
 }
-
+.cbp-tm-menu > li:first-child .cbp-tm-submenu {
+left: 0;
+}
 /* last menu item has to fit on the screen */
 .cbp-tm-menu > li:last-child .cbp-tm-submenu {
     right: 0;
@@ -171,8 +197,8 @@ the right position for the arrow
 
 .veggie_li {
     float: left;
-    background-color: white;
     margin: 0 10px 5px;
+    text-align: center;
 }
 
 /*.cbp-tm-show-above .cbp-tm-submenu:after {*/
@@ -185,7 +211,7 @@ the right position for the arrow
 
 .cbp-tm-submenu > li {
     display: block;
-    background: #fff;
+    /*background: #fff;*/
 }
 
 .cbp-tm-submenu > li > a {
@@ -194,7 +220,7 @@ the right position for the arrow
     font-size: .9em;
     font-weight: 400;
     position: relative;
-    color: lightgray;
+    color: black;
     /*border: 4px solid #fff;*/
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -220,6 +246,25 @@ the right position for the arrow
     opacity: 0.3;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Media Queries */
 @media screen and (max-width: 55.6875em) {
     .cbp-tm-menu {
@@ -240,7 +285,7 @@ the right position for the arrow
     .cbp-tm-menu > li {
         display: block;
         margin: 0;
-        border-bottom: 4px solid red;
+        border-top: 4px solid #3793ca;
     }
 
     .cbp-tm-menu > li:first-child {
