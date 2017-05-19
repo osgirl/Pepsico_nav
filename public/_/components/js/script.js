@@ -34,9 +34,17 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         this.searchInput = $('#pep-nav__utility--search__input');
         this.searchToggleState = false;
         this.searchClose = $('#pep-nav__utility__search-close');
+        this.searchBoard = $('#pep-nav__utility__search-form');
+        this.whiteglass = $('.pep-nav__utility-item-icon');
+        this.grayglass= $('.pep-nav__utility-item-icon2');
+
+
 
         this.primaryNav = $('#pep-nav__primary');
         this.searchForm = $('#pep-nav__utility__search-form');
+
+
+
 
         this.searchInputFocus = function () {
             _this.searchInput.focus();
@@ -48,13 +56,19 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
         Timelines['search'] = new TimelineMax({ delay: 0 }).pause();
         Timelines['search'].addCallback(this.setToggleState);
+        Timelines['search'].to(this.grayglass, 0.1, { opacity: 1 }).to(this.whiteglass, 0.1, { opacity: 0 });
+
         Timelines['search'].to(this.primaryNav, 0.5, { opacity: 0 });
         Timelines['search'].set(this.primaryNav, { display: 'none' });
         //width of the search bar
-        Timelines['search'].to(this.searchContainer, 0.3, { width: 1000, ease: Expo.easeOut }, "-=0.5");
+        Timelines['search'].to(this.searchContainer, 0.4, { width: 1000, ease: Expo.easeOut }, "-=0.5");
         Timelines['search'].set(this.searchInput, { display: 'block' });
         Timelines['search'].set(this.searchClose, { display: 'block' });
-        Timelines['search'].to(this.searchClose, 0.2, { opacity: 1 });
+        Timelines['search'].to(this.searchClose, 0.3, { opacity: 1 });
+
+
+        Timelines['search'].to(this.searchBoard, 0.3, {background:'white'});
+
         Timelines['search'].addCallback(this.searchInputFocus);
 
         this.toggleSearchInput = function (e, explicit) {
@@ -65,11 +79,12 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
                 if (Timelines['social'].progress() !== 0) {
                     Timelines['social'].reverse();
                 }
+
                 Timelines['search'].play();
-                // this.searchToggleState  = true
+                this.searchToggleState  = true
             } else {
                 Timelines['search'].tweenTo(0).duration(0.4);
-                // this.searchToggleState  = false
+                this.searchToggleState  = false
             }
         };
 
@@ -84,7 +99,6 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
     var Social = function Social() {
         var _this2 = this;
-
         this.socialContainer = $('#pep-nav__utility--social');
         this.socialBtn = $('#pep-nav__utility--social .pep-nav__utility-item-icon');
         this.socialToggleState = false;
@@ -170,54 +184,6 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         var SOCIAL = new Social();
         var GLOBAL = new Global();
     });
-//    ----------------------------------------------------
-//     var Global2 = function Global2() {
-//         var _this3 = this;
-//
-//
-//         this.globalToggleState = false;
-//
-//         this.languagesList = $('.pep-languages-list2');
-//
-//         //-------------------------------------------
-//         this.globalClose = $('#pep-languages__close2');
-//         this.globalBtn = $('#pep-nav__utility--global2');
-//         this.languages = $('#pep-languages2');
-//         // --------------------------------------------
-//
-//
-//         this.toggleOpenClass = function () {
-//             _this3.languages.toggleClass('open');
-//         };
-//
-//         Timelines['global'] = new TimelineMax({ delay: 0 }).pause();
-//         Timelines['global'].addCallback(this.toggleOpenClass);
-//         Timelines['global'].to(this.languagesList, 0.4, { opacity: 1 }, "+=0.2");
-//
-//         this.toggleGlobalMenu = function () {
-//             if (!_this3.globalToggleState) {
-//
-//                 if (Timelines['search'].progress() !== 0) {
-//                     Timelines['search'].reverse(0.2);
-//                 }
-//                 if (Timelines['social'].progress() !== 0) {
-//                     Timelines['social'].tweenTo(0).duration(0.15);
-//                 }
-//
-//                 Timelines['global'].play();
-//                 _this3.globalToggleState = true;
-//             } else {
-//                 Timelines['global'].reverse(0.5);
-//                 _this3.globalToggleState = false;
-//             }
-//         };
-//
-//         this.globalBtn.on('click', this.toggleGlobalMenu);
-//         this.globalClose.on('click', this.toggleGlobalMenu);
-//     };
-
-
-
 
 
     $(window).on('load', function () {

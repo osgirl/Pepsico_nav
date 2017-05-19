@@ -3,35 +3,6 @@ body {
 a{
     text-transform: uppercase;
 }
-.hero {
-    margin: auto;
-    width: 100%;
-    padding: 30px 12px 12px 12px;
-}
-.hero_mask{
-    background: black;
-    position: relative;
-    opacity: .3;
-    height: 124px;
-    top: -71px;
-    overflow: overlay;
-    z-index: -1;
-}
-#pepsico_logo {
-    display: block;
-    margin: auto;
-    width: 40%;
-    max-width: 8vw;
-    height: 5vh;
-}
-
-#menu_container {
-    display: block;
-    float: left;
-    width: 100%;
-    height: 8vh;
-}
-
 
 
 .filler-below{
@@ -58,7 +29,7 @@ a{
     display: block;
     position:relative;
     z-index: 1000;
-    top: -150px;
+    top: -172px;
     font-size: 1.2em;
     /*background: white;*/
     text-align: center;
@@ -87,6 +58,7 @@ a{
    /*transform: scale(1.2);*/
    font-weight: 400;
     color: white;
+    letter-spacing: 0;
 }
 
 
@@ -94,7 +66,7 @@ a{
 
 /* submenu with transitions */
 .cbp-tm-submenu {
-    width: 900px;
+    width: 1200px;
     font-size:.8em;
     justify-content: center;
     left: 0;
@@ -103,13 +75,17 @@ a{
     display: block;
     visibility: hidden;
     opacity: 0;
-    padding: 7px 120px;
+    padding: 2px 180px;
     text-align: center;
     pointer-events: none;
     -webkit-transition: visibility 0s, opacity 0s;
     -moz-transition: visibility 0s, opacity 0s;
     transition: visibility 0s, opacity 0s;
-    background: linear-gradient(to right, rgba(240,240,240,.5) 5%, rgba(240,240,240,1),rgba(240,240,240,.5) 95%);
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(252,252,252,1) 10%, rgba(252,252,252,1) 50%, rgba(255,255,255,1) 90%, rgba(252,252,252,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(252,252,252,1) 10%,rgba(252,252,252,1) 50%,rgba(255,255,255,1) 90%,rgba(252,252,252,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(252,252,252,1) 10%,rgba(252,252,252,1) 50%,rgba(255,255,255,1) 90%,rgba(252,252,252,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00fcfcfc',GradientType=1 );
+
 }
 
 
@@ -139,8 +115,8 @@ a{
 
 .cbp-tm-show-below .cbp-tm-submenu {
     top: 100%;
-    padding-top: 10px;
-    opacity: 0.5;
+    padding-top: 5px;
+    opacity: .9;
 
 }
 
@@ -166,6 +142,9 @@ arrow: depending on where the menu will be shown, we set
 the right position for the arrow
 */
 
+
+
+/* ARROW POSITION CONTROL */
 .cbp-tm-submenu:after {
     border: solid transparent;
     content: " ";
@@ -173,7 +152,29 @@ the right position for the arrow
     width: 0;
     position: absolute;
     pointer-events: none;
+    border-width: 16px;
+    margin-left: auto;
+    left: 8%;
 }
+#veggie_submenu1:after{
+    left:12%;
+}
+#veggie_submenu2:after{
+    left:25%;
+}
+#veggie_submenu3:after{
+    left:36%;
+}
+#veggie_submenu4:after{
+    left:47%;
+}
+#veggie_submenu5:after{
+    left:59%;
+}
+#veggie_submenu6:after{
+    left:71%;
+}
+
 
 /*.cbp-tm-show-above .cbp-tm-submenu:after {*/
 /*top: 100%;*/
@@ -185,15 +186,6 @@ the right position for the arrow
     margin-bottom: -10px;
 }
 
-/* ARROW POSITION CONTROL */
-/* ARROW POSITION CONTROL */
-/* ARROW POSITION CONTROL */
-.cbp-tm-submenu:after {
-    border-color: transparent;
-    border-width: 16px;
-    margin-left: auto;
-    left: 8%;
-}
 
 .veggie_li {
     float: left;
@@ -225,11 +217,14 @@ the right position for the arrow
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
+    text-shadow:0 0 1px white;
+    letter-spacing: 0.1px;
 }
 
 .no-touch .cbp-tm-submenu > li > a:hover,
 .no-touch .cbp-tm-submenu > li > a:active {
     color: black;
+    letter-spacing: 0;
     /*background: #47a3da;*/
 }
 
@@ -238,6 +233,8 @@ the right position for the arrow
     top: 50%;
     margin-top: -0.5em;
     right: 0.5em;
+    letter-spacing: 0.1px
+
 }
 
 .cbp-tm-menu > li > a:not(:only-child):before {

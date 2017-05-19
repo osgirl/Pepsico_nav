@@ -9,6 +9,11 @@ $small: 30em;
 $medium: 47em;
 $large: 75em;
 
+
+$total-columns  : 2;
+$column-width   : 4.25em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
 //header {
 //  margin-top: 50.50px;
 //  img {

@@ -12,12 +12,67 @@ body {
   font-weight: 300;
 }
 
+.hero_mask {
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
+  position: relative;
+  opacity: .3;
+  height: 150px;
+  top: -124px;
+  z-index: -1;
+}
 
-.hero{
+#pepsico_logo {
+  display: block;
+  margin: auto;
+  width: 50%;
+  /* float: right; */
+  /* margin-right: 182px; */
+  max-width: 140px;
+  height: 35px;
+}
+
+#menu_container {
+  display: block;
+  float: left;
+  width: 100%;
+  height: 8vh;
+}
+
+.hero {
   margin: auto;
   width: 100%;
-  padding: 30px 12px;
 }
+
+.hero_1{
+  width: 100%;
+  display: inline-block;
+}
+
+.global_sites_header{
+  text-transform: uppercase;
+  .global_sites_title{
+   width: 50%;
+    div{
+      margin-bottom: 6px;
+      font-size: 1.5em;
+    }
+    span{
+      display:inline-block;
+      font-weight: 600;
+      font-size: 3em;
+    }
+    .pep-languages__close{
+      width: 50%;
+      float: right;
+    }
+  }
+}
+
+
+
 
 ////whole heading tags
 //#{headings()} {
@@ -46,12 +101,12 @@ footer {
 //-----------------------------------------
 
 .pep-nav__utility {
-  position: absolute;
+  position: relative;
+  height: 2em;
+  float: right;
   display: block;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: auto;
+  margin: auto;
+  width: 32%;
 }
 
 /* line 94, ../../scss/1024_up.scss */
@@ -73,33 +128,45 @@ footer {
   top: 0px;
   overflow: hidden;
 }
+
 .pep-nav__utility-item:hover {
   //background-color: white;
 }
+
 .pep-nav__utility-item.utility--search {
-  right: -100px;
-  top: -25px;
+  right: -47px;
+  top: 0px;
+}
+.pep-nav__utility-item.utility--search:active {
+  background-color: white;
 }
 .pep-nav__utility-item.utility--global {
-  right: -56px;
-  top:-125px;
-  width: 78px;
+  width: 110px;
   height: 36px;
+  span{
+    width: inherit;
+    height: inherit;
+    margin: -4px -43px 0 0;
+  }
 }
+
 #pep-nav__utility--global {
-  right: -126px;
-  top: -93px;
-  border: 2px solid white;
+  border: 1px solid white;
   padding: 1px 0;
+  text-transform: uppercase;
+  font-size: .9em;
+  opacity: .7;
 }
+
 .pep-nav__utility-item.utility--share {
   right: 20px;
 }
 
 .pep-nav__utility-item-icon {
   position: absolute;
+  color: white;
   display: block;
-  background-image: url(../img/search_glass.png);
+  background-image: url(../img/search_m.svg);
   background-repeat: no-repeat;
   background-size: 25px 25px;
   background-color: transparent;
@@ -112,7 +179,10 @@ footer {
   outline: 0;
   cursor: pointer;
 }
+.pep-nav__utility-item-icon:hover path {
+fill:black;
 
+}
 // search bar control
 .utility--search .pep-nav__utility-item-icon {
   left: 7px;
@@ -120,15 +190,15 @@ footer {
 
 .utility--global .pep-nav__utility-item-icon {
   background-position: -44px -2px;
-  color: white;
+  //background-color: white;
   z-index: 999;
 }
+
 .utility--share .pep-nav__utility-item-icon {
   background-position: 0px -2px;
 }
 
-#pep-nav__utility__search-form{
-  background-color: white;
+#pep-nav__utility__search-form {
   height: 50px;
 }
 
@@ -144,12 +214,14 @@ footer {
   color: black;
   font-size: 1.2rem;
 }
+
 .pep-nav__utility--search__input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
 .pep-nav__utility__close {
-  position: absolute;
+  position: relative;
+  float: left;
   display: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
@@ -157,12 +229,35 @@ footer {
   width: 40px;
   right: 0;
   top: 0;
+  z-index: 999;
   background-image: url(../img/close.png);
+  fill: black;
   background-size: 15px 15px;
   background-position: center;
   background-repeat: no-repeat;
 }
+.pep-nav__utility-item-icon:active{
+  fill:black;
+}
 
+//second glass
+.pep-nav__utility-item-icon2{
+  position: absolute;
+  display: block;
+  background-image: url(../img/search_glass.png);
+  opacity: 0;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-color: transparent;
+  top: 7.5px;
+  z-index: 998;
+  right: 4px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
 
 
 
@@ -181,15 +276,17 @@ footer {
 
 .pep-languages {
   position: absolute;
+  font: $font-primary;
+  font-weight: 300;
   display: block;
   overflow: hidden;
   z-index: 9999;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: lightgray;
+  background-color: #cccccc;
   height: auto;
-  color: darkgray;
+  color: dimgray;
   max-height: 0;
   -webkit-transition: 0.7s ease max-height;
   -moz-transition: 0.7s ease max-height;
@@ -217,13 +314,51 @@ footer {
 //  transition: 0.7s ease max-height;
 //}
 
-
-
 .pep-languages.open {
-  max-height: 900px;
+  min-height: 90%;
 }
+
 .pep-languages__container {
   margin-top: 120px;
+  color: dimgray;
+  width: 80%;
+}
+.pep-languages__header{
+  font-weight: 400;
+}
+.pep-languages-list__item{
+  font:$font-primary;
+  font-weight: 300;
+  letter-spacing: .2px;
+}
+
+.pep_languages_list1{
+  font-weight: 300;
+  width: 100%;
+  //float: left;
+  position: relative;
+  height: 300px;
+  float: left;
+  .pep_language_list_left{
+    float: left;
+  display: inline-block;
+    width: 50%;
+  }
+  .pep_language_list_right{
+    float: right;
+    width: 50%;
+    position: relative;
+    display: inline-block;
+    .pep-languages__image {
+      width: 100%;
+      height: 400px;
+      background-image: url(/img/MAP.png);
+      background-size: contain;
+      background-position: right top;
+      background-repeat: no-repeat;
+      margin: 36px 0 50px 0;
+    }
+  }
 }
 
 //#pep-languages2 {
@@ -250,8 +385,6 @@ footer {
 //  transition: 0.7s ease max-height;
 //}
 
-
-
 .pep-languages-list {
   position: relative;
   display: inline-block;
@@ -263,11 +396,11 @@ footer {
 }
 
 .pep-languages-list.pep-languages-list--americas {
-  width: 15%;
+  width: 20%;
 }
 
 .pep-languages-list.pep-languages-list--europe {
-  width: 40%;
+  width: 30%;
 }
 
 .pep-languages-list.pep-languages-list--europe .pep-languages-set {
@@ -277,8 +410,9 @@ footer {
   width: 30%;
   margin: 0;
 }
+
 .pep-languages-list.pep-languages-list--asia-africa {
-  width: 21%;
+  width: 35%;
   margin-right: 0;
 }
 
@@ -287,8 +421,9 @@ footer {
   margin: 1.2rem 0;
   text-transform: uppercase;
   border-bottom: 1px solid #0080b9;
-  border-top:1px solid #0080b9 ;
+  border-top: 1px solid #0080b9;
 }
+
 .pep-languages__header * {
   margin: 0;
 }
@@ -303,17 +438,6 @@ footer {
   color: #0080b9;
 }
 
-.pep-languages__image {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 200px;
-  background-image: url(/img/global-menu-map.png);
-  background-size: contain;
-  background-position: right top;
-  background-repeat: no-repeat;
-  margin: -50px 0 30px 0;
-}
 
 /* line 89, ../../scss/partials/pep-languages.scss */
 .pep-languages__close {
@@ -329,6 +453,7 @@ footer {
   background-repeat: no-repeat;
   cursor: pointer;
 }
+
 // -------------------------------
 
 
