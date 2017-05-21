@@ -35,10 +35,8 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         this.searchToggleState = false;
         this.searchClose = $('#pep-nav__utility__search-close');
         this.searchBoard = $('#pep-nav__utility__search-form');
-        this.whiteglass = $('.pep-nav__utility-item-icon');
-        this.grayglass= $('.pep-nav__utility-item-icon2');
 
-
+        this.whiteglass = $('.cls-1');
 
         this.primaryNav = $('#pep-nav__primary');
         this.searchForm = $('#pep-nav__utility__search-form');
@@ -56,46 +54,57 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
         Timelines['search'] = new TimelineMax({ delay: 0 }).pause();
         Timelines['search'].addCallback(this.setToggleState);
-        Timelines['search'].to(this.grayglass, 0.1, { opacity: 1 }).to(this.whiteglass, 0.1, { opacity: 0 });
-
         Timelines['search'].to(this.primaryNav, 0.5, { opacity: 0 });
         Timelines['search'].set(this.primaryNav, { display: 'none' });
         //width of the search bar
         Timelines['search'].to(this.searchContainer, 0.4, { width: 1000, ease: Expo.easeOut }, "-=0.5");
         Timelines['search'].set(this.searchInput, { display: 'block' });
-        Timelines['search'].set(this.searchClose, { display: 'block' });
-        Timelines['search'].to(this.searchClose, 0.3, { opacity: 1 });
 
-
+        Timelines['search'].to(this.whiteglass, 0.1, { fill: "red" });
         Timelines['search'].to(this.searchBoard, 0.3, {background:'white'});
 
+        Timelines['search'].set(this.searchClose, { display: 'block' });
+        Timelines['search'].to(this.searchClose, 0.3, { opacity: 1 });
         Timelines['search'].addCallback(this.searchInputFocus);
 
-        this.toggleSearchInput = function (e, explicit) {
 
+
+        //todo: white glass toggle function
+
+
+
+        this.toggleSearchInput = function (e, explicit) {
             if (!_this.searchToggleState && !explicit) {
                 e.preventDefault();
 
                 if (Timelines['social'].progress() !== 0) {
                     Timelines['social'].reverse();
                 }
-
                 Timelines['search'].play();
-                this.searchToggleState  = true
+                this.searchToggleState  = true;
+
             } else {
                 Timelines['search'].tweenTo(0).duration(0.4);
-                this.searchToggleState  = false
+                Timelines['search'].to(this.whiteglass, 0.1, { fill: "white" });
+
+                this.searchToggleState  = false;
             }
         };
 
         this.disableForm = function () {
-            _this.searchForm.children('input').remove();
+            // _this.searchForm.children('input').remove();
         };
 
         this.toggleBtn.on('click', this.toggleSearchInput);
         this.searchForm.on('submit', this.disableForm);
         this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
     };
+
+
+
+
+
+
 
     var Social = function Social() {
         var _this2 = this;
@@ -136,6 +145,10 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         this.socialClose.on('click', this.toggleSocialLinks);
     };
 
+
+
+
+
     var Global = function Global() {
         var _this3 = this;
 
@@ -149,21 +162,29 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
 
 
         this.toggleOpenClass = function () {
+            //todo: css open and without open fix
             _this3.languages.toggleClass('open');
         };
 
         Timelines['global'] = new TimelineMax({ delay: 0 }).pause();
         Timelines['global'].addCallback(this.toggleOpenClass);
-        Timelines['global'].to(this.languagesList, 0.4, { opacity: 1 }, "+=0.2");
+        Timelines['global'].to(this.languagesList, 0.4, { opacity: 1 });
+
+
+
+
+
+
+
 
         this.toggleGlobalMenu = function () {
             if (!_this3.globalToggleState) {
 
                 if (Timelines['search'].progress() !== 0) {
-                    Timelines['search'].reverse(0.2);
+                    Timelines['search'].reverse();
                 }
                 if (Timelines['social'].progress() !== 0) {
-                    Timelines['social'].tweenTo(0).duration(0.15);
+                    Timelines['social'].tweenTo(0).duration(0.25);
                 }
 
                 Timelines['global'].play();
@@ -184,27 +205,6 @@ var _gsScope="undefined"!=typeof module&&module.exports&&"undefined"!=typeof glo
         var SOCIAL = new Social();
         var GLOBAL = new Global();
     });
-
-
-    $(window).on('load', function () {
-
-        var SEARCH = new Search();
-        var SOCIAL = new Social();
-        var GLOBAL = new Global();
-        // var GLOBAL2 = new Global2();
-
-    });
-
-
-
-
-
-
-
-
-
-
-
 
 })();
 //# sourceMappingURL=main.js.map
