@@ -1,20 +1,16 @@
-a{
+a {
   text-transform: uppercase;
 }
 
-
-.filler-below{
+.filler-below {
   color: transparent;
   height: 2vh;
 }
+
 /*.veggie_a{*/
 /*font-size: .5em;*/
 /*font-weight: 400;*/
 /*}*/
-
-
-
-
 
 /* reset  list style */
 .cbp-tm-menu,
@@ -25,7 +21,7 @@ a{
 /* set menu position; change here to set to relative or float, etc. */
 .cbp-tm-menu {
   display: block;
-  position:relative;
+  position: relative;
   z-index: 1000;
   top: -172px;
   font-size: 1.2em;
@@ -40,11 +36,11 @@ a{
 .cbp-tm-menu > li {
   display: inline-block;
   position: relative;
-  width:140px;
+  width: 140px;
   margin-right: 5px;
-&:last-child{
-  padding-right: 100px;
-}
+  &:last-child {
+    padding-right: 100px;
+  }
 }
 
 .cbp-tm-menu > li > a {
@@ -52,7 +48,7 @@ a{
   padding: 0 0.3em;
   font-size: 1.2em;
   display: block;
-  &:hover{
+  &:hover {
   }
 }
 
@@ -63,13 +59,10 @@ a{
   color: white;
 }
 
-
-
-
 /* submenu with transitions */
 .cbp-tm-submenu {
   width: 1200px;
-  font-size:.8em;
+  font-size: .8em;
   justify-content: center;
   left: 0;
   position: absolute;
@@ -83,17 +76,12 @@ a{
   -webkit-transition: visibility 0s, opacity 0s;
   -moz-transition: visibility 0s, opacity 0s;
   transition: visibility 0s, opacity 0s;
-  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(252,252,252,1) 10%, rgba(252,252,252,1) 50%, rgba(255,255,255,1) 90%, rgba(252,252,252,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(252,252,252,1) 10%,rgba(252,252,252,1) 50%,rgba(255,255,255,1) 90%,rgba(252,252,252,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(252,252,252,1) 10%,rgba(252,252,252,1) 50%,rgba(255,255,255,1) 90%,rgba(252,252,252,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00fcfcfc',GradientType=1 );
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00fcfcfc', GradientType=1);
 
 }
-
-
-
-
-
 
 .cbp-tm-show .cbp-tm-submenu {
   /*width: 16em;*/
@@ -104,7 +92,7 @@ a{
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-z-index: 1;
+  z-index: 1;
   -webkit-transition: visibility 0s, opacity 0.3s;
   -moz-transition: visibility 0s, opacity 0.3s;
   transition: visibility 0s, opacity 0.3s;
@@ -131,9 +119,11 @@ z-index: 1;
 .cbp-tm-nospace-left .cbp-tm-submenu {
   left: 0;
 }
+
 .cbp-tm-menu > li:first-child .cbp-tm-submenu {
   left: 0;
 }
+
 /* last menu item has to fit on the screen */
 .cbp-tm-menu > li:last-child .cbp-tm-submenu {
   right: 0;
@@ -143,8 +133,6 @@ z-index: 1;
 arrow: depending on where the menu will be shown, we set
 the right position for the arrow
 */
-
-
 
 /* ARROW POSITION CONTROL */
 .cbp-tm-submenu:after {
@@ -159,25 +147,46 @@ the right position for the arrow
   margin-left: auto;
   left: 8%;
 }
-#veggie_submenu1:after{
-  left:15%;
-}
-#veggie_submenu2:after{
-  left:25%;
-}
-#veggie_submenu3:after{
-  left:38%;
-}
-#veggie_submenu4:after{
-  left:48%;
-}
-#veggie_submenu5:after{
-  left:60%;
-}
-#veggie_submenu6:after{
-  left:71%;
+
+//submenu padding and starting point
+#veggie_submenu1 {
+  padding-left: 300px;
+  &:after {
+    left: 15%;
+  }
 }
 
+#veggie_submenu2{
+  padding-left: 400px;
+  &:after {
+    left: 25%;
+  }
+}
+
+#veggie_submenu3{
+  padding-left: 470px;
+  &:after {
+    left: 38%;
+  }
+}
+
+#veggie_submenu4{
+  padding-left: 400px;
+  &:after {
+    left: 48%;
+  }
+}
+
+#veggie_submenu5 {
+  padding-left: 250px;
+  &:after {
+    left: 60%;
+  }
+}
+
+#veggie_submenu6:after {
+  left: 71%;
+}
 
 /*.cbp-tm-show-above .cbp-tm-submenu:after {*/
 /*top: 100%;*/
@@ -189,8 +198,8 @@ the right position for the arrow
   margin-bottom: -10px;
 }
 
-.rido_title{
-  &:hover{
+.rido_title {
+  &:hover {
     letter-spacing: .5px;
   }
 }
@@ -201,7 +210,25 @@ the right position for the arrow
   text-align: center;
   line-height: 18px;
   margin-right: 12px;
+
 }
+
+//.rido_subtitle:nth-child(0) {
+//  //padding-left: 100px;
+//}
+//
+//.rido_subtitle:nth-child(1) {
+//  padding-left: 400px;
+//}
+//.rido_subtitle:nth-child(2) {
+//  padding-left: 470px;
+//}
+//.rido_subtitle:nth-child(3) {
+//  padding-left: 400px;
+//}
+//.rido_subtitle:nth-child(4) {
+//  padding-left: 250px;
+//}
 
 /*.cbp-tm-show-above .cbp-tm-submenu:after {*/
 /*border-top-color: #fff;*/
@@ -228,7 +255,7 @@ the right position for the arrow
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  text-shadow:0 0 1px white;
+  text-shadow: 0 0 1px white;
   letter-spacing: 0.1px;
 }
 
@@ -251,25 +278,6 @@ the right position for the arrow
   opacity: 0.3;
   letter-spacing: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Media Queries */
 @media screen and (max-width: 55.6875em) {

@@ -4493,7 +4493,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     var Global = function Global() {
         var _this3 = this;
         this.globalToggleState = false;
-
         this.globalClose = $('#pep-languages__close');
         this.globalBtn = $('#pep-nav__utility--global');
         this.languages = $('#pep-languages');
@@ -4502,8 +4501,9 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.toggleOpenClass = function () {
             _this3.languages.toggleClass('open');
         };
+
         this.setToggleState = function () {
-            _this.searchToggleState = !_this.searchToggleState;
+            _this3.globalToggleState = !_this3.globalToggleState;
         };
 
         Timelines['global'] = new TimelineMax({delay: 0}).pause();
@@ -4511,8 +4511,10 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         Timelines['global'].to(this.languagesList, 0.4, {opacity: 1});
 
 
-        this.toggleGlobalMenu = function () {
-            if (!_this3.globalToggleState) {
+
+        this.toggleGlobalMenu = function (e, explicit) {
+            if (!_this3.globalToggleState && !explicit) {
+                e.preventDefault();
 
                 if (Timelines['search'].progress() !== 0) {
                     Timelines['search'].reverse();
@@ -4520,7 +4522,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 if (Timelines['social'].progress() !== 0) {
                     Timelines['social'].tweenTo(0).duration(0.25);
                 }
-
                 Timelines['global'].play();
                 _this3.globalToggleState = true;
             } else {
