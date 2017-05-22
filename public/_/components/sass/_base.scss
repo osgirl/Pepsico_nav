@@ -139,7 +139,7 @@ footer {
 
 .pep-nav__utility-item.utility--search {
   right: -47px;
-  top: 0px;
+  top: 8px;
 }
 .pep-nav__utility-item.utility--search:active {
   background-color: white;
@@ -175,7 +175,7 @@ footer {
   background-repeat: no-repeat;
   background-size: 25px 25px;
   background-color: transparent;
-  top: 7px;
+  top: 5px;
   z-index: 999;
   right: 25px;
   height: 30px;
@@ -191,6 +191,8 @@ footer {
 // search bar control
 .utility--search .pep-nav__utility-item-icon {
   left: 7px;
+  width: 50px;
+  height: 40px;
 }
 
 .utility--global .pep-nav__utility-item-icon {
@@ -205,6 +207,12 @@ footer {
 
 #pep-nav__utility__search-form {
   height: 50px;
+
+  -webkit-transition: 0.7s ease ;
+  -moz-transition: 0.7s ease ;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+  transition: 0.7s ease;
 }
 
 .pep-nav__utility--search__input {
@@ -218,6 +226,7 @@ footer {
   outline: none;
   color: black;
   font-size: 1.2rem;
+
 }
 
 .pep-nav__utility--search__input::-webkit-input-placeholder {
@@ -240,6 +249,7 @@ footer {
   background-size: 15px 15px;
   background-position: center;
   background-repeat: no-repeat;
+
 }
 .pep-nav__utility-item-icon:active{
   fill:black;
@@ -292,8 +302,7 @@ footer {
   height: auto;
   color: dimgray;
   //max-height: 0;
-  max-height: 88%;
-
+  max-height: 95%;
   -webkit-transition: 0.7s ease max-height;
   -moz-transition: 0.7s ease max-height;
   -ms-transition: 0.7s ease max-height;
@@ -317,7 +326,6 @@ footer {
     color: white;
     opacity:1;
   }
-
 }
 
 
@@ -439,6 +447,9 @@ footer {
 
 #w_glass{
   z-index: 3;
+  height: 22px;
+  width: 22px;
+  top: 8px;
 }
 
 // --------- map -------------------

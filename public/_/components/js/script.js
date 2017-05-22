@@ -4388,16 +4388,14 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     var Search = function Search() {
         var _this = this;
+        this.searchToggleState = false;
 
         this.searchContainer = $('#pep-nav__utility--search');
         this.toggleBtn = $('#pep-nav__utility--search .pep-nav__utility-item-icon');
         this.searchInput = $('#pep-nav__utility--search__input');
-        this.searchToggleState = false;
         this.searchClose = $('#pep-nav__utility__search-close');
         this.searchBoard = $('#pep-nav__utility__search-form');
-
         this.whiteglass = $('.cls-1');
-
         this.primaryNav = $('#pep-nav__primary');
         this.searchForm = $('#pep-nav__utility__search-form');
 
@@ -4412,14 +4410,15 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         Timelines['search'] = new TimelineMax({delay: 0}).pause();
         Timelines['search'].addCallback(this.setToggleState);
+
         Timelines['search'].to(this.primaryNav, 0.5, {opacity: 0});
         Timelines['search'].set(this.primaryNav, {display: 'none'});
         //width of the search bar
-        Timelines['search'].to(this.searchContainer, 0.4, {width: 1000, ease: Expo.easeOut}, "-=0.5");
+        Timelines['search'].to(this.searchContainer, 0.3, {width: 1000, ease:Power0.easeOut}, '-=.3');
         Timelines['search'].set(this.searchInput, {display: 'block'});
 
-        Timelines['search'].to(this.whiteglass, 0.1, {fill: "red"});
-        Timelines['search'].to(this.searchBoard, 0.3, {background: 'white'});
+        Timelines['search'].to(this.whiteglass, 0.3, {fill: "gray"});
+        Timelines['search'].to(this.searchBoard, 0.1, {background: 'white'});
 
         Timelines['search'].set(this.searchClose, {display: 'block'});
         Timelines['search'].to(this.searchClose, 0.3, {opacity: 1});
@@ -4432,24 +4431,21 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.toggleSearchInput = function (e, explicit) {
             if (!_this.searchToggleState && !explicit) {
                 e.preventDefault();
-
                 if (Timelines['social'].progress() !== 0) {
                     Timelines['social'].reverse();
                 }
                 Timelines['search'].play();
                 this.searchToggleState = true;
-
-
             } else {
-                Timelines['search'].tweenTo(0).duration(0.4);
+                //search bar transition time
+                Timelines['search'].tweenTo(0).duration(0.8);
                 Timelines['search'].to(this.whiteglass, 0.1, {fill: "white"});
-
                 this.searchToggleState = false;
             }
         };
 
         this.disableForm = function () {
-            // _this.searchForm.children('input').remove();
+            _this.searchForm.children('input').remove();
         };
 
         this.toggleBtn.on('click', this.toggleSearchInput);
@@ -4459,7 +4455,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
 
     var Social = function Social() {
-
         var _this2 = this;
         this.socialContainer = $('#pep-nav__utility--social');
         this.socialBtn = $('#pep-nav__utility--social .pep-nav__utility-item-icon');
@@ -4477,16 +4472,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         Timelines['social'].set(this.socialItems, {display: 'block'}, "-=0.2");
         Timelines['social'].to(this.socialItems, 0.2, {opacity: 1}, "-=0.2");
 
-
         this.toggleSocialLinks = function (e, explicit) {
-
             if (!_this2.socialToggleState && !explicit) {
                 e.preventDefault();
-
                 if (Timelines['search'].progress() !== 0) {
                     Timelines['search'].tweenTo(0).duration(0.2);
                 }
-
                 Timelines['social'].play();
                 _this2.socialToggleState = true;
             } else {
@@ -4494,7 +4485,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 _this2.socialToggleState = false;
             }
         };
-
         this.socialBtn.on('click', this.toggleSocialLinks);
         this.socialClose.on('click', this.toggleSocialLinks);
     };
@@ -4510,8 +4500,10 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.languagesList = $('.pep-languages-list');
 
         this.toggleOpenClass = function () {
-            //todo: css open and without open fix
             _this3.languages.toggleClass('open');
+        };
+        this.setToggleState = function () {
+            _this.searchToggleState = !_this.searchToggleState;
         };
 
         Timelines['global'] = new TimelineMax({delay: 0}).pause();
@@ -4536,68 +4528,23 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 _this3.globalToggleState = false;
             }
         };
-
         this.globalBtn.on('click', this.toggleGlobalMenu);
         this.globalClose.on('click', this.toggleGlobalMenu);
     };
 
-    var Map = function Map() {
-
-        var _this3 = this;
-
-        this.popoverClose = $('#popover__close');
-        this.popverPinBtn = $('.pin__popover');
-
-        this.popoverToggleState = false;
-
-        this.popoverContent = $('.popover__copy');
-        this.languagesList = $('');
 
 
-        this.toggleOpenClass = function () {
-            _this3.popoverContent.toggleClass('open');
-        };
-        //map-> global
-        Timelines['map'] = new TimelineMax({delay: 0}).pause();
-        Timelines['map'].addCallback(this.toggleOpenClass);
-        //lnaguagelisst
-        Timelines['map'].to(this.popoverContent, 0.4, {opacity: 1});
 
 
-        this.toggleMapMenu = function () {
-            if (!_this3.popoverToggleState) {
-
-                if (Timelines['search'].progress() !== 0) {
-                    Timelines['search'].reverse();
-                }
-                if (Timelines['social'].progress() !== 0) {
-                    Timelines['social'].tweenTo(0).duration(0.25);
-                }
-
-                Timelines['map'].play();
-                _this3.popoverToggleState = true;
-            } else {
-                Timelines['map'].reverse(0.5);
-                _this3.popoverToggleState = false;
-            }
-        };
-
-        this.popverPinBtn.on('click', this.toggleMapMenu);
-        this.popoverClose.on('click', this.toggleMapMenu);
 
 
-    };
+
 
     $(window).on('load', function () {
-
         var SEARCH = new Search();
         var SOCIAL = new Social();
         var GLOBAL = new Global();
-        var MAP = new Map();
-
     });
-
-
 
     // map pop over
     // $("#a").click(function () {
@@ -4608,12 +4555,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     // $("#popover__close").click(function () {
     //
     // });
-
-
 })();
 
 
 //imageMapster
-
-
 //# sourceMappingURL=main.js.map

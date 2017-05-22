@@ -466,9 +466,48 @@
 //}
 
 
+<!-- green sock map function-->
 
-
-
+// var Map = function Map() {
+//
+//     var _this3 = this;
+//
+//     this.popoverClose = $('#popover__close');
+//     this.popverPinBtn = $('.pin__popover');
+//
+//     this.popoverToggleState = false;
+//
+//     this.popoverContent = $('.popover__copy');
+//     // this.languagesList = $('');
+//
+//     this.toggleOpenClass = function () {
+//         _this3.popoverContent.toggleClass('popover__copy--active');
+//     };
+//     //map-> global
+//     Timelines['map'] = new TimelineMax({delay: 0}).pause();
+//     Timelines['map'].addCallback(this.toggleOpenClass);
+//     //lnaguagelisst
+//     Timelines['map'].to(this.popoverContent, 0.4, {opacity: 1});
+//
+//
+//     this.toggleMapMenu = function () {
+//         if (!_this3.popoverToggleState) {
+//             if (Timelines['search'].progress() !== 0) {
+//                 Timelines['search'].reverse();
+//             }
+//             if (Timelines['social'].progress() !== 0) {
+//                 Timelines['social'].tweenTo(0).duration(0.25);
+//             }
+//             Timelines['map'].play();
+//             _this3.popoverToggleState = true;
+//         } else {
+//             Timelines['map'].reverse(0.5);
+//             _this3.popoverToggleState = false;
+//         }
+//     };
+//     this.popverPinBtn.on('click', this.toggleMapMenu);
+//     this.popoverClose.on('click', this.toggleMapMenu)
+// };
 
 
 
