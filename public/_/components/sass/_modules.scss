@@ -1,5 +1,4 @@
 a {
-  text-transform: uppercase;
 }
 
 .filler-below {
@@ -7,10 +6,9 @@ a {
   height: 2vh;
 }
 
-/*.veggie_a{*/
-/*font-size: .5em;*/
-/*font-weight: 400;*/
-/*}*/
+.veggie_a{
+
+}
 
 /* reset  list style */
 .cbp-tm-menu,
@@ -29,7 +27,7 @@ a {
   text-align: center;
   padding: 0 2em;
   margin: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 /* first level menu items */
@@ -65,7 +63,7 @@ a {
 /* submenu with transitions */
 .cbp-tm-submenu {
   width: 1200px;
-  font-size: .8em;
+  font-size: .7em;
   justify-content: center;
   left: 0;
   position: absolute;
@@ -73,6 +71,7 @@ a {
   display: block;
   visibility: hidden;
   opacity: 0;
+  text-transform: none;
   padding: 2px 180px;
   text-align: center;
   pointer-events: none;
@@ -153,35 +152,35 @@ the right position for the arrow
 
 //submenu padding and starting point
 #veggie_submenu1 {
-  padding-left: 300px;
+  padding-left: 240px;
   &:after {
     left: 15%;
   }
 }
 
 #veggie_submenu2{
-  padding-left: 400px;
+  padding-left: 350px;
   &:after {
     left: 25%;
   }
 }
 
 #veggie_submenu3{
-  padding-left: 470px;
+  padding-left: 520px;
   &:after {
     left: 38%;
   }
 }
 
 #veggie_submenu4{
-  padding-left: 400px;
+  padding-left: 350px;
   &:after {
     left: 48%;
   }
 }
 
 #veggie_submenu5 {
-  padding-left: 250px;
+  padding-left: 200px;
   &:after {
     left: 60%;
   }
