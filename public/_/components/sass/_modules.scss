@@ -58,7 +58,7 @@ a {
 .no-touch .cbp-tm-menu > li > a:hover,
 .no-touch .cbp-tm-menu > li > a:active {
   /*transform: scale(1.2);*/
-  font-weight: 400;
+  font-weight: 300;
   color: white;
 }
 
@@ -203,7 +203,7 @@ the right position for the arrow
 
 .rido_title {
   &:hover {
-    letter-spacing: .5px;
+    //letter-spacing: px;
   }
 }
 
@@ -278,7 +278,7 @@ the right position for the arrow
 .cbp-tm-menu > li > a:not(:only-child):before {
   /*content: "\f0c9";*/
   font-size: 60%;
-  opacity: 0.3;
+  opacity: 0.7;
   letter-spacing: 0px;
 }
 

@@ -46,33 +46,11 @@ body {
   width: 100%;
 }
 
-.hero_1{
+.hero_1 {
   width: 100%;
   display: inline-block;
   margin-bottom: 18px;
 }
-
-.global_sites_header{
-  text-transform: uppercase;
-  .global_sites_title{
-   width: 50%;
-    div{
-      margin-bottom: 6px;
-      font-size: 1.5em;
-    }
-    span{
-      display:inline-block;
-      font-weight: 600;
-      font-size: 3em;
-    }
-    .pep-languages__close{
-      width: 50%;
-      float: right;
-    }
-  }
-}
-
-
 
 
 ////whole heading tags
@@ -97,9 +75,6 @@ footer {
   }
 }
 
-
-
-
 //-----------------------------------------
 //----------- search & global--------------
 //-----------------------------------------
@@ -110,7 +85,7 @@ footer {
   float: right;
   display: block;
   margin: auto;
-  width: 32%;
+  width: 26%;
 }
 
 /* line 94, ../../scss/1024_up.scss */
@@ -141,13 +116,15 @@ footer {
   right: -47px;
   top: 8px;
 }
+
 .pep-nav__utility-item.utility--search:active {
   background-color: white;
 }
+
 .pep-nav__utility-item.utility--global {
   width: 110px;
   height: 36px;
-  span{
+  span {
     width: inherit;
     height: inherit;
     margin: -4px -43px 0 0;
@@ -184,10 +161,12 @@ footer {
   outline: 0;
   cursor: pointer;
 }
+
 .pep-nav__utility-item-icon:hover path {
-//fill:black;
+  //fill:black;
 
 }
+
 // search bar control
 .utility--search .pep-nav__utility-item-icon {
   left: 7px;
@@ -208,8 +187,8 @@ footer {
 #pep-nav__utility__search-form {
   height: 50px;
 
-  -webkit-transition: 0.7s ease ;
-  -moz-transition: 0.7s ease ;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
   -ms-transition: 0.7s ease;
   -o-transition: 0.7s ease;
   transition: 0.7s ease;
@@ -251,8 +230,9 @@ footer {
   background-repeat: no-repeat;
 
 }
-.pep-nav__utility-item-icon:active{
-  fill:black;
+
+.pep-nav__utility-item-icon:active {
+  fill: black;
 }
 
 //second glass
@@ -273,19 +253,15 @@ footer {
 //  cursor: pointer;
 //}
 
-
-
-
-
-
-
 //// global language ----------------------------------
 .container {
   position: relative;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
+  //width: 90%;
+  height: inherit;
+
 }
 
 .pep-languages {
@@ -295,11 +271,11 @@ footer {
   display: block;
   overflow: hidden;
   z-index: 9999;
-  bottom:0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #cccccc;
-  height: auto;
+  background-color: #d7d6d3;;
+  height: 100vh;
   color: dimgray;
   max-height: 0;
   //max-height: 88%;
@@ -321,49 +297,52 @@ footer {
   transition: 0.7s ease max-height;
 }
 
-.pep-nav__utility-item-icon{
-  #globalsite{
+.pep-nav__utility-item-icon {
+  #globalsite {
     color: white;
-    opacity:1;
+    opacity: 1;
   }
 }
 
-
 .pep-languages__container {
-  margin-top: 120px;
+  margin: 50px 150px 10px 150px;
   color: dimgray;
-  width: 80%;
+  //width: 70%;
+  //height: 80%;
 }
-.pep-languages__header{
+
+.pep-languages__header {
   font-weight: 400;
 }
-.pep-languages-list__item{
-  font:$font-primary;
+
+.pep-languages-list__item {
+  font: $font-primary;
   font-weight: 300;
   letter-spacing: .2px;
 }
 
-.pep_languages_list1{
+.pep_languages_list1 {
   font-weight: 300;
   width: 100%;
   //float: left;
   position: relative;
-  height: 300px;
+  height: 30%;
   float: left;
-  .pep_language_list_left{
+  .pep_language_list_left {
     float: left;
-  display: inline-block;
+    display: inline-block;
     width: 50%;
   }
-  .pep_language_list_right{
+  .pep_language_list_right {
     float: right;
     width: 50%;
+    height: 300px;
     position: relative;
     display: inline-block;
     .pep-languages__image {
-      width: 100%;
-      height: 400px;
-      background-image: url(/img/MAP.png);
+      width: 90%;
+      height: 300px;
+      //background-image: url(/img/MAP.png);
       background-size: contain;
       background-position: right top;
       background-repeat: no-repeat;
@@ -371,7 +350,12 @@ footer {
     }
   }
 }
-
+.pep_languages_list2 {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 30%;
+}
 
 .pep-languages-list {
   position: relative;
@@ -384,11 +368,12 @@ footer {
 }
 
 .pep-languages-list.pep-languages-list--americas {
-  width: 20%;
+  width: 25%;
 }
 
 .pep-languages-list.pep-languages-list--europe {
-  width: 30%;
+  width: 37%;
+  margin-top: 35px;
 }
 
 .pep-languages-list.pep-languages-list--europe .pep-languages-set {
@@ -400,13 +385,34 @@ footer {
 }
 
 .pep-languages-list.pep-languages-list--asia-africa {
-  width: 35%;
+  width: 45%;
   margin-right: 0;
 }
 
+.global_sites_header {
+  text-transform: uppercase;
+  .global_sites_title {
+    width: 50%;
+    div {
+      margin-bottom: 0px;
+      font-size: 1em;
+    }
+    span {
+      display: inline-block;
+      font-weight: 600;
+      font-size: 2.5em;
+    }
+    .pep-languages__close {
+      width: 50%;
+      float: right;
+    }
+  }
+}
+
+//
 .pep-languages__header {
-  padding: 0.8rem 0;
-  margin: 1.2rem 0;
+  padding: 0.6rem 0;
+  margin: 1rem 0;
   text-transform: uppercase;
   border-bottom: 1px solid #0080b9;
   border-top: 1px solid #0080b9;
@@ -417,15 +423,14 @@ footer {
 }
 
 .pep-languages-list__item {
-  height: 1.6rem;
-  line-height: 1.6rem;
+  height: 1.5rem;
+  line-height: 1rem;
   cursor: pointer;
 }
 
 .pep-languages-list__item:hover {
   color: #0080b9;
 }
-
 
 /* line 89, ../../scss/partials/pep-languages.scss */
 .pep-languages__close {
@@ -445,7 +450,7 @@ footer {
 // todo: stylelint, postCss, sugarSS
 // deep nesting makes problems!!
 
-#w_glass{
+#w_glass {
   z-index: 3;
   height: 22px;
   width: 22px;
@@ -465,7 +470,7 @@ footer {
 
 @media (min-width: 768px) {
   #water-map-root {
-    padding-top:80px
+    padding-top: 80px
   }
 }
 
@@ -517,7 +522,7 @@ footer {
 
 @media (min-width: 600px) {
   .pin {
-    width:30px
+    width: 30px
   }
 }
 
@@ -586,7 +591,7 @@ footer {
 
 @media (min-width: 900px) {
   .pin__popover {
-    width:46vw
+    width: 46vw
   }
 }
 
@@ -599,7 +604,7 @@ footer {
   -webkit-transition: -webkit-transform 150ms 150ms ease-in-out;
   -moz-transition: -moz-transform 150ms 150ms ease-in-out;
   transition: transform 150ms 150ms ease-in-out;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 95%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5) 0%, transparent 95%);
   border-radius: 100%;
   bottom: 0;
   content: "";
@@ -612,7 +617,9 @@ footer {
 }
 
 .pin__shadow--active {
-  @transition (transform 150ms 0ms ease-in-out);;-webkit-transform: scale(3);
+  @transition (transform 150ms 0ms ease-in-out);
+;
+  -webkit-transform: scale(3);
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   -o-transform: scale(3);
@@ -667,7 +674,7 @@ footer {
 
 @media (min-width: 900px) {
   .popover {
-    width:730px
+    width: 730px
   }
 }
 
@@ -683,7 +690,7 @@ footer {
   height: 300px
 }
 
-.popover__resource--active,.water-map-modal .popover__resource {
+.popover__resource--active, .water-map-modal .popover__resource {
   -webkit-transition: opacity 150ms 200ms ease-in-out;
   -moz-transition: opacity 150ms 200ms ease-in-out;
   transition: opacity 150ms 200ms ease-in-out;
@@ -692,7 +699,7 @@ footer {
 
 @media (min-width: 900px) {
   .popover__resource {
-    width:200px
+    width: 200px
   }
 }
 
@@ -738,7 +745,7 @@ footer {
 
 @media (min-width: 900px) {
   .popover__play-btn {
-    width:50%
+    width: 50%
   }
 }
 
@@ -755,7 +762,7 @@ footer {
   padding: 10px
 }
 
-.popover__copy--active,.water-map-modal .popover__copy {
+.popover__copy--active, .water-map-modal .popover__copy {
   -webkit-transition: opacity 150ms 300ms ease-in-out;
   -moz-transition: opacity 150ms 300ms ease-in-out;
   transition: opacity 150ms 300ms ease-in-out;
@@ -764,7 +771,7 @@ footer {
 
 @media (min-width: 900px) {
   .popover__copy {
-    margin:0 0 0 10px;
+    margin: 0 0 0 10px;
     width: 520px
   }
 }
@@ -804,7 +811,7 @@ footer {
   z-index: 1000;
   box-sizing: border-box;
   padding: 20px 0;
-  background-color: rgba(0,0,0,0.6)
+  background-color: rgba(0, 0, 0, 0.6)
 }
 
 .modal__close-btn {
@@ -842,14 +849,14 @@ footer {
 
 @media (min-width: 900px) {
   .modal__window--popover {
-    max-width:960px !important;
+    max-width: 960px !important;
     width: auto !important
   }
 }
 
 @media (min-width: 900px) {
   .modal__window {
-    -webkit-transform:translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
@@ -865,7 +872,6 @@ footer {
   padding-top: 25px;
   height: 0
 }
-
 
 .water-map {
   overflow: hidden;
@@ -896,7 +902,7 @@ footer {
 
 @media (min-width: 360px) {
   .map {
-    -webkit-transform:translateX(-50%);
+    -webkit-transform: translateX(-50%);
     -moz-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     -o-transform: translateX(-50%);
@@ -906,7 +912,7 @@ footer {
 
 @media (min-width: 600px) {
   .map {
-    padding:0 0 30px;
+    padding: 0 0 30px;
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -937,7 +943,6 @@ footer {
   height: 12px;
   z-index: 5
 }
-
 
 .map__svg {
   -webkit-transform: translateZ(0) scaleY(1.1);
