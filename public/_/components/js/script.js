@@ -4411,14 +4411,14 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         Timelines['search'] = new TimelineMax({delay: 0}).pause();
         Timelines['search'].addCallback(this.setToggleState);
 
-        Timelines['search'].to(this.primaryNav, 0.5, {opacity: 0});
+        Timelines['search'].to(this.primaryNav, 0.3, {opacity: 0});
         Timelines['search'].set(this.primaryNav, {display: 'none'});
         //width of the search bar
-        Timelines['search'].to(this.searchContainer, 0.3, {width: 1000, ease:Power0.easeOut}, '-=.3');
+        Timelines['search'].to(this.searchContainer, 0.3, {width: 1000, ease:Power0.easeOut});
         Timelines['search'].set(this.searchInput, {display: 'block'});
 
-        Timelines['search'].to(this.whiteglass, 0.3, {fill: "gray"});
-        Timelines['search'].to(this.searchBoard, 0.1, {background: 'white'});
+        Timelines['search'].to(this.whiteglass, 0.2, {fill: "gray"});
+        Timelines['search'].to(this.searchBoard, 0.1, {background: 'white'},'-.5');
 
         Timelines['search'].set(this.searchClose, {display: 'block'});
         Timelines['search'].to(this.searchClose, 0.3, {opacity: 1});
