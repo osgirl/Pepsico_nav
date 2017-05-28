@@ -4587,18 +4587,18 @@ this.lang_header = $('.pep-languages__header');
 
 
         //cadana
-        // this.lang_header.on('click', function(e, explicit){
-        //     var header_id = $(this).attr("id");
-        //     var header_id2 = $(this).attr("id").html();
-        //
-        //
-        //     console.log(header_id);
-        //
-        //     $('.pin[continent*="' + header_id + '"]').show(1000);
-        //     $('.pin[continent!="' + header_id + '"]').hide(1000);
-        // // unable to bring other pins: bring back other dots
-        // // pin_america css 만들어서 toggle 해야함
-        // });
+        this.lang_header.on('click', function(e, explicit){
+            var header_id = $(this).attr("id");
+            var header_id2 = $(this).attr("id").html();
+
+
+            console.log(header_id);
+
+            $('.pin[continent*="' + header_id + '"]').show(1000);
+            $('.pin[continent!="' + header_id + '"]').hide(1000);
+        // unable to bring other pins: bring back other dots
+        // pin_america css 만들어서 toggle 해야함
+        });
 
 
         this.map_pin.on('click',  function (e, explicit) {
