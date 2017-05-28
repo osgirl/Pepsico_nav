@@ -86,11 +86,6 @@ a {
 }
 
 .cbp-tm-show .cbp-tm-submenu {
-  /*width: 16em;*/
-  /*left: 50%;*/
-  /*arrow*/
-  /*margin: 0 0 0 0;*/
-  /*margin: auto;*/
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -189,11 +184,6 @@ the right position for the arrow
 #veggie_submenu6:after {
   left: 71%;
 }
-
-/*.cbp-tm-show-above .cbp-tm-submenu:after {*/
-/*top: 100%;*/
-/*margin-top: -10px;*/
-/*}*/
 
 .cbp-tm-show-below .cbp-tm-submenu:after {
   bottom: 100%;

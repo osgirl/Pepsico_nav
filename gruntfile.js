@@ -6,6 +6,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
+                    //list the js files in the order 
                     'public/js/script.js': ['public/_/components/js/*.js']
                 } //files
             } //my_target

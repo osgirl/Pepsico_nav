@@ -1,0 +1,163 @@
+
+.pep-nav__utility {
+  position: relative;
+  height: 2em;
+  float: right;
+  display: block;
+  margin: auto;
+  width: 25%;
+}
+
+/* line 94, ../../scss/1024_up.scss */
+.pep-nav__utility-item {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+
+  //Flexbox
+  // display: flex;
+  //flex-direction: column;
+  //flex-wrap: wrap;
+  //align-content: space-between;
+
+  //-webkit-box-sizing: border-box;
+  //-moz-box-sizing: border-box;
+  //-ms-box-sizing: border-box;
+  //-o-box-sizing: border-box;
+  //box-sizing: border-box;
+
+  //border: 2px solid #168dc2;
+  //background-color: white;
+  //border: 2px solid grey;
+  //border-radius: 43px;
+  top: 0px;
+  overflow: hidden;
+}
+
+.pep-nav__utility-item:hover {
+  //background-color: white;
+}
+
+.pep-nav__utility-item.utility--search {
+  right: -47px;
+  top: 8px;
+}
+
+.pep-nav__utility-item.utility--search:active {
+  background-color: white;
+}
+
+.pep-nav__utility-item.utility--global {
+  width: 110px;
+  height: 36px;
+  span {
+    width: inherit;
+    height: inherit;
+    margin: -4px -43px 0 0;
+  }
+}
+
+#pep-nav__utility--global {
+  border: 1px solid white;
+  padding: 1px 0;
+  text-transform: uppercase;
+  font-size: .9em;
+  opacity: .7;
+}
+
+.pep-nav__utility-item.utility--share {
+  right: 20px;
+}
+
+.pep-nav__utility-item-icon {
+  position: absolute;
+  color: white;
+  display: block;
+  //mask: url(../img/search_m.svg);
+  //fill:white;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-color: transparent;
+  top: 5px;
+  z-index: 999;
+  right: 25px;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+
+.pep-nav__utility-item-icon:hover path {
+  //fill:black;
+
+}
+
+// search bar control
+.utility--search .pep-nav__utility-item-icon {
+  left: 7px;
+  width: 50px;
+  height: 40px;
+}
+
+.utility--global .pep-nav__utility-item-icon {
+  background-position: -44px -2px;
+  //background-color: white;
+  //z-index: 999;
+}
+
+.utility--share .pep-nav__utility-item-icon {
+  background-position: 0px -2px;
+}
+
+#pep-nav__utility__search-form {
+  height: 50px;
+
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+  transition: 0.7s ease;
+}
+
+.pep-nav__utility--search__input {
+  position: relative;
+  display: none;
+  height: 37px;
+  width: calc(100% - 80px);
+  margin: 0 0 0 45px;
+  background: white;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 1.2rem;
+
+}
+
+.pep-nav__utility--search__input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.pep-nav__utility__close {
+  position: relative;
+  float: right;
+  display: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  height: 40px;
+  width: 40px;
+  right: 0;
+  top: 0;
+  z-index: 900;
+  background-image: url(../img/close.png);
+  fill: black;
+  background-size: 15px 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.pep-nav__utility-item-icon:active {
+  fill: black;
+}
