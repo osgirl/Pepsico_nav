@@ -4531,39 +4531,43 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
     };
 
 
-
-
     //base.scss starts from 460
     var Map = function Map() {
         var _this4 = this;
         this.mapToggleState = false;
         this.countryListitem = $('.pep-languages-list__item');
-        this.mapClose = $('#popover__close');
-        this.map_pin = $('.pin');
+        this.map_pin = $('.pin__svg');
         this.languages = $('#pep-languages');
         this.popover = $('.pin__popover');
         this.popover__copy = $('.popover__copy');
-this.lang_header = $('.pep-languages__header');
+        this.lang_header = $('.pep-languages__header');
+        this.closeButton = $('.pep-languages__close2');
 
         this.toggleOpenClass = function () {
             _this4.popover.toggleClass('pin__popover--active');
         };
-        // this.toggleCloseClass = function () {
-        //     _this4.popover__copy.toggleClass(popover--active');
-        // };
+
+        this.toggleCloseClass = function (e, explicit) {
+            var popover = $(this).closest('.pin__popover');
+            var content = $(this).closest('.popover__copy');
+
+            if ($('.pin__svg').hasClass('pin__svg--active')) {
+                $('.pin__svg').removeClass('pin__svg--active');
+            }
+
+            $(popover).toggleClass('pin__popover--active');
+            $(content).toggleClass('popover__copy--active');
+        };
+
         this.setToggleState = function () {
             _this4.mapToggleState = !_this4.mapToggleState;
         };
-
-        // var id = this.pinWrapper.attr('id');
 
         Timelines['map'] = new TimelineMax({delay: 0}).pause();
         Timelines['map'].addCallback(this.toggleOpenClass);
         Timelines['map'].to(this.popover__copy, 0.4, {opacity: 1});
 
         this.toggleMapMenu = function (e, explicit) {
-
-
             if (!_this4.mapToggleState && !explicit) {
                 e.preventDefault();
                 if (Timelines['search'].progress() !== 0) {
@@ -4580,61 +4584,65 @@ this.lang_header = $('.pep-languages__header');
             }
         };
 
-        //country id is lowercase
-        //Slovak Republic -> slovak
-        //Czech Republic -> czech
-        // uk, us
+        this.MapPinToggle = function (e, explicit) {
+            e.preventDefault();
+            var a = $(this).parent().attr("href");// #argentina
+            var copy = $(a + '_copy');// #argentina_copy
+            var pin_id = $(this).parent().attr("id");//argentina_pin
+            // var pin = $(a + '_pin');// #argentina_pin
+            console.log(pin_id);
 
 
-        //cadana
-        this.lang_header.on('click', function(e, explicit){
+            // rest of pins unclickable by css, .pin__svg--active
+            $(a).toggleClass('pin__popover--active');
+            $('.pin__svg[name!="' + pin_id + '"]').toggleClass('pin__svg--active');
+            $(copy).toggleClass('popover__copy--active');
+        };
+
+        this.ListPinToggle = function (e, explicit) {
+            e.preventDefault();
+            var a = $(this).attr("href");// #argentina
+            var copy = $(a + '_copy');// #argentina_copy
+            // var pin_id = $(this).attr("id");
+            var a1 = $(this).text().toLowerCase();
+            var a2 = a1 + '_pin';//argentina_pin
+            console.log(a2);
+            if ($('.pin__popover').hasClass('pin__popover--active')) {
+                $('.pin__popover').removeClass('pin__popover--active');
+            }
+            if ($('.pin__svg').hasClass('pin__svg--active')) {
+                $('.pin__svg').removeClass('pin__svg--active');
+            }
+
+            // $(copy).removeClass('popover__copy--active');
+            // rest of pins unclickable by css, .pin__svg--active
+            $(a).addClass('pin__popover--active');
+            $('.pin__svg[name!="' + a2 + '"]').addClass('pin__svg--active');
+            $(copy).addClass('popover__copy--active');
+        };
+        /*
+         country id : lowercase
+         exceptions: Slovak Republic -> slovak, Czech Republic -> czech, uk, us
+         */
+
+        // TODO: click america, show only american countries
+        this.lang_header.on('click', function (e, explicit) {
             var header_id = $(this).attr("id");
-            var header_id2 = $(this).attr("id").html();
-
+            // var header_id2 = $(this).attr("id").html();
 
             console.log(header_id);
 
-            $('.pin[continent*="' + header_id + '"]').show(1000);
-            $('.pin[continent!="' + header_id + '"]').hide(1000);
-        // unable to bring other pins: bring back other dots
-        // pin_america css 만들어서 toggle 해야함
+            $('.pin__svg[continent*="' + header_id + '"]').show(1000);
+            $('.pin__svg[continent!="' + header_id + '"]').hide(1000);
+
         });
 
-
-        this.map_pin.on('click',  function (e, explicit) {
-            e.preventDefault();
-
-            var a = $(this).attr("href");// #argentina
-            var a1 = $(this).attr("value");
-            var copy = $(a + '_copy');// #argentina_copy
-            var pin = $(a + '_pin');// #argentina_pin
-            // console.log(a1);
-
-            $('.pin__popover--active').removeClass('pin__popover--active');
-            $(a).toggleClass('pin__popover--active');
-            $(copy).toggleClass('popover__copy--active');
-        });
+        this.map_pin.on('click', this.MapPinToggle);
+        this.countryListitem.on('click', this.ListPinToggle);
+        this.closeButton.on('click', this.toggleCloseClass);
 
 
-        this.countryListitem.on('click', function (e, explicit) {
-            e.preventDefault();
-
-            var a = $(this).attr("href");
-            var a1 = $(this).attr("id");
-            var copy = $(a + '_copy');
-            var pin = $(a + '_pin');
-
-            $('.pin__popover--active').removeClass('pin__popover--active');
-            $(a).toggleClass('pin__popover--active');
-            $(copy).toggleClass('popover__copy--active');
-        });
-
-    //    color continent
-
-    //    click america show only america
-
-
-
+        //    color continent
 
 
     };
@@ -4646,15 +4654,4 @@ this.lang_header = $('.pep-languages__header');
         var MAP = new Map();
 
     });
-
-
-    // map pop over
-    // $("#a").click(function () {
-    //     $('.pin__popover').addClass('pin__popover--active');
-    //     $('.popover__copy').addClass('popover__copy--active');
-    //
-    // });
-    // $("#popover__close").click(function () {
-    //
-    // });
 })();
