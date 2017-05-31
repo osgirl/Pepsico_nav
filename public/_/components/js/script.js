@@ -4491,9 +4491,9 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     var Global = function Global() {
         var _this3 = this;
-        this.globalToggleState = false;
+        this.mobilelToggleState = false;
         this.globalClose = $('#pep-languages__close');
-        this.globalBtn = $('#pep-nav__utility--global');
+        this.mobile_burger_btn = $('#pep-nav__utility--global');
         this.languages = $('#pep-languages');
         this.languagesList = $('.pep-languages-list');
 
@@ -4502,15 +4502,15 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         };
 
         this.setToggleState = function () {
-            _this3.globalToggleState = !_this3.globalToggleState;
+            _this3.mobilelToggleState = !_this3.mobilelToggleState;
         };
 
         Timelines['global'] = new TimelineMax({delay: 0}).pause();
         Timelines['global'].addCallback(this.toggleOpenClass);
         Timelines['global'].to(this.languagesList, 0.4, {opacity: 1});
 
-        this.toggleGlobalMenu = function (e, explicit) {
-            if (!_this3.globalToggleState && !explicit) {
+        this.toggleMobileMenu = function (e, explicit) {
+            if (!_this3.mobilelToggleState && !explicit) {
                 e.preventDefault();
 
                 if (Timelines['search'].progress() !== 0) {
@@ -4520,14 +4520,14 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                     Timelines['social'].tweenTo(0).duration(0.25);
                 }
                 Timelines['global'].play();
-                _this3.globalToggleState = true;
+                _this3.mobilelToggleState = true;
             } else {
                 Timelines['global'].reverse(0.5);
-                _this3.globalToggleState = false;
+                _this3.mobilelToggleState = false;
             }
         };
-        this.globalBtn.on('click', this.toggleGlobalMenu);
-        this.globalClose.on('click', this.toggleGlobalMenu);
+        this.mobile_burger_btn.on('click', this.toggleMobileMenu);
+        this.globalClose.on('click', this.toggleMobileMenu);
     };
 
 
@@ -4551,10 +4551,9 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             var popover = $(this).closest('.pin__popover');
             var content = $(this).closest('.popover__copy');
 
-            if ($('.pin__svg').hasClass('pin__svg--active')) {
-                $('.pin__svg').removeClass('pin__svg--active');
+            if (_this4.map_pin.hasClass('pin__svg--active')) {
+                _this4.map_pin.removeClass('pin__svg--active');
             }
-
             $(popover).toggleClass('pin__popover--active');
             $(content).toggleClass('popover__copy--active');
         };
@@ -4586,72 +4585,143 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         this.MapPinToggle = function (e, explicit) {
             e.preventDefault();
-            var a = $(this).parent().attr("href");// #argentina
-            var copy = $(a + '_copy');// #argentina_copy
-            var pin_id = $(this).parent().attr("id");//argentina_pin
-            // var pin = $(a + '_pin');// #argentina_pin
-            console.log(pin_id);
-
+            var pinId = $(this).parent().attr("href");// #argentina
+            var copy = $(pinId + '_copy');// #argentina_copy
+            var parent_id = $(this).parent().attr("id");//argentina_pin
 
             // rest of pins unclickable by css, .pin__svg--active
-            $(a).toggleClass('pin__popover--active');
-            $('.pin__svg[name!="' + pin_id + '"]').toggleClass('pin__svg--active');
+            $(pinId).toggleClass('pin__popover--active');
+            $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
             $(copy).toggleClass('popover__copy--active');
         };
 
         this.ListPinToggle = function (e, explicit) {
             e.preventDefault();
+
             var a = $(this).attr("href");// #argentina
             var copy = $(a + '_copy');// #argentina_copy
-            // var pin_id = $(this).attr("id");
             var a1 = $(this).text().toLowerCase();
             var a2 = a1 + '_pin';//argentina_pin
-            console.log(a2);
-            if ($('.pin__popover').hasClass('pin__popover--active')) {
-                $('.pin__popover').removeClass('pin__popover--active');
+
+            if (_this4.popover.hasClass('pin__popover--active')) {
+                _this4.popover.removeClass('pin__popover--active');
             }
-            if ($('.pin__svg').hasClass('pin__svg--active')) {
-                $('.pin__svg').removeClass('pin__svg--active');
+            if (_this4.map_pin.hasClass('pin__svg--active')) {
+                _this4.map_pin.removeClass('pin__svg--active');
             }
 
-            // $(copy).removeClass('popover__copy--active');
-            // rest of pins unclickable by css, .pin__svg--active
             $(a).addClass('pin__popover--active');
             $('.pin__svg[name!="' + a2 + '"]').addClass('pin__svg--active');
             $(copy).addClass('popover__copy--active');
         };
         /*
-         country id : lowercase
-         exceptions: Slovak Republic -> slovak, Czech Republic -> czech, uk, us
+         country id : lowercase, exceptions: Slovak Republic -> slovak, Czech Republic -> czech, uk, us
          */
 
-        // TODO: click america, show only american countries
-        this.lang_header.on('click', function (e, explicit) {
+        this.ContinentToggle = function (e, explicit) {
             var header_id = $(this).attr("id");
-            // var header_id2 = $(this).attr("id").html();
-
-            console.log(header_id);
+            // console.log(header_id);
 
             $('.pin__svg[continent*="' + header_id + '"]').show(1000);
             $('.pin__svg[continent!="' + header_id + '"]').hide(1000);
+        };
 
-        });
-
+        // TODO: color continent
+        this.lang_header.on('click', this.ContinentToggle);
         this.map_pin.on('click', this.MapPinToggle);
         this.countryListitem.on('click', this.ListPinToggle);
         this.closeButton.on('click', this.toggleCloseClass);
 
+    };
 
-        //    color continent
+    var Mobile = function Mobile() {
+        var _this5 = this;
+        this.mapToggleState = false;
+        this.mobileList = $('.rido_title');
+        this.mobileListIcon = $('.mobile_list');
+        this.mobile_burger_btn = $('.mobile_menu');
+        this.menu = $('#cbp-tm-menu');
+        this.mobile_x= $('.mobile_close');
 
+        this.mobile_menu_container = $('#menu_container');
+        this.menuList = $('.rido_show');
+
+        // TODO: hover on mobile is click
+
+
+        this.mobileList.on('click', function (e, explicit) {
+                $(this).append('<a class="mobile_list" title="Menu" href="#"></a>');
+            $('.cbp-tm-submenu').removeAttr('style');
+        });
+        this.mobileListIcon.on('click', function (e, explicit) {
+            // $(this).removeAttr('style');
+            // $(this).css('style'); // opacity: 0
+
+            $('.cbp-tm-show .cbp-tm-show-below').toggleClass('');
+        });
+
+
+
+        this.mobilelToggleState = false;
+        // this.globalClose = $('#pep-languages__close');
+        // this.languages = $('#pep-languages');
+        // this.languagesList = $('.pep-languages-list');
+
+        this.toggleOpenClass = function () {
+            _this5.menu.toggleClass('open');
+        };
+        this.setToggleState = function () {
+            _this5.mobilelToggleState = !_this5.mobilelToggleState;
+        };
+
+        Timelines['global'] = new TimelineMax({delay: 0}).pause();
+        Timelines['global'].addCallback(this.toggleOpenClass);
+        Timelines['global'].to(this.mobileList , 0.4, {opacity: 1});
+        Timelines['global'].to(this.mobile_x , 0.4, {opacity: 1});
+        Timelines['global'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
+
+        this.toggleMobileMenu = function (e, explicit) {
+            if (!_this5.mobilelToggleState && !explicit) {
+                e.preventDefault();
+
+                if (Timelines['search'].progress() !== 0) {
+                    Timelines['search'].reverse();
+                }
+                if (Timelines['social'].progress() !== 0) {
+                    Timelines['social'].tweenTo(0).duration(0.25);
+                }
+                Timelines['global'].play();
+                _this5.mobilelToggleState = true;
+            } else {
+                Timelines['global'].reverse(0.5);
+                _this5.mobilelToggleState = false;
+            }
+        };
+
+
+        this.mobile_burger_btn.on('click', this.toggleMobileMenu);
+        this.mobile_x.on('click', this.toggleMobileMenu);
+    // trigeer for global site?  append another list
+    //
+    //     global list to menu
+    //    compare each section plsy it with cbp style
 
     };
+
+
+
+
+
+
+
+
 
     $(window).on('load', function () {
         var SEARCH = new Search();
         var SOCIAL = new Social();
         var GLOBAL = new Global();
         var MAP = new Map();
+        var MOBILE = new Mobile();
 
     });
 })();

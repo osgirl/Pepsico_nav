@@ -3,33 +3,35 @@
 body {
   font-family: $font-secondary;
   font-size: 1rem;
+  font-weight: 300;
   line-height: 160%;
   color: $darkblue;
-  font-weight: 300;
-
-  background-image: url("../img/lady.jpg");
-  background-repeat: no-repeat;
+  background-color: #9e5f04;
+  //background: url("../img/lady.jpg") no-repeat;
   background-size: cover;
 }
 
 .hero_mask {
+  position: relative;
+  height: 150px;
+  top: -124px;
+
+  opacity: .5;
+  z-index: -1;
+
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
-  position: relative;
-  opacity: .5;
-  height: 150px;
-  top: -124px;
-  z-index: -1;
 }
 
 #pepsico_logo {
   display: block;
-  margin: auto;
   width: 50%;
   max-width: 190px;
   height: 35px;
+
+  margin: auto;
 }
 
 #menu_container {
@@ -45,8 +47,8 @@ body {
 }
 
 .hero_1 {
-  width: 100%;
   display: inline-block;
+  width: 100%;
   margin-bottom: 18px;
 }
 

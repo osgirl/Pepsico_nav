@@ -48,6 +48,9 @@
 		return (reltg != handler); 
 	}
 
+
+
+
 	function cbpTooltipMenu( el, options ) {	
 		this.el = el;
 		this.options = extend( this.defaults, options );
@@ -81,6 +84,7 @@
 							ev.preventDefault();
 						}
 					} );
+					// todo : onclick
 					el.addEventListener( 'mouseover', function(ev) { if( isMouseLeaveOrEnter( ev, this ) ) self._openMenu( this ); } );
 					el.addEventListener( 'mouseout', function(ev) { if( isMouseLeaveOrEnter( ev, this ) ) self._closeMenu( this ); } );
 				}
@@ -100,7 +104,7 @@
 				if( submenu ) {
 					el.className = 'cbp-tm-show';
 					if( self._positionMenu( el ) === 'top' ) {
-						el.className += ' cbp-tm-show-above';
+                        el.className += ' cbp-tm-show-below';
 					}
 					else {
 						el.className += ' cbp-tm-show-below';
