@@ -82,7 +82,7 @@
     }
   }
 }
-
+//disable
 .pin__svg--active {
   content: '';
   position: absolute;
@@ -394,7 +394,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 760px) {
   .pin__popover {
     width: 160px;
     height: 120px;
@@ -413,6 +413,22 @@
   .popover__copy {
     margin: 0 0 0 10px;
     width: 160px;
+  }
+  //disable the map
+  .pin__svg {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: hidden;
+    background: transparent;
+    z-index: 1;
+
+    //-webkit-transition: -webkit-transform 150ms 0ms ease-in-out;
+    //-moz-transition: -moz-transform 150ms 0ms ease-in-out;
+    //transition: transform 150ms 0ms ease-in-out
   }
   .modal__window--popover {
     max-width: 960px !important;

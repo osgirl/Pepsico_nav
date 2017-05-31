@@ -5,7 +5,14 @@
 // TODO: globalsite
 
 // TODO: submenu, set first one left ... overflow: visible $(this).width(), .css()
-
+.mobile_mask{
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  opacity: 0;
+}
 .pep-nav__utility {
   position: relative;
   display: block;
@@ -238,7 +245,7 @@
   position: absolute;
   width: 32px;
   height: 32px;
-  top: 12px;
+  top: 50px;
   right: 20px;
   margin-left: -16px;
   background: url(../img/mobile/BURGER.png) no-repeat 0 0;
@@ -471,7 +478,7 @@
     font-size: .9em;
     font-weight: 400;
     color: #797575;
-    text-shadow: 0 0 1px white;
+    //text-shadow: 0 0 1px white;
     letter-spacing: 0.1px;
 
     -webkit-transition: all 0.2s;
@@ -502,6 +509,10 @@
   font-size: 60%;
 }
 
+
+
+
+
 /* Media Queries */
 @media screen and (max-width: 880px) {
   .cbp-tm-menu {
@@ -509,9 +520,19 @@
   }
 }
 
+
+
+
 @media screen and (max-width: 760px) {
-  #menu_container {
-    height: auto;
+  header{
+    background-color: green;
+  }
+  .container{
+    background-color: red;
+    position: absolute !important;
+    display: block;
+    height: 100vh !important;
+    top: 100px;
   }
 
   .pep-nav__utility#global_wrapper,
@@ -569,6 +590,11 @@
   }
   .rido_title {
     font-size: 30px;
+    color: #414141;
+  }
+  .rido_subtitle a{
+    font-weight: 300 !important;
+
   }
   //burger open
   .cbp-tm-menu {
@@ -586,7 +612,7 @@
       display: block;
       width: 100%;
       margin: 0;
-      border-top: 1px solid #3793ca;
+      border-top: .1px solid #B1B1B1;
 
       -webkit-transition: all 1s;
       -moz-transition: all 1s;
@@ -597,11 +623,12 @@
       }
     }
   }
+  //menu title control
   .cbp-tm-menu li a {
     text-align: left;
     display: block;
     line-height: 2em;
-    padding: 0 0.3em;
+    padding-left: 1.2em;
     font-size: 2em;
     color: black;
     opacity: .7;
@@ -609,6 +636,7 @@
 
   .cbp-tm-menu.open {
     opacity: 1;
+
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     transition: all 0.3s;
@@ -626,6 +654,7 @@
     left: 0;
     width: 100vw;
     clear: both;
+
     background: transparent;
     border-bottom: transparent;
     border-top: transparent;
@@ -633,14 +662,14 @@
     li {
       clear: both;
       width: 100vw;
+      border: none;
 
       a {
         content: "";
         display: block;
         clear: both;
-        border: none;
-        clear: both;
         float: left;
+        padding-left: 2em;
       }
     }
     &::after {

@@ -4526,6 +4526,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 _this3.mobilelToggleState = false;
             }
         };
+
+
+
+
+
         this.mobile_burger_btn.on('click', this.toggleMobileMenu);
         this.globalClose.on('click', this.toggleMobileMenu);
     };
@@ -4634,6 +4639,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     };
 
+
+
+
+
+
     var Mobile = function Mobile() {
         var _this5 = this;
         this.mapToggleState = false;
@@ -4642,6 +4652,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.mobile_burger_btn = $('.mobile_menu');
         this.menu = $('#cbp-tm-menu');
         this.mobile_x= $('.mobile_close');
+        this.mobile_mask =  $('.mobile_mask');
 
         this.mobile_menu_container = $('#menu_container');
         this.menuList = $('.rido_show');
@@ -4663,9 +4674,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
 
         this.mobilelToggleState = false;
-        // this.globalClose = $('#pep-languages__close');
-        // this.languages = $('#pep-languages');
-        // this.languagesList = $('.pep-languages-list');
+
 
         this.toggleOpenClass = function () {
             _this5.menu.toggleClass('open');
@@ -4674,11 +4683,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             _this5.mobilelToggleState = !_this5.mobilelToggleState;
         };
 
-        Timelines['global'] = new TimelineMax({delay: 0}).pause();
-        Timelines['global'].addCallback(this.toggleOpenClass);
-        Timelines['global'].to(this.mobileList , 0.4, {opacity: 1});
-        Timelines['global'].to(this.mobile_x , 0.4, {opacity: 1});
-        Timelines['global'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
+        Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
+        Timelines['mobile1'].addCallback(this.toggleOpenClass);
+        Timelines['mobile1'].to(this.mobile_mask , 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobileList , 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_x , 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
 
         this.toggleMobileMenu = function (e, explicit) {
             if (!_this5.mobilelToggleState && !explicit) {
@@ -4690,10 +4700,10 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 if (Timelines['social'].progress() !== 0) {
                     Timelines['social'].tweenTo(0).duration(0.25);
                 }
-                Timelines['global'].play();
+                Timelines['mobile1'].play();
                 _this5.mobilelToggleState = true;
             } else {
-                Timelines['global'].reverse(0.5);
+                Timelines['mobile1'].reverse(0.5);
                 _this5.mobilelToggleState = false;
             }
         };
