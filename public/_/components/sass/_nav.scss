@@ -1,9 +1,5 @@
 // TODO: adjust margin/padding of sub check the submenu's margin/padding and fix it as a 0
 // TODO: search width
-// TODO: toggleClass on x, up, search
-// TODO: social sprite
-// TODO: globalsite
-
 // TODO: submenu, set first one left ... overflow: visible $(this).width(), .css()
 .mobile_mask {
   position: absolute;
@@ -64,8 +60,12 @@
   }
 }
 
+
+
+
+
 .pep-nav__utility-item.utility--search {
-  right: -47px;
+  right: 42px;
   top: 8px;
   &:active {
     background-color: white;
@@ -78,7 +78,6 @@
 
 #social {
   height: 77px;
-
 }
 
 .social-media-icons {
@@ -105,7 +104,6 @@
       display: block;
       float: left;
       padding-right: 30px;
-
     }
     a.facebook {
       background-color: blue;
@@ -124,11 +122,9 @@
     }
     a.pintrest {
       background-position: 300px 72px;
-
     }
     a.instagram {
       background-position: 350px 72px;
-
     }
   }
 }
@@ -161,7 +157,6 @@
   width: 50px;
   height: 40px;
   left: 7px;
-
 }
 
 .utility--global .pep-nav__utility-item-icon {
@@ -194,7 +189,6 @@
   outline: none;
   color: black;
   font-size: 1.2rem;
-
 }
 
 .pep-nav__utility--search__input::-webkit-input-placeholder {
@@ -217,7 +211,6 @@
   background-size: 15px 15px;
   background-position: center;
   background-repeat: no-repeat;
-
 }
 
 .pep-nav__utility-item-icon:active {
@@ -288,8 +281,6 @@
 .cbp-tm-menu {
   display: block;
   position: relative;
-
-  top: -172px;
   padding: 0 2em;
   margin: 0;
   font-size: 1.2em;
@@ -297,7 +288,6 @@
   list-style: none;
   z-index: 1000;
   text-transform: uppercase;
-
 }
 
 ///* first level menu items */
@@ -309,7 +299,6 @@
   &:last-child {
     padding-right: 100px;
   }
-
 }
 
 //menu control
@@ -318,15 +307,10 @@
   padding: 0 0.3em;
   font-size: 1.2em;
   display: block;
-  opacity: .7;
+  opacity: 1;
   &:hover {
-    opacity: 1;
     -webkit-transition: all 0.2s;
   }
-}
-
-.cbp-tm-submenu {
-
 }
 
 .no-touch .cbp-tm-menu > li > a:hover,
@@ -341,8 +325,8 @@
   position: absolute;
   display: inline-block;
   float: left;
-  width: 100vw;
-  padding: 2px 100px;
+  width: 1300px;
+  padding: 6px 100px;
   visibility: hidden;
   opacity: 0;
 
@@ -367,6 +351,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+  text-align: center;
 
   -webkit-transition: visibility 0s, opacity 0.5s;
   -moz-transition: visibility 0s, opacity 0.5s;
@@ -375,7 +360,7 @@
 }
 
 .cbp-tm-show-below .cbp-tm-submenu {
-  top: 75%;
+  top: 80%;
   padding-top: 5px;
   opacity: .9;
 }
@@ -399,7 +384,6 @@
   right: 0;
 }
 
-/* ARROW POSITION CONTROL: depend on the menu */
 .cbp-tm-submenu:after {
   position: absolute;
   width: 0;
@@ -410,50 +394,71 @@
 
   content: " ";
   pointer-events: none;
-  z-index: 0;
+  z-index: 0 !important;
 }
 
-submenu padding and starting point
+// submenu(2nd) padding, starting point, arrow position
 #veggie_submenu1 {
   padding-left: 240px;
-  left: -125px;
+  left: -120px;
   &:after {
-    left: 15%;
+    left: 13%;
   }
 }
 
 #veggie_submenu2 {
   padding-left: 350px;
-  left: -235px;
+  left: -275px;
   &:after {
-    left: 25%;
+    left: 26%;
   }
 }
 
 #veggie_submenu3 {
   padding-left: 520px;
-  left: -400px;
+  left: -430px;
   &:after {
-    left: 38%;
+    left: 37%;
   }
 }
 
 #veggie_submenu4 {
   padding-left: 350px;
-  left: -525px;
+  left: -560px;
   &:after {
-    left: 48%;
+    left: 47%;
   }
 }
 
 #veggie_submenu5 {
   padding-left: 200px;
-  left: -670px;
+  left: -700px;
   &:after {
-    left: 60%;
+    left: 58%;
   }
 }
 
+// third menu position control
+#veggie_third1{
+  //background-color: green;
+  left: 0px;
+  padding-left: 460px;
+}
+
+#veggie_third3 {
+  left: 0px;
+}
+
+#veggie_third4 {
+  //background-color: green;
+  left: 0px;
+  padding-left: 460px;
+}
+
+
+//#veggie_third4{
+//  left: 350px;
+//}
 #veggie_submenu6:after {
   left: 71%;
 }
@@ -465,9 +470,20 @@ submenu padding and starting point
 
 .rido_subtitle {
   float: left;
-  margin: 0 12px 5px 10px;
+  margin: 5px 12px 5px 10px;
   text-align: center;
   line-height: 18px;
+  text-transform: uppercase;
+}
+
+//third font size
+.cbp-tm-submenu.rido_third_ul {
+  top: 40px;
+  font-size: 15px;
+}
+
+.cbp-tm-submenu.rido_third_ul:after {
+  display: none;
 }
 
 .cbp-tm-show-below .cbp-tm-submenu:after {
@@ -476,14 +492,13 @@ submenu padding and starting point
 
 .cbp-tm-submenu li {
   display: block;
+
   a {
     position: relative;
     display: inline-block;
-
     font-size: .9em;
     font-weight: 400;
     color: #797575;
-    //text-shadow: 0 0 1px white;
     letter-spacing: 0.1px;
 
     -webkit-transition: all 0.2s;
@@ -509,22 +524,21 @@ submenu padding and starting point
 
 .cbp-tm-menu > li > a:not(:only-child):before {
   /*content: "\f0c9";*/
-  opacity: 0.7;
+  //opacity: 0.9;
   letter-spacing: 0px;
   font-size: 60%;
 }
 
-veggie_thirdmenu4 {
-  clear: both;
-  background-color: rebeccapurple;
-  display: none;
-  opacity: 0;
-  margin-top: 20px;
-  height: 30px;
-}
+//veggie_thirdmenu4 {
+//  clear: both;
+//  background-color: rebeccapurple;
+//  display: none;
+//  opacity: 0;
+//  margin-top: 20px;
+//  height: 30px;
+//}
 
 // third menu control
-
 .rido_third_ul {
   display: none;
   position: absolute;
@@ -532,21 +546,54 @@ veggie_thirdmenu4 {
   background: transparent;
   font-size: 20px;
   opacity: 0 !important;
+
+
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+  transition: all 2s ease !important;
+  transition-duration: 1s;
 }
 
 .rido_third_ul-active {
   display: block;
   opacity: 1 !important;
+
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+  transition: all 2s ease !important;
 }
 
 .menu_close_icon {
-  background-size: 10%;
+  position: relative;
+  top:2px !important;;
   display: inline-block;
-  width: 9px;
+  background-size: cover;
   height: 10px;
-  padding-right: 34px;
-  background: url(../img/mobile/menu_close.png) no-repeat 0px 0;
+  width: 10px;
+  padding-right: 20px;
+  background: url(../img/close_menu1.png) no-repeat 5px 0px;
+}
 
+#menu_container {
+  top: -200px;
+  padding: 20px 30px;
+}
+
+.cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
+  width: 100%;
+  height: 400px;
+  display: block;
+  li a {
+    color: white;
+    opacity: .6;
+    &:hover {
+      opacity: 1
+    }
+  }
 }
 
 /* Media Queries */
@@ -558,10 +605,10 @@ veggie_thirdmenu4 {
 
 @media screen and (max-width: 760px) {
   header {
-    background-color: green;
+    //background-color: green;
   }
   .container {
-    background-color: red;
+    //background-color: red;
     position: absolute !important;
     display: block;
     height: 100vh !important;
@@ -623,9 +670,9 @@ veggie_thirdmenu4 {
     font-size: 30px;
     color: #414141;
   }
+
   .rido_subtitle a {
     font-weight: 300 !important;
-
   }
   //burger open
   .cbp-tm-menu {
@@ -709,7 +756,15 @@ veggie_thirdmenu4 {
     }
   }
 
-  //todo: 1.mobile transition on first level, 2.global map overflow hidden 3. web third menu onclick  transition 4. move white glass & global on mobile, web 5. change the drop icon
+  // issues
+  // todo: 0. first level menu text-transform: uppercase
+  // todo: 1 mobile transition on first level,
+  // todo: 2.global map overflow hidden
+  // todo: 3. web third menu onclick  transition
+  // todo: 4. move white glass & global on mobile, web
+  // todo: 5. change the drop icon
+  // todo: 6. mobile list borderline top
+  // todo: 7. social clickable
 
   //third menu cotrol
   // !!!!!!! it was overflow, height 0-> auto
@@ -766,6 +821,7 @@ veggie_thirdmenu4 {
     left: 0;
     margin: 0;
     padding: 0;
+
     -webkit-transition: 0.7s ease;
     -moz-transition: 0.7s ease;
     -ms-transition: 0.7s ease;

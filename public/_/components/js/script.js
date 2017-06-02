@@ -4403,7 +4403,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.primaryNav = $('#pep-nav__primary');
         this.searchForm = $('#pep-nav__utility__search-form');
 
-
         // nav
         this.thirdNav = $('.rido_third');
         this.thirdNav_ul = $('.rido_third_ul');
