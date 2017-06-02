@@ -4404,6 +4404,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.searchForm = $('#pep-nav__utility__search-form');
 
 
+        // nav
+        this.thirdNav = $('.rido_third');
+        this.thirdNav_ul = $('.rido_third_ul');
+        this.firstNav = $('.rido_title');
+
+
         this.searchInputFocus = function () {
             _this.searchInput.focus();
         };
@@ -4443,13 +4449,47 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             }
         };
 
+        this.thirdToggle = function (e, explicit) {
+            e.preventDefault();
+            // this = .rido_third
+
+            var thirdNavId = $(this).attr("href"); // #veggie_third1
+            var parent_id = $(this).attr("name");
+                    //active = 1
+
+            $(thirdNavId).toggleClass('rido_third_ul-active');
+            $('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
+        };
+
+        this.firstToggle = function (e, explicit) {
+            //this = .rido_title
+            e.preventDefault();
+            var parent_id = $(this).attr("href");
+
+            var rido_href =  $(this).attr("href"); // veggie_sbumenu1
+            if( $('.cbp-tm-submenu').attr('id') !== parent_id ){
+                $('.rido_third_ul-active').removeClass('rido_third_ul-active');
+            }
+// close third
+            $('.rido_third_ul-active').toggleClass('rido_third_ul');
+            // $(this).closet('.cbp-tm-submenu').toggleClass('rido_third_ul::after')
+ // close second
+            $('cbp-tm-show[id!="' + rido_href + '"]').removeClass('cbp-tm-show');
+        };
+
+
         this.disableForm = function () {
             _this.searchForm.children('input').remove();
         };
 
+
         this.toggleBtn.on('click', this.toggleSearchInput);
         this.searchForm.on('submit', this.disableForm);
         this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
+        this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
+        this.thirdNav.on('click', this.thirdToggle);
+        this.firstNav.on('click', this.firstToggle);
+
     };
 
 
@@ -4526,11 +4566,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
                 _this3.mobilelToggleState = false;
             }
         };
-
-
-
-
-
         this.mobile_burger_btn.on('click', this.toggleMobileMenu);
         this.globalClose.on('click', this.toggleMobileMenu);
     };
@@ -4639,11 +4674,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     };
 
-
-
-
-
-
     var Mobile = function Mobile() {
         var _this5 = this;
         this.mapToggleState = false;
@@ -4651,17 +4681,15 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.mobileListIcon = $('.mobile_list');
         this.mobile_burger_btn = $('.mobile_menu');
         this.menu = $('#cbp-tm-menu');
-        this.mobile_x= $('.mobile_close');
-        this.mobile_mask =  $('.mobile_mask');
+        this.mobile_x = $('.mobile_close');
+        this.mobile_mask = $('.mobile_mask');
 
         this.mobile_menu_container = $('#menu_container');
         this.menuList = $('.rido_show');
 
         // TODO: hover on mobile is click
-
-
         this.mobileList.on('click', function (e, explicit) {
-                $(this).append('<a class="mobile_list" title="Menu" href="#"></a>');
+            // $(this).append('<a class="mobile_list" title="Menu" href="#"></a>');
             $('.cbp-tm-submenu').removeAttr('style');
         });
         this.mobileListIcon.on('click', function (e, explicit) {
@@ -4671,10 +4699,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             $('.cbp-tm-show .cbp-tm-show-below').toggleClass('');
         });
 
-
-
         this.mobilelToggleState = false;
-
 
         this.toggleOpenClass = function () {
             _this5.menu.toggleClass('open');
@@ -4685,9 +4710,9 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
         Timelines['mobile1'].addCallback(this.toggleOpenClass);
-        Timelines['mobile1'].to(this.mobile_mask , 0.4, {opacity: 1});
-        Timelines['mobile1'].to(this.mobileList , 0.4, {opacity: 1});
-        Timelines['mobile1'].to(this.mobile_x , 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
         Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
 
         this.toggleMobileMenu = function (e, explicit) {
@@ -4711,19 +4736,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         this.mobile_burger_btn.on('click', this.toggleMobileMenu);
         this.mobile_x.on('click', this.toggleMobileMenu);
-    // trigeer for global site?  append another list
-    //
-    //     global list to menu
-    //    compare each section plsy it with cbp style
+        // trigeer for global site?  append another list
+        //
+        //     global list to menu
+        //    compare each section plsy it with cbp style
 
     };
-
-
-
-
-
-
-
 
 
     $(window).on('load', function () {

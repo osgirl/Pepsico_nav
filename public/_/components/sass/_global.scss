@@ -207,18 +207,15 @@
   z-index: 3;
 }
 
-
-
-
-
-
-
 @media screen and (max-width: 760px) {
 
   .pep-languages.open {
     //top:100%;
     max-height: 100%;
 
+  }
+  .global_sites_title {
+    width: 100% !important;
   }
   .pep-languages__container {
     width: 100vw;
@@ -230,53 +227,52 @@
     position: relative;
     display: block;
   }
-  .pep_language_list_right,.global_sites_title div {
+  .pep_language_list_right, .global_sites_title div {
     opacity: 0;
   }
-.pep_language_list_left{
-  overflow: visible;
-  display: block;
-  position: absolute;
-  width: 100% !important;
-  float: left;
-  margin-right: 0
+  .pep_language_list_left {
+    overflow: visible;
+    display: block;
+    position: absolute;
+    width: 100% !important;
+    float: left;
+    margin-right: 0
 
-}
-  .pep_language_list_right{
+  }
+  .pep_language_list_right {
     position: relative;
     display: block;
     float: left;
     height: 0;
     width: 0;
 
-
   }
-  .pep-languages-list{
+  .pep-languages-list {
     width: 100% !important;
     display: block;
     position: relative;
   }
 
-  .pep_languages_list1{
+  .pep_languages_list1 {
     position: relative;
     display: block;
-    height: auto;
+    height: 420px;
     width: 100%;
   }
-.pep_language_list_right,.pep-languages__image{
-  position: absolute;
-  width: 100% !important;
-}
-    .pep_languages_list2{
-    position: relative;
-      display: block;
-      float: left;
-  }
-  .pep-languages-list pep-languages-list--americas{
+  .pep_language_list_right, .pep-languages__image {
     position: absolute;
     width: 100% !important;
   }
-  .pep-languages-list pep-languages-list--europe{
+  .pep_languages_list2 {
+    position: relative;
+    display: block;
+    float: left;
+  }
+  .pep-languages-list pep-languages-list--americas {
+    position: absolute;
+    width: 100% !important;
+  }
+  .pep-languages-list pep-languages-list--europe {
     width: 100% !important;
     position: relative;
     display: block;
