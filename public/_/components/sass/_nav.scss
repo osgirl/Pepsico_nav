@@ -12,7 +12,7 @@ header {
   display: block;
   width: 100vw;
   height: 100vh;
-  background-color: grey;
+  background-color: rgb(241,240,235);
   opacity: 0;
 }
 .pep-nav__utility {
@@ -161,8 +161,6 @@ header {
 
 .utility--global .pep-nav__utility-item-icon {
   background-position: -44px -2px;
-  //background-color: white;
-  //z-index: 999;
 }
 
 .utility--share .pep-nav__utility-item-icon {
@@ -406,7 +404,6 @@ header {
     left: 13%;
   }
 }
-
 #rido_menu2 {
   padding-left: 350px;
   left: -275px;
@@ -414,7 +411,6 @@ header {
     left: 26%;
   }
 }
-
 #rido_menu3 {
   padding-left: 520px;
   left: -430px;
@@ -422,7 +418,6 @@ header {
     left: 37%;
   }
 }
-
 #rido_menu4 {
   padding-left: 350px;
   left: -560px;
@@ -430,7 +425,6 @@ header {
     left: 47%;
   }
 }
-
 #rido_menu5 {
   padding-left: 200px;
   left: -700px;
@@ -438,20 +432,20 @@ header {
     left: 58%;
   }
 }
-
+.rido_subtitle {
+  float: left;
+  margin: 5px 12px 5px 10px;
+  //text-align: center;
+  line-height: 18px;
+  text-transform: uppercase;
+}
 // third menu position control
-#rido_third1 {
+#rido_third1, #rido_third4 {
   left:0;
   padding-left: 460px;
 }
-
 #rido_third3 {
   left: 0;
-}
-
-#rido_third4 {
-  left: 0;
-  padding-left: 460px;
 }
 #rido_menu6:after {
   left: 71%;
@@ -462,22 +456,12 @@ header {
   margin-bottom: -10px;
 }
 
-.rido_subtitle {
-  float: left;
-  margin: 5px 12px 5px 10px;
-  text-align: center;
-  line-height: 18px;
-  text-transform: uppercase;
-}
-
-//third font size
 .cbp-tm-submenu.rido_third_ul {
   top: 40px;
   font-size: 15px;
-}
-
-.cbp-tm-submenu.rido_third_ul:after {
-  display: none;
+  &:after{
+    display: none;
+  }
 }
 
 .cbp-tm-show-below .cbp-tm-submenu:after {
@@ -492,14 +476,12 @@ header {
     font-size: .9em;
     font-weight: 400;
     color: #797575;
-    letter-spacing: 0.1px;
+    //letter-spacing: 0.1px;
 
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
     z-index: 10;
-    /*border: 4px solid #fff;*/
-    /*padding: 5px 2.3em 5px 0.6em; !* top/bottom paddings in 'em' cause a tiny "jump" in Chrome on Win *!*/
   }
 }
 
@@ -513,52 +495,28 @@ header {
   top: 50%;
   right: 0.5em;
   margin-top: -0.5em;
-}
-
-.cbp-tm-menu > li > a:not(:only-child):before {
-  /*content: "\f0c9";*/
-  //opacity: 0.9;
-  letter-spacing: 0px;
   font-size: 60%;
 }
 
-//veggie_thirdmenu4 {
-//  clear: both;
-//  background-color: rebeccapurple;
-//  display: none;
-//  opacity: 0;
-//  margin-top: 20px;
-//  height: 30px;
-//}
-
-// third menu control
+// third menu hide/show
 .rido_third_ul {
-  display: none;
   position: absolute;
+  display: none;
   float: left;
   background: transparent;
-  font-size: 20px;
   opacity: 0 !important;
-
-  -webkit-transition: 0.7s ease;
-  -moz-transition: 0.7s ease;
-  -ms-transition: 0.7s ease;
-  -o-transition: 0.7s ease;
-  transition: all 2s ease !important;
-  transition-duration: 1s;
 }
-
 .rido_third_ul-active {
   display: block;
-  opacity: 1 !important;
+  height: 400px;
+  width: 100%;
 
-  -webkit-transition: 0.7s ease;
-  -moz-transition: 0.7s ease;
-  -ms-transition: 0.7s ease;
-  -o-transition: 0.7s ease;
-  transition: all 2s ease !important;
+  opacity: 1 !important;
+  //TODO: transition is not working, Timeline?
+  transition: opacity 2s ease !important;
 }
 
+//mobile
 .menu_close_icon {
   position: relative;
   top: 2px !important;;
@@ -570,15 +528,7 @@ header {
   background: url(../img/close_menu1.png) no-repeat 5px 0px;
 }
 
-#menu_container {
-  //top: -200px;
-  //padding: 20px 30px;
-}
-
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
-  width: 100%;
-  height: 400px;
-  display: block;
   li a {
     color: white;
     opacity: .6;
@@ -599,38 +549,16 @@ header {
   body {
     background: url(../img/mobile/mobile_background.png) no-repeat 0 0;
     background-size: cover;
-
   }
   .container {
     //background-color: red;
-    position: absolute !important;
+    position:relative;
     display: block;
-    height: 100vh !important;
+    height: 100vh;
     top: 100px;
-  }
-
-  .pep-nav__utility#global_wrapper,
-  #pep-nav__utility--global, #globalsite {
-    dispaly: none;
-    opcity: 0;
-  }
-  .pep-nav__utility #pep-nav__utility__search-form {
-    //display: none;
-  }
-  .rido_title {
   }
   .mobile_menu, .mobile_list, .mobile_search {
     display: block;
-  }
-
-  #white_wrapper {
-    position: absolute;
-    display: block;
-    height: 2em;
-    bottom: -59px;
-    left: -10px;
-    width: 100%;
-    float: left;
   }
   .pep-nav__utility--search__input {
     width: 100%;
@@ -642,16 +570,13 @@ header {
     width: 100% !important;
   }
   #pep-nav__utility--search {
-
   }
-  #socal {
+  #social {
     height: 77px;
     opacity: 1;
     display: inline-block;
   }
-  .cbp-tm-menu > li > a {
-    line-height: 2em;
-  }
+
   .social-media-icons {
     padding: 0px 45px;
     opacity: 1;
@@ -666,11 +591,28 @@ header {
     font-size: 30px;
     color: #414141;
   }
-
   .rido_subtitle a {
+    position: absolute;
+    display: block;
     font-weight: 300 !important;
+    left: 0;
+    color: #B1B1B1;
   }
-  //burger open
+  #rido_menu1,
+  #rido_menu2, #rido_menu3,
+  #rido_menu4, #rido_menu5 {
+    left: 0;
+    padding: 0;
+    width: 100vw;
+  }
+  #rido_third1, #rido_third2, #rido_third3,#rido_third4{
+    left: 0;
+    width: 100vw;
+    padding-left: 2em;
+    top: 0;
+    font-size: 1em;
+  }
+    //burger open
   .cbp-tm-menu {
     position: relative;
     padding: 0;
@@ -679,10 +621,10 @@ header {
     font-size: 100%;
     text-align: center;
     overflow: hidden;
-
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
+    //
+    //-webkit-transition: all 0.3s;
+    //-moz-transition: all 0.3s;
+    //transition: all 0.3s;
     li {
       display: block;
       width: 100%;
@@ -696,6 +638,8 @@ header {
       a {
         text-align: left;
         display: block;
+        line-height: 2em;
+
         position: relative;
         padding-left: 1.2em;
         font-size: 2em;
@@ -709,32 +653,16 @@ header {
   }
 
   //menu title control
-
   .cbp-tm-menu.open {
     opacity: 1;
-
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
   }
 
   li.cbp-tm-show > a,
   .no-touch .cbp-tm-menu > li > a:hover,
   .no-touch .cbp-tm-menu > li > a:active {
-    color: #fff;
+    color: #B1B1B1;
   }
 
-  #rido_menu1, #rido_menu2, #rido_menu3,
-  #rido_menu4, #rido_menu5 {
-
-    //padding: 0px;
-    //left: 0px;
-    //width: 100%;
-    //height: 0;
-    //position: relative;
-    //float: left;
-    //display: block;
-  }
 
   .cbp-tm-submenu {
     position: relative;
@@ -743,7 +671,6 @@ header {
 
     left: 0;
     width: 100vw;
-    //opacity: 0;
     height:0;
     overflow: hidden ;
     clear: both;
@@ -751,6 +678,8 @@ header {
     border-bottom: transparent;
     border-top: transparent;
     li {
+      left: 0;
+      padding: 0;
       clear: both;
       width: 100vw;
       border: none;
@@ -769,10 +698,11 @@ header {
 
 
 
-  .cbp-tm-submenu-active {
+ .cbp-tm-submenu-active {
     display: block;
     opacity: 1;
     height: auto;
+   //transition: opacity 2s ease !important;
   }
 
 
@@ -790,7 +720,7 @@ header {
 
   //third menu cotrol
   // overflow, height 0-> auto
-  .rido_third_ul {
+  cbp-tm-submenu.rido_third_ul {
     display: none;
     position: relative;
     float: left;
@@ -798,6 +728,11 @@ header {
     background: transparent;
     font-size: 20px;
     opacity: 0 !important;
+    li a{
+      color: #B1B1B1;
+      padding-left: 0;
+      left: 0;
+    }
   }
 
   .rido_third_ul-active {
@@ -807,17 +742,16 @@ header {
   }
 
 
-
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a{
+    color: black;
+    opacity: .7;
+  }
 
   .pep-nav__utility__close {
     display: none;
   }
 
-
   .cbp-tm-menu .cbp-tm-show-below {
-
-    -webkit-transition: all 1s;
-    -moz-transition: all 1s;
     transition: all 1s;
   }
 
@@ -829,14 +763,16 @@ header {
     left: 0;
     margin: 0;
     padding: 0;
-
-    -webkit-transition: 0.7s ease;
-    -moz-transition: 0.7s ease;
-    -ms-transition: 0.7s ease;
-    -o-transition: 0.7s ease;
-    transition: 0.7s ease;
+    //transition: 0.7s ease;
   }
 }
+
+
+
+
+
+
+
 
 // default @media, this overwrite the container
 @media screen and (max-width: 880px) {

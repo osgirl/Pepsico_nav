@@ -4406,7 +4406,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         // nav
         this.thirdNav = $('.rido_third');
         this.thirdNav_ul = $('.rido_third_ul');
-
         this.firstNav = $('.rido_title'); // About
 
 
@@ -4450,9 +4449,21 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         };
 
 
+        this.firstToggle = function (e, explicit) {
+            //this = .rido_title
+            e.preventDefault();
+            var parent_id = $(this).attr("href");// veggie_sbumenu1
+            var a_name = $(this).attr("name");// veggie_sbumenu1
 
+            $('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
+            $('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
 
-
+            if( $('.cbp-tm-submenu').attr('id') !== a_name ){
+                $('.rido_third_ul-active').removeClass('rido_third_ul-active');
+            }
+            $('.rido_third_ul-active').toggleClass('rido_third_ul');// close third
+            $('cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
+        };
 
 
         this.thirdToggle = function (e, explicit) {
@@ -4465,23 +4476,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             $('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
         };
 
-        this.firstToggle = function (e, explicit) {
-            //this = .rido_title
-            e.preventDefault();
-            var parent_id = $(this).attr("href");// veggie_sbumenu1
-            var a_name = $(this).attr("name");// veggie_sbumenu1
-
-            $('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
-            $('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
-
-
-            if( $('.cbp-tm-submenu').attr('id') !== a_name ){
-                $('.rido_third_ul-active').removeClass('rido_third_ul-active');
-            }
-            $('.rido_third_ul-active').toggleClass('rido_third_ul');// close third
-            $('cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
-        };
-
 
         this.disableForm = function () {
             _this.searchForm.children('input').remove();
@@ -4492,8 +4486,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.searchForm.on('submit', this.disableForm);
         this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
         this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
-        this.thirdNav.on('click', this.thirdToggle);
         this.firstNav.on('click', this.firstToggle);
+        this.thirdNav.on('click', this.thirdToggle);
 
     };
 
@@ -4678,6 +4672,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     };
 
+
+
+
+
+
+
     var Mobile = function Mobile() {
         var _this5 = this;
         this.mapToggleState = false;
@@ -4689,16 +4689,12 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.mobile_mask = $('.mobile_mask');
 
         // TODO: hover on mobile is click
-        this.mobileList.on('click', function (e, explicit) {
-            // $(this).append('<a class="mobile_list" title="Menu" href="#"></a>');
-            $('.cbp-tm-submenu').removeAttr('style');
-        });
-        this.mobileListIcon.on('click', function (e, explicit) {
-            // $(this).removeAttr('style');
-            // $(this).css('style'); // opacity: 0
-
-            $('.cbp-tm-show .cbp-tm-show-below').toggleClass('');
-        });
+        // this.mobileList.on('click', function (e, explicit) {
+        //     $('.cbp-tm-submenu').removeAttr('style');
+        // });
+        // this.mobileListIcon.on('click', function (e, explicit) {
+        //     $('.cbp-tm-show .cbp-tm-show-below').toggleClass('');
+        // });
 
         this.mobilelToggleState = false;
 
@@ -4711,7 +4707,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
         Timelines['mobile1'].addCallback(this.toggleOpenClass);
-        Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: .95});
         Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
         Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
         Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
@@ -4737,10 +4733,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
         this.mobile_burger_btn.on('click', this.toggleMobileMenu);
         this.mobile_x.on('click', this.toggleMobileMenu);
-        // trigeer for global site?  append another list
-        //
-        //     global list to menu
-        //    compare each section plsy it with cbp style
 
     };
 
