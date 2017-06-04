@@ -4406,7 +4406,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         // nav
         this.thirdNav = $('.rido_third');
         this.thirdNav_ul = $('.rido_third_ul');
-        this.firstNav = $('.rido_title');
+
+        this.firstNav = $('.rido_title'); // About
 
 
         this.searchInputFocus = function () {
@@ -4448,13 +4449,17 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             }
         };
 
+
+
+
+
+
+
         this.thirdToggle = function (e, explicit) {
-            e.preventDefault();
-            // this = .rido_third
+            e.preventDefault();// this = .rido_third, active= 1
 
             var thirdNavId = $(this).attr("href"); // #veggie_third1
             var parent_id = $(this).attr("name");
-                    //active = 1
 
             $(thirdNavId).toggleClass('rido_third_ul-active');
             $('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
@@ -4463,17 +4468,18 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.firstToggle = function (e, explicit) {
             //this = .rido_title
             e.preventDefault();
-            var parent_id = $(this).attr("href");
+            var parent_id = $(this).attr("href");// veggie_sbumenu1
+            var a_name = $(this).attr("name");// veggie_sbumenu1
 
-            var rido_href =  $(this).attr("href"); // veggie_sbumenu1
-            if( $('.cbp-tm-submenu').attr('id') !== parent_id ){
+            $('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
+            $('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
+
+
+            if( $('.cbp-tm-submenu').attr('id') !== a_name ){
                 $('.rido_third_ul-active').removeClass('rido_third_ul-active');
             }
-// close third
-            $('.rido_third_ul-active').toggleClass('rido_third_ul');
-            // $(this).closet('.cbp-tm-submenu').toggleClass('rido_third_ul::after')
- // close second
-            $('cbp-tm-show[id!="' + rido_href + '"]').removeClass('cbp-tm-show');
+            $('.rido_third_ul-active').toggleClass('rido_third_ul');// close third
+            $('cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
         };
 
 
@@ -4656,7 +4662,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         /*
          country id : lowercase, exceptions: Slovak Republic -> slovak, Czech Republic -> czech, uk, us
          */
-
         this.ContinentToggle = function (e, explicit) {
             var header_id = $(this).attr("id");
             // console.log(header_id);
@@ -4682,9 +4687,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.menu = $('#cbp-tm-menu');
         this.mobile_x = $('.mobile_close');
         this.mobile_mask = $('.mobile_mask');
-
-        this.mobile_menu_container = $('#menu_container');
-        this.menuList = $('.rido_show');
 
         // TODO: hover on mobile is click
         this.mobileList.on('click', function (e, explicit) {

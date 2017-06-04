@@ -1,6 +1,12 @@
 // TODO: adjust margin/padding of sub check the submenu's margin/padding and fix it as a 0
 // TODO: search width
 // TODO: submenu, set first one left ... overflow: visible $(this).width(), .css()
+header {
+  position: relative;
+  display: block;
+  width: 100vw;
+  height: auto;
+}
 .mobile_mask {
   position: absolute;
   display: block;
@@ -9,16 +15,14 @@
   background-color: grey;
   opacity: 0;
 }
-
 .pep-nav__utility {
   position: relative;
   display: block;
   height: 2em;
-  width: 25%;
+  width: 27%;
   float: right;
   margin: auto;
 }
-
 .pep-nav__utility-item {
   position: absolute;
   display: block;
@@ -60,12 +64,8 @@
   }
 }
 
-
-
-
-
 .pep-nav__utility-item.utility--search {
-  right: 42px;
+  right: 78px;
   top: 8px;
   &:active {
     background-color: white;
@@ -303,6 +303,7 @@
 
 //menu control
 .cbp-tm-menu > li > a {
+  //margin-top: -80px;
   line-height: 4em;
   padding: 0 0.3em;
   font-size: 1.2em;
@@ -398,7 +399,7 @@
 }
 
 // submenu(2nd) padding, starting point, arrow position
-#veggie_submenu1 {
+#rido_menu1 {
   padding-left: 240px;
   left: -120px;
   &:after {
@@ -406,7 +407,7 @@
   }
 }
 
-#veggie_submenu2 {
+#rido_menu2 {
   padding-left: 350px;
   left: -275px;
   &:after {
@@ -414,7 +415,7 @@
   }
 }
 
-#veggie_submenu3 {
+#rido_menu3 {
   padding-left: 520px;
   left: -430px;
   &:after {
@@ -422,7 +423,7 @@
   }
 }
 
-#veggie_submenu4 {
+#rido_menu4 {
   padding-left: 350px;
   left: -560px;
   &:after {
@@ -430,7 +431,7 @@
   }
 }
 
-#veggie_submenu5 {
+#rido_menu5 {
   padding-left: 200px;
   left: -700px;
   &:after {
@@ -439,27 +440,20 @@
 }
 
 // third menu position control
-#veggie_third1{
-  //background-color: green;
-  left: 0px;
+#rido_third1 {
+  left:0;
   padding-left: 460px;
 }
 
-#veggie_third3 {
-  left: 0px;
+#rido_third3 {
+  left: 0;
 }
 
-#veggie_third4 {
-  //background-color: green;
-  left: 0px;
+#rido_third4 {
+  left: 0;
   padding-left: 460px;
 }
-
-
-//#veggie_third4{
-//  left: 350px;
-//}
-#veggie_submenu6:after {
+#rido_menu6:after {
   left: 71%;
 }
 
@@ -492,7 +486,6 @@
 
 .cbp-tm-submenu li {
   display: block;
-
   a {
     position: relative;
     display: inline-block;
@@ -547,7 +540,6 @@
   font-size: 20px;
   opacity: 0 !important;
 
-
   -webkit-transition: 0.7s ease;
   -moz-transition: 0.7s ease;
   -ms-transition: 0.7s ease;
@@ -569,7 +561,7 @@
 
 .menu_close_icon {
   position: relative;
-  top:2px !important;;
+  top: 2px !important;;
   display: inline-block;
   background-size: cover;
   height: 10px;
@@ -579,8 +571,8 @@
 }
 
 #menu_container {
-  top: -200px;
-  padding: 20px 30px;
+  //top: -200px;
+  //padding: 20px 30px;
 }
 
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
@@ -604,8 +596,10 @@
 }
 
 @media screen and (max-width: 760px) {
-  header {
-    //background-color: green;
+  body {
+    background: url(../img/mobile/mobile_background.png) no-repeat 0 0;
+    background-size: cover;
+
   }
   .container {
     //background-color: red;
@@ -655,7 +649,9 @@
     opacity: 1;
     display: inline-block;
   }
-
+  .cbp-tm-menu > li > a {
+    line-height: 2em;
+  }
   .social-media-icons {
     padding: 0px 45px;
     opacity: 1;
@@ -682,6 +678,7 @@
     opacity: 0;
     font-size: 100%;
     text-align: center;
+    overflow: hidden;
 
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
@@ -691,26 +688,27 @@
       width: 100%;
       margin: 0;
       border-top: .1px solid #B1B1B1;
+      overflow: hidden;
 
       -webkit-transition: all 1s;
       -moz-transition: all 1s;
       transition: all 1s;
-
+      a {
+        text-align: left;
+        display: block;
+        position: relative;
+        padding-left: 1.2em;
+        font-size: 2em;
+        color: black;
+        opacity: .7;
+      }
       &:first-child {
         //border-top: 1px solid #3793ca;
       }
     }
   }
+
   //menu title control
-  .cbp-tm-menu li a {
-    text-align: left;
-    display: block;
-    line-height: 2em;
-    padding-left: 1.2em;
-    font-size: 2em;
-    color: black;
-    opacity: .7;
-  }
 
   .cbp-tm-menu.open {
     opacity: 1;
@@ -726,22 +724,36 @@
     color: #fff;
   }
 
+  #rido_menu1, #rido_menu2, #rido_menu3,
+  #rido_menu4, #rido_menu5 {
+
+    //padding: 0px;
+    //left: 0px;
+    //width: 100%;
+    //height: 0;
+    //position: relative;
+    //float: left;
+    //display: block;
+  }
+
   .cbp-tm-submenu {
     position: relative;
     display: none;
+    float: left;
+
     left: 0;
     width: 100vw;
+    //opacity: 0;
+    height:0;
+    overflow: hidden ;
     clear: both;
-    overflow: hidden;
     background: transparent;
     border-bottom: transparent;
     border-top: transparent;
-
     li {
       clear: both;
       width: 100vw;
       border: none;
-
       a {
         content: "";
         display: block;
@@ -752,9 +764,21 @@
     }
     &::after {
       display: none;
-
     }
   }
+
+
+
+  .cbp-tm-submenu-active {
+    display: block;
+    opacity: 1;
+    height: auto;
+  }
+
+
+  .cbp-tm-show .cbp-tm-show-below {
+  }
+
 
   // issues
   // todo: 0. first level menu text-transform: uppercase
@@ -762,12 +786,10 @@
   // todo: 2.global map overflow hidden
   // todo: 3. web third menu onclick  transition
   // todo: 4. move white glass & global on mobile, web
-  // todo: 5. change the drop icon
-  // todo: 6. mobile list borderline top
   // todo: 7. social clickable
 
   //third menu cotrol
-  // !!!!!!! it was overflow, height 0-> auto
+  // overflow, height 0-> auto
   .rido_third_ul {
     display: none;
     position: relative;
@@ -784,27 +806,13 @@
     opacity: 1 !important;
   }
 
-  #veggie_submenu1, #veggie_submenu2, #veggie_submenu3,
-  #veggie_submenu4, #veggie_submenu5 {
 
-    padding: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    float: left;
 
-  }
+
   .pep-nav__utility__close {
     display: none;
   }
-  .cbp-tm-show .cbp-tm-show-below {
-    -webkit-transition: 0.7s ease;
-    -moz-transition: 0.7s ease;
-    -ms-transition: 0.7s ease;
-    -o-transition: 0.7s ease;
-    transition: 0.7s ease;
-  }
+
 
   .cbp-tm-menu .cbp-tm-show-below {
 
