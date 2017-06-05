@@ -538,11 +538,91 @@ header {
   }
 }
 
+
+
+
+
 /* Media Queries */
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1180px) {
+
   .cbp-tm-menu {
-    font-size: 80%;
+    font-size: 90%;
+    //padding:0 ;
+    li{
+      width: 120px;
+    }
   }
+
+  .cbp-tm-submenu{
+    padding: 6px 10px;
+    width: 100vw;
+    //padding-left: 100px;
+    li{
+      width: 120px;
+    }
+  }
+  #rido_menu1 {
+    padding-left: 100px;
+    left: -50px;
+    &:after {
+      left: 13%;
+    }
+  }
+  #rido_menu2 {
+    padding-left: 150px;
+    left: -200px;
+    &:after {
+      left: 26%;
+    }
+  }
+  #rido_menu3 {
+    padding-left: 320px;
+    left: -320px;
+    &:after {
+      left: 37%;
+    }
+  }
+  #rido_menu4 {
+    padding-left: 150px;
+    left: -490px;
+    &:after {
+      left: 47%;
+    }
+  }
+  #rido_menu5 {
+    padding-left: 100px;
+    left: -590px;
+    &:after {
+      left: 58%;
+    }
+  }
+}
+//@media screen and (max-width: 1020px) {
+//  .pep-nav__utility-item.utility--search{
+//    right: 16px;
+//    top: 0px;
+//  }
+//
+//
+//  .cbp-tm-menu {
+//    font-size: 80%;
+//
+//    //padding:0 ;
+//    li{
+//      width: 80px;
+//    }
+//  }
+//}
+@media screen and (max-width: 800px) {
+  .cbp-tm-menu {
+    font-size: 90%;
+    //padding:0;
+    //margin-top: 0;
+    li{
+      width: 100px;
+    }
+  }
+
 }
 
 @media screen and (max-width: 760px) {
