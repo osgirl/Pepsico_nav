@@ -281,7 +281,7 @@ header {
 }
 
 /* reset  list style */
-.cbp-tm-menu, cbp-tm-menu ul {
+.cbp-tm-menu, .cbp-tm-menu ul {
   list-style: none;
 }
 
@@ -354,6 +354,10 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00fcfcfc', GradientType=1);
   //justify-content: center;
   //left: 0;
+}
+
+.cbp-tm-submenu .cbp-tm-submenu {
+  background: none;
 }
 
 .cbp-tm-show .cbp-tm-submenu {
@@ -456,13 +460,18 @@ header {
 }
 
 // third menu position control
-#rido_third1, #rido_third4 {
+#rido_third1 {
   left: 0;
-  padding-left: 460px;
+  padding-left: 260px;
 }
 
 #rido_third3 {
   left: 0;
+}
+
+#rido_third4 {
+  left: 0;
+  padding-left: 460px;
 }
 
 #rido_menu6:after {
@@ -583,7 +592,7 @@ header {
   }
   #rido_menu1 {
     padding-left: 65px;
-    left: -130px;
+    left: -80px;
     &:after {
       left: 13%;
     }

@@ -62,17 +62,65 @@
                     });
                 }
                 else {
-                    trigger.addEventListener('click', function (ev) {
-                        if (this.parentNode.querySelector('ul.cbp-tm-submenu')) {
-                            ev.preventDefault();
-                        }
-                    });
-                    el.addEventListener('mouseover', function (ev) {
-                        if (isMouseLeaveOrEnter(ev, this)) self._openMenu(this);
-                    });
-                    el.addEventListener('mouseout', function (ev) {
-                        if (isMouseLeaveOrEnter(ev, this)) self._closeMenu(this);
-                    });
+                    if(trigger){
+                        trigger.addEventListener('click', function (ev) {
+                            // if it's a link with a submenu
+                            if (this.classList.contains('rido_title')) {
+                                // click on a title link with an other submenu
+                                if(this.parentNode.classList.contains('rido_show')) {
+                                    // if it has the class open, close the menu
+                                    if(this.parentNode.classList.contains('is-open')) {
+                                        // console.log('===  cbpTooltipMenu.js [close menu] ===');
+                                        self._closeMenu(this.parentNode);
+                                        this.parentNode.classList.remove('is-open');
+                                    }
+                                    else {
+                                        // check if any other opened
+                                        var title = document.querySelectorAll(".is-open");
+                                        for (var i = title.length - 1; i >= 0; i--) {
+                                            // console.log('===  cbpTooltipMenu.js [71] ===', title);
+                                            self._closeMenu(title[i]);
+                                            title[i].classList.remove('is-open');
+                                        };
+
+                                        // remove all sub submenu open on level third if we close a level 1 or 2
+                                        var sub_title = document.querySelectorAll(".rido_third_ul-active");
+                                        for (var i = sub_title.length - 1; i >= 0; i--) {
+                                            sub_title[i].classList.remove('rido_third_ul-active');
+                                        };
+
+                                        // if it doens't have the class open, close the menu
+                                        // console.log('===  cbpTooltipMenu.js [open menu] ===');
+                                        self._openMenu(this.parentNode);
+                                        this.parentNode.classList.add('is-open');
+                                    }
+                                }
+                                else {
+                                    console.log('===  cbpTooltipMenu.js [submenu click] ===');
+                                    // submenu 
+                                    if(this.parentNode.classList.contains('rido_subtitle')) {
+                                        console.log('===  cbpTooltipMenu.js [subtitle] ===');
+                                    }
+                                    // ev.preventDefault();
+                                }
+                            }
+
+                            if(this.parentNode.classList.contains('rido_subtitle')) {
+                                console.log('===  cbpTooltipMenu.js [109] ===');
+                            }
+
+                            else {
+                                // normal link, do nothing
+                            }
+
+                        });
+                        // el.addEventListener('mouseenter', function (ev) {
+                        //     // if (isMouseLeaveOrEnter(ev, this)) self._openMenu(this);
+                        // });
+                        // el.addEventListener('mouseout', function (ev) {
+                        //     if (isMouseLeaveOrEnter(ev, this)) self._closeMenu(this);
+                        // });
+                    }
                 }
             });
         },
@@ -87,7 +135,7 @@
                     var submenu = el.querySelector('ul.cbp-tm-submenu');
 
                     if (submenu) {
-                        el.className = 'cbp-tm-show';
+                        el.className += ' cbp-tm-show';
                         el.className += ' cbp-tm-show-below';
                     }
                     // if (submenu_third) {
