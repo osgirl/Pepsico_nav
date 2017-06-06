@@ -21,5 +21,8 @@
     "path": "^0.12.7",
     "susy": "^2.2.12",
     "swig": "^1.4.2"
+  },
+  "devDependencies": {
+    "grunt-contrib-compass": "^1.1.1"
   }
 }
