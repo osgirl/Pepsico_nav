@@ -20,36 +20,21 @@ header {
   position: relative;
   display: block;
   height: 2em;
-  width: 27%;
-  float: right;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
 }
 
 .pep-nav__utility-item {
   position: absolute;
   display: block;
+  right:75px;
   height: 40px;
   width: 40px;
   top: 0px;
   overflow: hidden;
 }
 
-//Flexbox
-// display: flex;
-//flex-direction: column;
-//flex-wrap: wrap;
-//align-content: space-between;
-
-//-webkit-box-sizing: border-box;
-//-moz-box-sizing: border-box;
-//-ms-box-sizing: border-box;
-//-o-box-sizing: border-box;
-//box-sizing: border-box;
-
-//border: 2px solid #168dc2;
-//background-color: white;
-//border: 2px solid grey;
-//border-radius: 43px;
 
 .pep-nav__utility-item.utility--global {
   width: 110px;
@@ -299,7 +284,7 @@ header {
   visibility: hidden;
   opacity: 0;
 
-  font-size: .7em;
+  font-size: .9em;
   text-transform: none;
   text-align: center;
   pointer-events: none;
@@ -372,7 +357,7 @@ header {
 
 // submenu(2nd) padding, starting point, arrow position
 #rido_menu1 {
-  padding-left: 240px;
+  padding: 6px 150px;
   left: -120px;
   &:after {
     left: 13%;
@@ -380,7 +365,7 @@ header {
 }
 
 #rido_menu2 {
-  padding-left: 350px;
+  padding: 6px 270px;
   left: -275px;
   &:after {
     left: 26%;
@@ -388,15 +373,15 @@ header {
 }
 
 #rido_menu3 {
-  padding-left: 520px;
+  padding: 6px 550px;
   left: -430px;
   &:after {
-    left: 37%;
+    left: 38%;
   }
 }
 
 #rido_menu4 {
-  padding-left: 350px;
+  padding: 6px 300px;
   left: -560px;
   &:after {
     left: 47%;
@@ -462,18 +447,20 @@ header {
     font-size: .9em;
     font-weight: 400;
     color: #797575;
-    //letter-spacing: 0.1px;
 
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
     z-index: 10;
+
   }
 }
 
 .no-touch .cbp-tm-submenu > li > a:hover,
 .no-touch .cbp-tm-submenu > li > a:active {
-  color: black;
+  //color: black;
+  color: dodgerblue;
+
 }
 
 .cbp-tm-submenu li a:before {
@@ -492,14 +479,12 @@ header {
   background: transparent;
   opacity: 0 !important;
 }
-
 .rido_third_ul-active {
   display: block;
   height: 400px;
   width: 100%;
 
   opacity: 1 !important;
-  //TODO: transition is not working, Timeline?
   transition: opacity 2s ease !important;
 }
 
@@ -517,18 +502,33 @@ header {
 
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
   li a {
+    font-size: 1em;
+    font-weight: 300;
+
     color: white;
-    opacity: .6;
+    opacity: 1;
     &:hover {
-      opacity: 1
+      opacity: .7;
+    }
+  }
+}
+
+@media screen and (max-width: 1060px) {
+
+  .cbp-tm-menu {
+    font-size: 98%;
+    padding: 0;
+
+    li {
+      width: 90px;
     }
   }
 }
 
 /* Media Queries */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1260px) {
   .cbp-tm-menu {
-    font-size: 90%;
+    font-size: 95%;
     padding: 0;
 
     li {
@@ -543,65 +543,77 @@ header {
     }
   }
   .cbp-tm-submenu {
-    //padding: 6px 10px;
     width: 100vw;
-    //padding-left: 100px;
+    max-width: 1200px;
     li {
       width: auto;
     }
   }
   #rido_menu1 {
-    padding-left: 65px;
-    left: -80px;
+    padding: 6px 100px;
+    left: -244px;
     &:after {
-      left: 13%;
+      left: 23%;
     }
   }
   #rido_menu2 {
-    padding-left: 150px;
-    left: -140px;
+    padding: 6px 238px;
+    left: -320px;
     &:after {
-      left: 26%;
+      left: 30%;
     }
   }
   #rido_menu3 {
-    padding-left: 320px;
-    left: -240px;
+    padding: 6px 522px;
+    left: -440px;
     &:after {
-      left: 37%;
+      left: 39%;
     }
   }
   #rido_menu4 {
-    padding-left: 150px;
-    left: -340px;
+    padding: 6px 254px;
+    left: -538px;
     &:after {
       left: 47%;
     }
   }
   #rido_menu5 {
-    padding-left: 100px;
-    left: -450px;
+    padding: 6px 100px;
+    left: -646px;
     &:after {
-      left: 58%;
+      left: 56%;
     }
   }
-}
-
-//@media screen and (max-width: 1020px) {
-
-@media screen and (max-width: 800px) {
-  .cbp-tm-menu {
-    font-size: 90%;
-    //padding:0;
-    //margin-top: 0;
-    //li{
-    //  width: 100px;
-    //}
+  .pep-nav__utility {
+    position: relative;
+    display: block;
+    height: 2em;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
   }
 
+  .pep-nav__utility-item {
+    position: absolute;
+    display: block;
+    right:200px;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+    overflow: hidden;
+  }
+
+
+
+
+
+
+
+
 }
 
-@media screen and (max-width: 760px) {
+
+@media screen and (max-width: 1000px) {
   body {
     background: url(../img/mobile/mobile_background.png) no-repeat 0 0;
     background-size: cover;
@@ -616,6 +628,31 @@ header {
   .mobile_menu, .mobile_list, .mobile_search {
     display: block;
   }
+
+  .pep-nav__utility {
+    position: relative;
+    display: block;
+    height: 2em;
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+  }
+
+  .pep-nav__utility-item {
+    position: absolute;
+    display: block;
+    right:68px;
+    height: 40px;
+    width: 40px;
+    top: 0px;
+    overflow: hidden;
+  }
+
+
+
+
+
+
   .pep-nav__utility--search__input {
     width: 100%;
   }
@@ -650,15 +687,17 @@ header {
     display: inline-block;
     width: 100vw;
       line-height: 18px;
-       a {
+    font-weight: 300 !important;
 
+    a {
       position: absolute;
       display: block;
-      font-weight: 300 !important;
       left: 0;
       color: #B1B1B1;
     }
   }
+
+
   #rido_menu1,
   #rido_menu2, #rido_menu3,
   #rido_menu4, #rido_menu5 {
@@ -748,13 +787,15 @@ header {
         clear: both;
         float: left;
         padding-left: 2em;
+        &:hover{
+          color: dodgerblue !important;
+        }
       }
     }
     &::after {
       display: none;
     }
   }
-
   .cbp-tm-submenu-active {
     display: block;
     opacity: 1;
@@ -764,17 +805,6 @@ header {
 
   .cbp-tm-show .cbp-tm-show-below {
   }
-
-  // issues
-  // todo: 0. first level menu text-transform: uppercase
-  // todo: 1 mobile transition on first level,
-  // todo: 2.global map overflow hidden
-  // todo: 3. web third menu onclick  transition
-  // todo: 4. move white glass & global on mobile, web
-  // todo: 7. social clickable
-
-  //third menu cotrol
-  // overflow, height 0-> auto
   cbp-tm-submenu.rido_third_ul {
     display: none;
     position: relative;
@@ -787,9 +817,9 @@ header {
       color: #B1B1B1;
       padding-left: 0;
       left: 0;
+
     }
   }
-
   .rido_third_ul-active {
     display: block;
     height: auto;
@@ -799,6 +829,7 @@ header {
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
     color: black;
     opacity: .7;
+    font-weight:300;
   }
 
   .pep-nav__utility__close {
@@ -817,7 +848,7 @@ header {
     left: 0;
     margin: 0;
     padding: 0;
-    //transition: 0.7s ease;
+    transition: all 0.7s ease;
   }
   #rido_menu1 {
     padding-left: 65px;
@@ -854,9 +885,6 @@ header {
       left: 58%;
     }
   }
-
-
-
 }
 
 // default @media, this overwrite the container

@@ -24,7 +24,6 @@
     function getOffset(el) {
         return el.getBoundingClientRect();
     }
-
     function isMouseLeaveOrEnter(e, handler) {
         if (e.type != 'mouseout' && e.type != 'mouseover') return false;
         var reltg = e.relatedTarget ? e.relatedTarget :
