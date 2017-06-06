@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 npm-debug.log
 .zip
-.sass-cache
-public/css/*.css
-public/js/*.js
+.sass-cache/
+public/css/
+public/js/
+public/_/components/sass/*.css
