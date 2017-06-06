@@ -4408,6 +4408,11 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         this.thirdNav_ul = $('.rido_third_ul');
         this.firstNav = $('.rido_title'); // About
 
+        function getSearchFieldWidth()  {
+            return ($('.cbp-tm-menu li').width() * $('.cbp-tm-menu > li:visible').length);
+        }
+
+        // this.search_size = getSearchFieldWidth();
 
         this.searchInputFocus = function () {
             _this.searchInput.focus();
@@ -4422,7 +4427,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         Timelines['search'].to(this.primaryNav, 0.3, {opacity: 0});
         Timelines['search'].set(this.primaryNav, {display: 'none'});
         //width of the search bar
-        Timelines['search'].to(this.searchContainer, 0.3, {width: 1000, ease: Power0.easeOut});
+
+        Timelines['search'].to(this.searchContainer, 0.3, {width: getSearchFieldWidth(), ease: Power0.easeOut});
         Timelines['search'].set(this.searchInput, {display: 'block'});
 
         Timelines['search'].to(this.whiteglass, 0.2, {fill: "gray"});
@@ -4433,6 +4439,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         Timelines['search'].addCallback(this.searchInputFocus);
 
         this.toggleSearchInput = function (e, explicit) {
+            _this.search_size = getSearchFieldWidth();
+
             if (!_this.searchToggleState && !explicit) {
                 e.preventDefault();
                 if (Timelines['social'].progress() !== 0) {
@@ -4457,7 +4465,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
             $('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
             $('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
-
             if( $('.cbp-tm-submenu').attr('id') !== a_name ){
                 $('.rido_third_ul-active').removeClass('rido_third_ul-active');
             }
@@ -4475,7 +4482,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             $(thirdNavId).toggleClass('rido_third_ul-active');
             $('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
         };
-
 
         this.disableForm = function () {
             _this.searchForm.children('input').remove();
@@ -4672,12 +4678,6 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     };
 
-
-
-
-
-
-
     var Mobile = function Mobile() {
         var _this5 = this;
         this.mapToggleState = false;
@@ -4736,6 +4736,89 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
 
     };
 
+    var adjustLayout = function () {
+
+            var menu_width = 0;
+            var menu_li_width = 0;
+            var submenu_width=0;
+            var submenu_li_width=0;
+
+            var firstRun = true;
+            var total_li = 0;
+            var current_menu = 0;
+            var current_submenu = 0;
+
+            menu_li_width = $('.cbp-tm-menu li').width(); //120
+            submenu_li_width = $('#rido_menu1 li').width();//64
+
+            menu_width = $('.cbp-tm-menu').width();//874
+            submenu_width = $('#rido_menu1').width();//86
+
+            calLayout();
+            setInterval(checkWindowSize, 1000);
+
+            function calLayout() {
+                // getting each panel item's left value
+                // $('.cbp-tm-menu > li').each(function (index) {
+                //     var newX = menu_li_width * index; //8
+                //     $(this).css('left', newX+'px');//-1600px
+                // });
+
+                // $('#rido_menu1> li').each(function (index) {
+                //     var newX = submenu_li_width * index; //8
+                //     console.log(newX);
+                //     $(this).css('left', newX+'px');
+                // });
+
+                // current_menu = $('.cbp-tm-menu li:last-child').index(); // putting 0, ca7
+                current_menu = 6; // putting 0, ca7
+                activateNavigation();
+            }
+
+            function activateNavigation() {
+                // $('.cbp-tm-menu li').on('click', function () {
+                //     current_menu = $(this).index();
+                //     menu_width =$('.cbp-tm-menu').width();//1190
+                //     var Offset = (menu_width - menu_li_width) * .5;// left/right margin
+                //     var newPosition = ((current_menu * menu_li_width) * -1)  + Offset;
+                //     // console.log(newPosition);
+                // });
+
+                $('#rido_menu1 > li').on('click', function () {
+                    current_submenu = $(this).index();
+                    submenu_width =$('#rido_menu1> li').width();//120
+
+                    // left/right margin
+                    var Offset = (submenu_width - submenu_li_width) * .5;
+                    var newPosition = ((current_submenu * submenu_li_width) * -1)  + Offset;
+                });
+            }
+
+            function checkWindowSize() {
+                var newTimelineWidth = $('.cbp-tm-menu').width();
+                var newTimelineSubWidth = $('#rido_menu1').width();
+
+                //large screen
+                if( newTimelineWidth > 500 && menu_li_width >500){
+                    // do nothing
+                }else if( newTimelineWidth < 500 && menu_li_width < 500 ){
+                    // do nothig
+                }else {
+                    if( newTimelineWidth > 500 && menu_li_width < 500 ){
+                        firstRun = true;
+                    }
+                }
+                menu_li_width = newTimelineWidth;
+
+                if( firstRun == true ){
+                    //current_menu is index, a is clicked and search for the current Panel
+                    // $('.cbp-tm-menu > li a:nth-child('+(current_menu + 1) +')').trigger('click');
+                    firstRun = false;
+                    $('#rido_menu1> li a:nth-child('+(current_submenu + 1) +')').trigger('click');
+
+                }
+            }
+        }
 
     $(window).on('load', function () {
         var SEARCH = new Search();
@@ -4743,6 +4826,7 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
         var GLOBAL = new Global();
         var MAP = new Map();
         var MOBILE = new Mobile();
+        // var Layout = new adjustLayout();
 
     });
 })();

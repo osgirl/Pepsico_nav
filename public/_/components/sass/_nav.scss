@@ -7,14 +7,16 @@ header {
   width: 100vw;
   height: auto;
 }
+
 .mobile_mask {
   position: absolute;
   display: block;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(241,240,235);
+  background-color: rgb(241, 240, 235);
   opacity: 0;
 }
+
 .pep-nav__utility {
   position: relative;
   display: block;
@@ -23,6 +25,7 @@ header {
   float: right;
   margin: auto;
 }
+
 .pep-nav__utility-item {
   position: absolute;
   display: block;
@@ -64,11 +67,17 @@ header {
   }
 }
 
+.search_li {
+  top: 5px;
+  margin-right: 0 !important;
+}
+
 .pep-nav__utility-item.utility--search {
-  right: 78px;
-  top: 8px;
+  top: 2px;
+  right: 87px;
   &:active {
     background-color: white;
+
   }
 }
 
@@ -78,6 +87,7 @@ header {
 
 #social {
   height: 77px;
+  display: none;
 }
 
 .social-media-icons {
@@ -404,6 +414,7 @@ header {
     left: 13%;
   }
 }
+
 #rido_menu2 {
   padding-left: 350px;
   left: -275px;
@@ -411,6 +422,7 @@ header {
     left: 26%;
   }
 }
+
 #rido_menu3 {
   padding-left: 520px;
   left: -430px;
@@ -418,6 +430,7 @@ header {
     left: 37%;
   }
 }
+
 #rido_menu4 {
   padding-left: 350px;
   left: -560px;
@@ -425,6 +438,7 @@ header {
     left: 47%;
   }
 }
+
 #rido_menu5 {
   padding-left: 200px;
   left: -700px;
@@ -432,6 +446,7 @@ header {
     left: 58%;
   }
 }
+
 .rido_subtitle {
   float: left;
   margin: 5px 12px 5px 10px;
@@ -439,14 +454,17 @@ header {
   line-height: 18px;
   text-transform: uppercase;
 }
+
 // third menu position control
 #rido_third1, #rido_third4 {
-  left:0;
+  left: 0;
   padding-left: 460px;
 }
+
 #rido_third3 {
   left: 0;
 }
+
 #rido_menu6:after {
   left: 71%;
 }
@@ -459,7 +477,7 @@ header {
 .cbp-tm-submenu.rido_third_ul {
   top: 40px;
   font-size: 15px;
-  &:after{
+  &:after {
     display: none;
   }
 }
@@ -469,10 +487,9 @@ header {
 }
 
 .cbp-tm-submenu li {
-  display: block;
+  display: inline-block;
   a {
     position: relative;
-    display: inline-block;
     font-size: .9em;
     font-weight: 400;
     color: #797575;
@@ -506,6 +523,7 @@ header {
   background: transparent;
   opacity: 0 !important;
 }
+
 .rido_third_ul-active {
   display: block;
   height: 400px;
@@ -538,89 +556,78 @@ header {
   }
 }
 
-
-
-
-
 /* Media Queries */
 @media screen and (max-width: 1180px) {
-
   .cbp-tm-menu {
     font-size: 90%;
-    //padding:0 ;
-    li{
-      width: 120px;
+    padding: 0;
+
+    li {
+      width: 90px;
     }
   }
-
-  .cbp-tm-submenu{
-    padding: 6px 10px;
+  .search_li {
+    width: 80px;
+    .pep-nav__utility-item.utility--search {
+      top: -3px;
+      right: 30px;
+    }
+  }
+  .cbp-tm-submenu {
+    //padding: 6px 10px;
     width: 100vw;
     //padding-left: 100px;
-    li{
-      width: 120px;
+    li {
+      width: auto;
     }
   }
   #rido_menu1 {
-    padding-left: 100px;
-    left: -50px;
+    padding-left: 65px;
+    left: -130px;
     &:after {
       left: 13%;
     }
   }
   #rido_menu2 {
     padding-left: 150px;
-    left: -200px;
+    left: -140px;
     &:after {
       left: 26%;
     }
   }
   #rido_menu3 {
     padding-left: 320px;
-    left: -320px;
+    left: -240px;
     &:after {
       left: 37%;
     }
   }
   #rido_menu4 {
     padding-left: 150px;
-    left: -490px;
+    left: -340px;
     &:after {
       left: 47%;
     }
   }
   #rido_menu5 {
     padding-left: 100px;
-    left: -590px;
+    left: -450px;
     &:after {
       left: 58%;
     }
   }
 }
+
 //@media screen and (max-width: 1020px) {
-//  .pep-nav__utility-item.utility--search{
-//    right: 16px;
-//    top: 0px;
-//  }
-//
-//
-//  .cbp-tm-menu {
-//    font-size: 80%;
-//
-//    //padding:0 ;
-//    li{
-//      width: 80px;
-//    }
-//  }
-//}
+
 @media screen and (max-width: 800px) {
   .cbp-tm-menu {
     font-size: 90%;
     //padding:0;
     //margin-top: 0;
-    li{
-      width: 100px;
-    }
+    //li{
+    //  width: 100px;
+    //}
   }
 
 }
@@ -632,7 +639,7 @@ header {
   }
   .container {
     //background-color: red;
-    position:relative;
+    position: relative;
     display: block;
     height: 100vh;
     top: 100px;
@@ -643,7 +650,6 @@ header {
   .pep-nav__utility--search__input {
     width: 100%;
   }
-
   .pep-nav__utility-item.utility--search {
     position: absolute;
     float: left;
@@ -656,7 +662,6 @@ header {
     opacity: 1;
     display: inline-block;
   }
-
   .social-media-icons {
     padding: 0px 45px;
     opacity: 1;
@@ -668,15 +673,22 @@ header {
     }
   }
   .rido_title {
-    font-size: 30px;
+    //font-size: 30px;
     color: #414141;
   }
-  .rido_subtitle a {
-    position: absolute;
-    display: block;
-    font-weight: 300 !important;
-    left: 0;
-    color: #B1B1B1;
+
+  .rido_subtitle {
+    display: inline-block;
+    width: 100vw;
+      line-height: 18px;
+       a {
+
+      position: absolute;
+      display: block;
+      font-weight: 300 !important;
+      left: 0;
+      color: #B1B1B1;
+    }
   }
   #rido_menu1,
   #rido_menu2, #rido_menu3,
@@ -685,14 +697,14 @@ header {
     padding: 0;
     width: 100vw;
   }
-  #rido_third1, #rido_third2, #rido_third3,#rido_third4{
+  #rido_third1, #rido_third2, #rido_third3, #rido_third4 {
     left: 0;
     width: 100vw;
     padding-left: 2em;
     top: 0;
     font-size: 1em;
   }
-    //burger open
+  //burger open
   .cbp-tm-menu {
     position: relative;
     padding: 0;
@@ -701,7 +713,6 @@ header {
     font-size: 100%;
     text-align: center;
     overflow: hidden;
-    //
     //-webkit-transition: all 0.3s;
     //-moz-transition: all 0.3s;
     //transition: all 0.3s;
@@ -743,7 +754,6 @@ header {
     color: #B1B1B1;
   }
 
-
   .cbp-tm-submenu {
     position: relative;
     display: none;
@@ -751,8 +761,8 @@ header {
 
     left: 0;
     width: 100vw;
-    height:0;
-    overflow: hidden ;
+    height: 0;
+    overflow: hidden;
     clear: both;
     background: transparent;
     border-bottom: transparent;
@@ -776,19 +786,15 @@ header {
     }
   }
 
-
-
- .cbp-tm-submenu-active {
+  .cbp-tm-submenu-active {
     display: block;
     opacity: 1;
     height: auto;
-   //transition: opacity 2s ease !important;
+    //transition: opacity 2s ease !important;
   }
-
 
   .cbp-tm-show .cbp-tm-show-below {
   }
-
 
   // issues
   // todo: 0. first level menu text-transform: uppercase
@@ -808,7 +814,7 @@ header {
     background: transparent;
     font-size: 20px;
     opacity: 0 !important;
-    li a{
+    li a {
       color: #B1B1B1;
       padding-left: 0;
       left: 0;
@@ -821,8 +827,7 @@ header {
     opacity: 1 !important;
   }
 
-
-  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a{
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
     color: black;
     opacity: .7;
   }
@@ -845,14 +850,45 @@ header {
     padding: 0;
     //transition: 0.7s ease;
   }
+  #rido_menu1 {
+    padding-left: 65px;
+    left: -130px;
+    &:after {
+      left: 13%;
+    }
+  }
+  #rido_menu2 {
+    padding-left: 150px;
+    left: -200px;
+    &:after {
+      left: 26%;
+    }
+  }
+  #rido_menu3 {
+    padding-left: 320px;
+    left: -320px;
+    &:after {
+      left: 37%;
+    }
+  }
+  #rido_menu4 {
+    padding-left: 150px;
+    left: -490px;
+    &:after {
+      left: 47%;
+    }
+  }
+  #rido_menu5 {
+    padding-left: 100px;
+    left: -590px;
+    &:after {
+      left: 58%;
+    }
+  }
+
+
+
 }
-
-
-
-
-
-
-
 
 // default @media, this overwrite the container
 @media screen and (max-width: 880px) {

@@ -7,12 +7,14 @@
     <title>PepsiCo</title>
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
+
 <body>
 <!---  global site START  --->
 <div class="pep-languages" id="pep-languages">
     <div class="container pep-languages__container">
         <div class="global_sites_header">
-            <div class="global_sites_title" style="letter-spacing: 2.5px">
+            <div class="global_sites_title">
                 <div>pepsico</div>
                 <span>Global sites</span>
             </div>
@@ -48,539 +50,556 @@
 
             <!--map -->
             <div class="pep_language_list_right">
-                <img class="pep-languages__image" src="/img/MAP.png" alt="world_map">
+                <div class="pep-container-map">
 
-                <!-- -----------------------------------1. America-------------------------------------- -->
-                <div class="pin" id="argentina_pin" data-target="" href="#argentina" style="left: 21.6%;top: 105%;">
-                    <div class="pin__svg" name='argentina_pin' continent="america"><img src="/img/map_dot.png">
+                    <img class="pep-languages__image" src="/img/MAP.png" alt="world_map">
+
+                    <!-- -----------------------------------1. America-------------------------------------- -->
+                    <div class="pin" id="argentina_pin" data-target="" href="#argentina" style="left: 21.6%;top: 105%;">
+                        <div class="pin__svg" name='argentina_pin' continent="america"><img src="/img/map_dot.png">
+                        </div>
+                        <div class="pin__popover" id="argentina" style="top: -30.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="argentina_copy">
+                                    <div class="popover__title">Argentina</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiArgentina </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoArgentina </span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div><!--popover__body-->
+                                </div><!--popover__copy-->
+                            </div><!--popover-->
+                        </div><!--pin__popover-->
                     </div>
-                    <div class="pin__popover" id="argentina" style="top: -30.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="argentina_copy">
-                                <div class="popover__title">Argentina</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiArgentina </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoArgentina </span></a>
-                                    <div class="pep-languages__close2"></div>
-                                </div><!--popover__body-->
-                            </div><!--popover__copy-->
-                        </div><!--popover-->
-                    </div><!--pin__popover-->
-                </div>
 
-                <div class="pin" id="brazil_pin" data-target="" href="#brazil" style="left: 25.5%;top: 91%;">
-                    <div class="pin__svg" name='brazil_pin' continent="america"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="brazil" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="brazil_copy">
-                                <div class="popover__title">Brazil</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiBrazil </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoBrazil </span></a>
-                                    <div class="pep-languages__close2"></div>
-                                </div><!--popover__body-->
-                            </div><!--popover__copy-->
-                        </div><!--popover-->
-                    </div><!--pin__popover-->
-                </div>
+                    <div class="pin" id="brazil_pin" data-target="" href="#brazil" style="left: 25.5%;top: 91%;">
+                        <div class="pin__svg" name='brazil_pin' continent="america"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="brazil" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="brazil_copy">
+                                    <div class="popover__title">Brazil</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiBrazil </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoBrazil </span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div><!--popover__body-->
+                                </div><!--popover__copy-->
+                            </div><!--popover-->
+                        </div><!--pin__popover-->
+                    </div>
 
-                <div class="pin" id="canada_pin" data-target="" href="#canada" style="left: 12.3%;top: 56.8%;">
-                    <div class="pin__svg" name='canada_pin' id="canada_svg" continent="america"><img
-                            src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="canada" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="canada_copy">
-                                <div class="popover__title">Canada</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">pepsiCanada </span></a>
-                                    <a href="#" target="_blank"><span class="undr">pepsiCoCanada </span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="canada_pin" data-target="" href="#canada" style="left: 12.3%;top: 56.8%;">
+                        <div class="pin__svg" name='canada_pin' id="canada_svg" continent="america"><img
+                                src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="canada" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="canada_copy">
+                                    <div class="popover__title">Canada</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span class="undr">pepsiCanada </span></a>
+                                        <a href="#" target="_blank"><span class="undr">pepsiCoCanada </span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="chile_pin" data-target="" href="#chile" style="left: 22.3%;top: 100.8%;">
-                    <div class="pin__svg" name='chile_pin'><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="chile" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="chile_copy">
-                                <div class="popover__title">Chile</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;Pepsi Chile </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;PepsiCo Chile </span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="chile_pin" data-target="" href="#chile" style="left: 22.3%;top: 100.8%;">
+                        <div class="pin__svg" name='chile_pin'><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="chile" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="chile_copy">
+                                    <div class="popover__title">Chile</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;Pepsi Chile </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;PepsiCo Chile </span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="mexico_pin" data-target="" href="#mexico"
-                     style="left: 14.3%;top: 75.8%;">
-                    <div class="pin__svg" name='mexico_pin' continent="america"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="mexico" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="mexico_copy">
-                                <div class="popover__title">Mexico</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiMexico </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoMexico</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="mexico_pin" data-target="" href="#mexico"
+                         style="left: 14.3%;top: 75.8%;">
+                        <div class="pin__svg" name='mexico_pin' continent="america"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="mexico" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="mexico_copy">
+                                    <div class="popover__title">Mexico</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiMexico </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoMexico</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="us_pin" data-target="" href="#us" style="left: 12.3%;top: 65.8%;">
-                    <div class="pin__svg" name='us_pin' continent="america"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="us" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="us_copy">
-                                <div class="popover__title">United States</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiUS </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUS</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="us_pin" data-target="" href="#us" style="left: 12.3%;top: 65.8%;">
+                        <div class="pin__svg" name='us_pin' continent="america"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="us" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="us_copy">
+                                    <div class="popover__title">United States</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiUS </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUS</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="uraguay_pin" data-target="" href="#uraguay"
-                     style="left: 23.3%;top: 100.8%;">
-                    <div class="pin__svg" name='uraguay_pin' continent="america"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="uraguay" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="uraguay_copy">
-                                <div class="popover__title">Uraguay</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiUraguay </span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUraguay</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="uraguay_pin" data-target="" href="#uraguay"
+                         style="left: 23.3%;top: 100.8%;">
+                        <div class="pin__svg" name='uraguay_pin' continent="america"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="uraguay" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="uraguay_copy">
+                                    <div class="popover__title">Uraguay</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiUraguay </span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUraguay</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- -----------------------------------ASIA-------------------------------------- -->
+                    <!-- -----------------------------------ASIA-------------------------------------- -->
 
-                <div class="pin" id="china_pin" data-target="" href="#china" style="left: 55.3%;top: 61.8%;">
-                    <div class="pin__svg" name='china_pin' continent="asia"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="china" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="china_copy">
-                                <div class="popover__title">China</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiChina</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoChina</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="china_pin" data-target="" href="#china" style="left: 55.3%;top: 61.8%;">
+                        <div class="pin__svg" name='china_pin' continent="asia"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="china" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="china_copy">
+                                    <div class="popover__title">China</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiChina</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoChina</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="india_pin" data-target="" href="#india"
-                     style="left: 49.3%;top: 78.8%;">
-                    <div class="pin__svg" name='india_pin' continent="asia"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="india" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="india_copy">
-                                <div class="popover__title">India</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiIndia</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoIndia</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="india_pin" data-target="" href="#india"
+                         style="left: 49.3%;top: 78.8%;">
+                        <div class="pin__svg" name='india_pin' continent="asia"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="india" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="india_copy">
+                                    <div class="popover__title">India</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiIndia</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoIndia</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="australia_pin" data-target="" href="#australia"
-                     style="left: 70.3%;top: 97.8%;">
-                    <div class="pin__svg" name='australia_pin' continent="asia"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="australia" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="australia_copy">
-                                <div class="popover__title">Australia</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiAustralia</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoAustralia</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="australia_pin" data-target="" href="#australia"
+                         style="left: 70.3%;top: 97.8%;">
+                        <div class="pin__svg" name='australia_pin' continent="asia"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="australia" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="australia_copy">
+                                    <div class="popover__title">Australia</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiAustralia</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoAustralia</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="japan_pin" data-target="" href="#japan"
-                     style="left: 61.3%;top: 66.8%;">
-                    <div class="pin__svg" name='japan_pin' continent="asia"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="japan" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="japan_copy">
-                                <div class="popover__title">Japan</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiJapan</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoJapan</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="japan_pin" data-target="" href="#japan"
+                         style="left: 61.3%;top: 66.8%;">
+                        <div class="pin__svg" name='japan_pin' continent="asia"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="japan" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="japan_copy">
+                                    <div class="popover__title">Japan</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiJapan</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoJapan</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!------------------------------ Europe ------------------------------------>
-                <div class="pin" id="europe_pin" data-target="" href="#europe"
-                     style="left: 36.3%;top: 63.8%;">
-                    <div class="pin__svg" name='europe_pin' continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="europe" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="europe_copy">
-                                <div class="popover__title">Europe</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiEurope</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoEurope</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <!------------------------------ Europe ------------------------------------>
+                    <div class="pin" id="europe_pin" data-target="" href="#europe"
+                         style="left: 36.3%;top: 63.8%;">
+                        <div class="pin__svg" name='europe_pin' continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="europe" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="europe_copy">
+                                    <div class="popover__title">Europe</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiEurope</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoEurope</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="austria_pin" data-target="" href="#austria"
-                     style="left: 48.3%; top: 65.8%;">
-                    <div class="pin__svg" name="austria_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="austria" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="austria_copy">
-                                <div class="popover__title">Austria</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiAustralia</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoAustralia</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="austria_pin" data-target="" href="#austria"
+                         style="left: 48.3%; top: 65.8%;">
+                        <div class="pin__svg" name="austria_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="austria" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="austria_copy">
+                                    <div class="popover__title">Austria</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiAustralia</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoAustralia</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="belgium_pin" data-target="" href="#belgium"
-                     style="    left: 35.3%;top: 60.8%;">
-                    <div class="pin__svg" name="belgium_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="belgium" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="belgium_copy">
-                                <div class="popover__title">Belgium</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiBelgium</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoBelgium</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="belgium_pin" data-target="" href="#belgium"
+                         style="    left: 35.3%;top: 60.8%;">
+                        <div class="pin__svg" name="belgium_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="belgium" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="belgium_copy">
+                                    <div class="popover__title">Belgium</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiBelgium</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoBelgium</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="france_pin" data-target="" href="#france"
-                     style="    left: 34.3%;top: 64.8%;">
-                    <div class="pin__svg" name="france_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="france" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="france_copy">
-                                <div class="popover__title">France</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiFrance</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoFrance</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="france_pin" data-target="" href="#france"
+                         style="    left: 34.3%;top: 64.8%;">
+                        <div class="pin__svg" name="france_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="france" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="france_copy">
+                                    <div class="popover__title">France</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiFrance</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoFrance</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="germany_pin" data-target="" href="#germany"
-                     style=" left: 37.3%;top: 60.8%;">
-                    <div class="pin__svg" name="germany_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="germany" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="germany_copy">
-                                <div class="popover__title">Germany</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiGermany</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoGermany</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="germany_pin" data-target="" href="#germany"
+                         style=" left: 37.3%;top: 60.8%;">
+                        <div class="pin__svg" name="germany_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="germany" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="germany_copy">
+                                    <div class="popover__title">Germany</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiGermany</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoGermany</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="greece_pin" data-target="" href="#greece"
-                     style="left: 38.3%;top: 66.8%;">
-                    <div class="pin__svg" name="greece_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="greece" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="greece_copy">
-                                <div class="popover__title">Greece</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiGreece</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoGreece</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="greece_pin" data-target="" href="#greece"
+                         style="left: 38.3%;top: 66.8%;">
+                        <div class="pin__svg" name="greece_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="greece" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="greece_copy">
+                                    <div class="popover__title">Greece</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiGreece</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoGreece</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="italy_pin" data-target="" href="#italy"
-                     style="left: 36.3%;top: 67.8%;">
-                    <div class="pin__svg" name="italy_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="italy" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="italy_copy">
-                                <div class="popover__title">Italy</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiItaly</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoItaly</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="italy_pin" data-target="" href="#italy"
+                         style="left: 36.3%;top: 67.8%;">
+                        <div class="pin__svg" name="italy_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="italy" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="italy_copy">
+                                    <div class="popover__title">Italy</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiItaly</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoItaly</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="netherlands_pin" data-target="" href="#netherlands"
-                     style="left: 33.3%;top: 61.8%;">
-                    <div class="pin__svg" name="netherlands_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="netherlands" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="netherlands_copy">
-                                <div class="popover__title">Netherlands</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiNetherlands</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoNetherlands</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="netherlands_pin" data-target="" href="#netherlands"
+                         style="left: 33.3%;top: 61.8%;">
+                        <div class="pin__svg" name="netherlands_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="netherlands"
+                             style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="netherlands_copy">
+                                    <div class="popover__title">Netherlands</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiNetherlands</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoNetherlands</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="poland_pin" data-target="" href="#poland"
-                     style="left: 36.3%;top: 57.8%;">
-                    <div class="pin__svg" name="poland_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="poland" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="poland_copy">
-                                <div class="popover__title">Poland</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiPoland</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoPoland</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="poland_pin" data-target="" href="#poland"
+                         style="left: 36.3%;top: 57.8%;">
+                        <div class="pin__svg" name="poland_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="poland" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="poland_copy">
+                                    <div class="popover__title">Poland</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiPoland</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoPoland</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="portugal_pin" data-target="" href="#portugal"
-                     style="left: 32.3%;top: 68.8%;">
-                    <div class="pin__svg" name="portugal_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="portugal" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="portugal_copy">
-                                <div class="popover__title">Portugal</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiPortugal</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoPortugal</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="portugal_pin" data-target="" href="#portugal"
+                         style="left: 32.3%;top: 68.8%;">
+                        <div class="pin__svg" name="portugal_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="portugal" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="portugal_copy">
+                                    <div class="popover__title">Portugal</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiPortugal</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoPortugal</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="russia_pin" data-target="" href="#russia"
-                     style="left: 54.3%;top: 54.8%;">
-                    <div class="pin__svg" name="russia_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="russia" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="russia_copy">
-                                <div class="popover__title">Russia</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiRussia</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoRussia</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="russia_pin" data-target="" href="#russia"
+                         style="left: 54.3%;top: 54.8%;">
+                        <div class="pin__svg" name="russia_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="russia" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="russia_copy">
+                                    <div class="popover__title">Russia</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiRussia</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoRussia</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="spain_pin" data-target="" href="#spain"
-                     style="left: 32.3%;top: 64.8%;">
-                    <div class="pin__svg" name="spain_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="spain" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="spain_copy">
-                                <div class="popover__title">Spain</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiSpain</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSpain</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="spain_pin" data-target="" href="#spain"
+                         style="left: 32.3%;top: 64.8%;">
+                        <div class="pin__svg" name="spain_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="spain" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="spain_copy">
+                                    <div class="popover__title">Spain</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiSpain</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSpain</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="solvak_pin" data-target="" href="#slovak"
-                     style="left: 38.3%;top: 63.8%;">
-                    <div class="pin__svg" name="solvak_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="slovak"
-                         style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="slovak_copy">
-                                <div class="popover__title">Slovak Republic</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiSlovak Republic</span></a>
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSlovak Republic</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="solvak_pin" data-target="" href="#slovak"
+                         style="left: 38.3%;top: 63.8%;">
+                        <div class="pin__svg" name="solvak_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="slovak"
+                             style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="slovak_copy">
+                                    <div class="popover__title">Slovak Republic</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiSlovak Republic</span></a>
+                                        <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSlovak Republic</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="czech_pin" data-target="" href="#czech"
-                     style="left: 38.3%;top: 57.8%;">
-                    <div class="pin__svg" name="czech_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="czech"
-                         style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="czech_copy">
-                                <div class="popover__title">Czech Republic</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCzech Republic</span></a>
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCzech Republic</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="czech_pin" data-target="" href="#czech"
+                         style="left: 38.3%;top: 57.8%;">
+                        <div class="pin__svg" name="czech_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="czech"
+                             style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="czech_copy">
+                                    <div class="popover__title">Czech Republic</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCzech Republic</span></a>
+                                        <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiCzech Republic</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="sweden_pin" data-target="" href="#sweden"
-                     style="left: 37.3%;top: 48.8%;">
-                    <div class="pin__svg" name="sweden_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="sweden" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="sweden_copy">
-                                <div class="popover__title">Sweden</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiSweden</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSweden</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="sweden_pin" data-target="" href="#sweden"
+                         style="left: 37.3%;top: 48.8%;">
+                        <div class="pin__svg" name="sweden_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="sweden" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="sweden_copy">
+                                    <div class="popover__title">Sweden</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiSweden</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoSweden</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="turkey_pin" style="left: 40.3%;top: 68.8%;">
-                    <div class="pin__svg" name="turkey_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="turkey" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="turkey_copy">
-                                <div class="popover__title">Turkey</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiTurkey</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoTurkey</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="turkey_pin" style="left: 40.3%;top: 68.8%;">
+                        <div class="pin__svg" name="turkey_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="turkey" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="turkey_copy">
+                                    <div class="popover__title">Turkey</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiTurkey</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoTurkey</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="ukraine_pin" style="left: 40.3%;top: 60.8%;">
-                    <div class="pin__svg" name="ukraine_pin" continent="eu"><img src="/img/map_dot.png" alt="Ukraine">
-                    </div>
-                    <div class="pin__popover" id="ukraine" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="ukraine_copy">
-                                <div class="popover__title">Ukraine</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiUkraine</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUkraine</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="ukraine_pin" style="left: 40.3%;top: 60.8%;">
+                        <div class="pin__svg" name="ukraine_pin" continent="eu"><img src="/img/map_dot.png"
+                                                                                     alt="Ukraine">
+                        </div>
+                        <div class="pin__popover" id="ukraine" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="ukraine_copy">
+                                    <div class="popover__title">Ukraine</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiUkraine</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUkraine</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="pin" id="uk_pin" style="left: 33%;top: 56.8%;">
-                    <div class="pin__svg" name="uk_pin" continent="eu"><img src="/img/map_dot.png"></div>
-                    <div class="pin__popover" id="uk" style="top: -64.6406px; left: 100%; margin-left: 2px;">
-                        <div class="popover">
-                            <div class="popover__copy" id="uk_copy">
-                                <div class="popover__title">United Kingdom</div>
-                                <div class="popover__body">
-                                    <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiUK</span></a>
-                                    <a href="#" target="_blank"><span
-                                            class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUK</span></a>
-                                    <div class="pep-languages__close2"></div>
+                    <div class="pin" id="uk_pin" style="left: 33%;top: 56.8%;">
+                        <div class="pin__svg" name="uk_pin" continent="eu"><img src="/img/map_dot.png"></div>
+                        <div class="pin__popover" id="uk" style="top: -64.6406px; left: 100%; margin-left: 2px;">
+                            <div class="popover">
+                                <div class="popover__copy" id="uk_copy">
+                                    <div class="popover__title">United Kingdom</div>
+                                    <div class="popover__body">
+                                        <a href="#" target="_blank"><span class="undr">>&nbsp;&nbsp;&nbsp;pepsiUK</span></a>
+                                        <a href="#" target="_blank"><span
+                                                class="undr">>&nbsp;&nbsp;&nbsp;pepsiCoUK</span></a>
+                                        <div class="pep-languages__close2"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div> <!--pep_language_list_right-->
+                </div> <!--pep_language_list_right-->
+            </div>
         </div><!--pep_languages_list1-->
         <div class="pep_languages_list2">
             <div class="pep-languages-list pep-languages-list--europe">
@@ -633,13 +652,14 @@
         </div>
 
         <div class="container" id="menu_container">
+            <!-- first menu-->
             <ul id="cbp-tm-menu" class="cbp-tm-menu">
                 <li class="rido_show"><a href="#" class="rido_title" name="rido_menu1">About</a>
-
-                    <!-- 1st third menu -->
+                    <!-- second menu-->
                     <ul class="cbp-tm-submenu" id="rido_menu1">
-                        <li class="rido_subtitle">
-                            <a class="rido_third" name="rido_third1" data-target="" href="#rido_third1">Diversity & engagement<span class="menu_close_icon"></span></a>
+                        <li class="rido_subtitle"><a class="rido_third" name="rido_third1" data-target=""
+                                                     href="#rido_third1">Diversity & engagement<span class="menu_close_icon"></span></a>
+                            <!-- (1st) third menu -->
                             <ul class="cbp-tm-submenu rido_third_ul" id="rido_third1">
                                 <li class="rido_subtitle"><a href="#">EQUALITY</a></li>
                                 <li class="rido_subtitle"><a href="#">WOMEN LEADERS</a></li>
@@ -658,9 +678,9 @@
 
                 <li class="rido_show"><a href="#" class="rido_title" name="rido_menu2">Sustainability</a>
                     <ul class="cbp-tm-submenu" id="rido_menu2">
-                        <!-- 2nd third menu -->
-                        <li class="rido_subtitle">
-                            <a class="rido_third" name="rido_third2" data-target="" href="#rido_third2">Performance with purpose<span class="menu_close_icon"></span></a>
+                        <li class="rido_subtitle"><a class="rido_third" name="rido_third2" data-target=""
+                                                     href="#rido_third2">Performance with purpose<span class="menu_close_icon"></span></a>
+                            <!-- (2nd) third menu -->
                             <ul class="cbp-tm-submenu rido_third_ul" id="rido_third2">
                                 <li class="rido_subtitle"><a href="#">OUR GOALS</a></li>
                                 <li class="rido_subtitle"><a href="#">PRODUCTS</a></li>
@@ -670,9 +690,9 @@
                         </li>
                         <li class="rido_subtitle"><a href="#" class="">Sustainability reporting</a></li>
                         <li class="rido_subtitle"><a href="#" class="">Philanthropy</a></li>
-                        <!--3rd third menu-->
-                        <li class="rido_subtitle">
-                            <a class="rido_third" name="rido_third3" data-target="" href="#rido_third3">Policies & perspectives<span class="menu_close_icon"></span></a>
+                        <li class="rido_subtitle"><a class="rido_third" name="rido_third3" data-target=""
+                                                     href="#rido_third3">Policies & perspectives<span class="menu_close_icon"></span></a>
+                            <!-- (3rd) third menu-->
                             <ul class="cbp-tm-submenu rido_third_ul" id="rido_third3">
                                 <li class="rido_subtitle"><a href="#">POSITIVE WATER IMPACT</a></li>
                                 <li class="rido_subtitle"><a href="#">CLIMATE CHANGE & CARBON EMISSIONS</a></li>
@@ -711,8 +731,9 @@
                         <li class="rido_subtitle"><a href="#">Investor contacts</a></li>
                         <li class="rido_subtitle"><a href="#">SEC filings</a></li>
                         <li class="rido_subtitle"><a href="#">Stock index</a></li>
-                        <!-- 4th third menu -->
-                        <li class="rido_subtitle"><a class="rido_third" name="rido_third4" data-target="" href="#rido_third4">For shareholder<span class="menu_close_icon"></span></a>
+                        <li class="rido_subtitle"><a class="rido_third" name="rido_third4" data-target=""
+                                                     href="#rido_third4">For shareholder<span class="menu_close_icon"></span></a>
+                            <!-- (4th) third menu -->
                             <ul class="cbp-tm-submenu rido_third_ul" id="rido_third4">
                                 <li class="rido_subtitle"><a href="#">FAQS</a></li>
                                 <li class="rido_subtitle"><a href="#">ELECTRONIC</a></li>
@@ -723,58 +744,46 @@
                     </ul>
                 </li>
                 <li class="rido_show"><a href="#" class="rido_title" name="rido_menu6">contact</a>
-                </li>
+                </li><!-- menu end -->
 
-
-                <!-- ------------ search bar ----------------------------------- -->
-                <li>
+                <!-- search bar start -->
+                <li class="search_li">
                     <div class="pep-nav__utility">
                         <div class="pep-nav__utility-item utility--search" id="pep-nav__utility--search">
                             <span class="pep-nav__utility__close" id="pep-nav__utility__search-close"></span>
                             <form action="#" id="pep-nav__utility__search-form">
                                 <input type="submit" class="pep-nav__utility-item-icon" value="">
                                 <span class="pep-nav__utility-item-icon" id="white_glass">
-
-
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.65 186.65"><defs><style>.cls-1 {
-                                    fill: #fff;
-                                }</style></defs><title>Asset 1</title>
-                                    <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
-                                    <rect class="cls-1" x="146.02" y="120.29" width="22.46" height="73.91" rx="11.23"
-                                          ry="11.23" transform="translate(-65.13 157.25) rotate(-45)"/>
-                                    <path class="cls-1"
-                                          d="M20.17,20.17a68.86,68.86,0,1,0,97.39,0A68.86,68.86,0,0,0,20.17,20.17Zm83.12,83.12a48.69,48.69,0,1,1,0-68.86A48.69,48.69,0,0,1,103.29,103.29Z"/>
-                                    <path class="cls-1"
-                                          d="M39.86,77.78A35.83,35.83,0,0,1,93.07,46.45a32.89,32.89,0,0,0-52.16,40A35.89,35.89,0,0,1,39.86,77.78Z"/></g></g>
-                                </svg>
-
-                            </span>
-                                <input class="pep-nav__utility--search__input" id="pep-nav__utility--search__input"
-                                       name="search-string" type="text" placeholder="Search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.65 186.65"><defs>
+                                        <style>.cls-1 { fill: #fff;  }</style></defs><title>Asset 1</title>
+                                        <g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
+                                        <rect class="cls-1" x="146.02" y="120.29" width="22.46" height="73.91" rx="11.23"
+                                              ry="11.23" transform="translate(-65.13 157.25) rotate(-45)"/>
+                                        <path class="cls-1" d="M20.17,20.17a68.86,68.86,0,1,0,97.39,0A68.86,68.86,0,0,0,20.17,20.17Zm83.12,83.12a48.69,48.69,0,1,1,0-68.86A48.69,48.69,0,0,1,103.29,103.29Z"/>
+                                        <path class="cls-1" d="M39.86,77.78A35.83,35.83,0,0,1,93.07,46.45a32.89,32.89,0,0,0-52.16,40A35.89,35.89,0,0,1,39.86,77.78Z"/></g></g>
+                                    </svg>
+                                 </span>
+                                <input class="pep-nav__utility--search__input" id="pep-nav__utility--search__input" name="search-string" type="text" placeholder="Search">
                             </form>
                         </div>
                     </div>
-                </li>
+                </li><!-- search bar end -->
 
-
-                <!-- -----------------------search bar end------------------------ -->
                 <li id="social">
                     <ul class="social-media-icons">
                         <li><a class="facebook" href="#"></a></li>
                         <li><a class="twitter" href="#"></a></li>
-                        <li><a class="linkedIn" href="www.google.com"></a></li>
+                        <li><a class="linkedIn" href="#"></a></li>
                         <li><a class="pinterest" href="#"></a></li>
                         <li><a class="instagram" href="#"></a></li>
                     </ul>
                 </li>
             </ul>
-        </div><a class="mobile_menu" title="Menu" href="#"></a>
+        </div>
+        <a class="mobile_menu" title="Menu" href="#"></a>
         <!--<a class="mobile_search" title="Menu" href="#"></a>-->
         <a class="mobile_close" title="Menu" href="#"></a>
-
-
     </div><!-- hero -->
-
 
     <!-------------------------------- navigation, menu --------------------------------------->
 

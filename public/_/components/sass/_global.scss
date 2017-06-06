@@ -24,7 +24,7 @@
 
 .pep-languages.open {
   //top:100%;
-  max-height: 88%;
+  max-height: calc(100% - 100px);
 
   -webkit-transition: 0.7s ease max-height;
   -moz-transition: 0.7s ease max-height;
@@ -36,7 +36,7 @@
 .container {
   position: relative;
   display: block;
-  width: 90%;
+  max-width: 90%;
   height: inherit;
   margin-left: auto;
   margin-right: auto;
@@ -108,10 +108,17 @@
     float: right;
     width: 50%;
     height: 300px;
+
+    .pep-container-map {
+      max-width: 100%;
+      position: relative;
+      //max-height: 300px;
+    }
+
     .pep-languages__image {
-      width: 490px;
-      height: 300px;
-      margin: 36px 0 50px 0;
+      max-width: 100%;
+      //max-height: 300px;
+      //margin: 36px 0 50px 0;
       //background-image: url(/img/MAP.png);
       background-size: contain;
       background: no-repeat right top;
@@ -241,11 +248,11 @@
   .pep_language_list_left {
     overflow: visible;
     display: block;
+
     position: absolute;
     width: 100% !important;
     float: left;
     margin-right: 0
-
   }
   .pep_language_list_right {
     position: relative;
