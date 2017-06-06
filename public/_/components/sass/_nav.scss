@@ -1,5 +1,4 @@
 // TODO: adjust margin/padding of sub check the submenu's margin/padding and fix it as a 0
-// TODO: search width
 // TODO: submenu, set first one left ... overflow: visible $(this).width(), .css()
 header {
   position: relative;
@@ -9,7 +8,7 @@ header {
 }
 
 .mobile_mask {
-  position: absolute;
+  position: fixed;
   display: block;
   width: 100vw;
   height: 100vh;
@@ -67,6 +66,14 @@ header {
   }
 }
 
+#white_glass {
+  width: 22px;
+  height: 22px;
+  top: 8px;
+  z-index: 3;
+}
+
+
 .search_li {
   top: 5px;
   margin-right: 0 !important;
@@ -90,54 +97,7 @@ header {
   display: none;
 }
 
-.social-media-icons {
-  position: relative;
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  height: 77px;
-  float: left;
-  font-size: 12px;
-  opacity: 0;
-  li {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    background: url(../img/mobile/menu_social.png) no-repeat 0 0;
-    background-size: contain;
-    align-content: center;
 
-    a {
-      width: 40px;
-      height: 40px;
-      display: block;
-      float: left;
-      padding-right: 30px;
-    }
-    a.facebook {
-      background-color: blue;
-      position: relative;
-    }
-    a.twitter {
-      position: relative;
-      background-color: peachpuff;
-      left: 65px;
-      cursor: pointer;
-    }
-    a.linkedIn {
-      background: red;
-      position: relative;
-      left: 131px;
-    }
-    a.pintrest {
-      background-position: 300px 72px;
-    }
-    a.instagram {
-      background-position: 350px 72px;
-    }
-  }
-}
 
 //search bar > svg wrapper
 .pep-nav__utility-item-icon {
@@ -289,7 +249,7 @@ header {
 .cbp-tm-menu {
   display: block;
   position: relative;
-  padding: 0 2em;
+  padding: 0;
   margin: 0;
   font-size: 1.2em;
   text-align: center;
@@ -671,16 +631,16 @@ header {
     opacity: 1;
     display: inline-block;
   }
-  .social-media-icons {
-    padding: 0px 45px;
-    opacity: 1;
-    li {
-      opacity: 1;
-      a {
-        opacity: 1;
-      }
-    }
-  }
+  // .social-media-icons {
+  //   padding: 0px 45px;
+  //   opacity: 1;
+  //   li {
+  //     opacity: 1;
+  //     a {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
   .rido_title {
     //font-size: 30px;
     color: #414141;
@@ -926,6 +886,75 @@ header {
     position: relative;
     height: auto;
     background: #f0f0f0;
+  }
+  
+  #menu_container {
+    max-width: 100%;
+  }
+  // hide the search, what is the design for it
+  .search_li {
+    display: none;
+  }
+  #social {
+    border-top: 0;
+  }
+  .cbp-tm-menu>li:last-child {
+    padding-right: 0;
+  }
+  .social-media-icons {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 80%;
+    max-width: 390px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45px;
+    font-size: 12px;
+    opacity: 1;
+    background: url(../img/mobile/menu_social.png) no-repeat center 0;
+    background-size: 90% auto;
+    li {
+      width: 18%;
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      margin-left: 1%;
+      margin-right: 1%;
+      position: relative;
+      border-top: 0;
+      a {
+        width: 100%;
+        display: block;
+        height: 45px;
+        cursor: pointer;
+        // background-color: silver;
+      }
+      a.facebook {
+        // background-color: blue;
+      }
+      a.twitter {
+        // background-color: peachpuff;
+      }
+      a.linkedIn {
+        // background: red;
+      }
+      a.pinterest {
+      }
+      a.instagram {
+      }
+    }
+  }
+  
+  #search_li {
+    display: none;
+  }
+
+  .cbp-tm-submenu {
+    padding-left: 10px !important;
+    left: 0 !important;
   }
 
 }
