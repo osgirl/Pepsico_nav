@@ -1,5 +1,5 @@
 
-/*default.css : move to the base ---------------------------------*/
+/* default.css ---------------------------------*/
 
 *,
 *:after,
@@ -37,8 +37,9 @@ a {
 }
 
 .container {
-  ///*height: 100%;
+  height: 200px;
   position: relative;
+
   header {
     position: relative;
     display: block;

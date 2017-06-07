@@ -65,7 +65,7 @@ header {
 }
 
 .pep-nav__utility-item.utility--search {
-  top: 2px;
+  top: 18px;
   right: 87px;
   &:active {
     background-color: white;
@@ -228,10 +228,16 @@ header {
 .cbp-tm-menu, .cbp-tm-menu ul {
   list-style: none;
 }
-
+.container{
+  height: 200px;
+}
 /* set menu position; change here to set to relative or float, etc. */
 .cbp-tm-menu {
-  display: block;
+  //display: block;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
   position: relative;
   padding: 0;
   margin: 0;
@@ -259,7 +265,10 @@ header {
   line-height: 4em;
   padding: 0 0.3em;
   font-size: 1.2em;
-  display: block;
+  //display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   opacity: 1;
   &:hover {
     -webkit-transition: all 0.2s;
@@ -318,7 +327,6 @@ header {
 
 .cbp-tm-show-below .cbp-tm-submenu {
   top: 80%;
-  padding-top: 5px;
   opacity: .9;
 }
 
@@ -356,42 +364,82 @@ header {
 
 // submenu(2nd) padding, starting point, arrow position
 #rido_menu1 {
-  padding: 6px 150px;
-  left: -120px;
+  max-width: 95vw;
+  //left: -82%;
+  left: -7em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  //padding: 6px 70%;
+  //padding: 6px 150px;
   &:after {
-    left: 13%;
+    //left: 13%;
+    left: 10em;
   }
 }
 
 #rido_menu2 {
-  padding: 6px 270px;
-  left: -275px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  //left: -188%;
+  left: -15em;
+  //padding: 6px 70%;
+  //padding: 6px 270px;
   &:after {
-    left: 26%;
+    //left: 24%;
+    left: 18em;
+
   }
 }
 
 #rido_menu3 {
-  padding: 6px 550px;
-  left: -430px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  //left: -293%;
+  left: -24em;
+  //padding: 6px 550px;
   &:after {
-    left: 38%;
+    //left: 36%;
+    left: 27em;
+
   }
 }
 
 #rido_menu4 {
-  padding: 6px 300px;
-  left: -560px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  //padding: 6px 300px;
+  //left: -400%;
+  left: -32em;
   &:after {
-    left: 47%;
+    //left: 47%;
+    left: 35em;
+
   }
 }
 
 #rido_menu5 {
-  padding-left: 200px;
-  left: -700px;
+  max-width: 95vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  //padding-left: 200px;
+  //left: -509%;
+  left: -41em;
   &:after {
-    left: 58%;
+    //left: 59%;
+    left: 44em;
   }
 }
 
@@ -406,16 +454,28 @@ header {
 // third menu position control
 #rido_third1 {
   left: 0;
-  padding-left: 260px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
+#rido_third2 {
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 #rido_third3 {
   left: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #rido_third4 {
   left: 0;
-  padding-left: 460px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #rido_menu6:after {
@@ -512,20 +572,8 @@ header {
   }
 }
 
-@media screen and (max-width: 1060px) {
-
-  .cbp-tm-menu {
-    font-size: 98%;
-    padding: 0;
-
-    li {
-      width: 90px;
-    }
-  }
-}
-
-/* Media Queries */
-@media screen and (max-width: 1260px) {
+/* small screen */
+@media screen and (max-width: 1000px) {
   .cbp-tm-menu {
     font-size: 95%;
     padding: 0;
@@ -542,22 +590,25 @@ header {
     }
   }
   .cbp-tm-submenu {
-    width: 100vw;
-    max-width: 1200px;
+    //width: 100%;
+    max-width: 900px;
     li {
-      width: auto;
+      //width: auto;
     }
   }
   #rido_menu1 {
-    padding: 6px 100px;
-    left: -244px;
+    //max-width: 1000px;
+    //left: -231%;
+    //padding: 6px 100px;
+    //left: -244px;
     &:after {
       left: 23%;
     }
   }
   #rido_menu2 {
-    padding: 6px 238px;
-    left: -320px;
+    max-width: 1000px;
+    //padding: 6px 238px;
+    left: -231%;
     &:after {
       left: 30%;
     }
@@ -601,18 +652,10 @@ header {
     top: 0px;
     overflow: hidden;
   }
-
-
-
-
-
-
-
-
 }
 
-
-@media screen and (max-width: 1000px) {
+// mobile view
+@media screen and (max-width: 800px) {
   body {
     background: url(../img/mobile/mobile_background.png) no-repeat 0 0;
     background-size: cover;
@@ -651,7 +694,6 @@ header {
 
 
 
-
   .pep-nav__utility--search__input {
     width: 100%;
   }
@@ -667,16 +709,6 @@ header {
     opacity: 1;
     display: inline-block;
   }
-  // .social-media-icons {
-  //   padding: 0px 45px;
-  //   opacity: 1;
-  //   li {
-  //     opacity: 1;
-  //     a {
-  //       opacity: 1;
-  //     }
-  //   }
-  // }
   .rido_title {
     //font-size: 30px;
     color: #414141;
@@ -727,6 +759,7 @@ header {
       display: block;
       width: 100%;
       margin: 0;
+      //width: 100px;
       border-top: .1px solid #B1B1B1;
       overflow: hidden;
 
@@ -826,9 +859,9 @@ header {
   }
 
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
-    color: black;
-    opacity: .7;
-    font-weight:300;
+    //color: black;
+    //opacity: .7;
+    //font-weight:300;
   }
 
   .pep-nav__utility__close {
@@ -838,7 +871,9 @@ header {
   .cbp-tm-menu .cbp-tm-show-below {
     transition: all 1s;
   }
-
+  .cbp-tm-show-below .cbp-tm-submenu{
+    top:0;
+  }
   .cbp-tm-menu .cbp-tm-show .cbp-tm-submenu {
     display: block;
     content: "";
@@ -885,6 +920,14 @@ header {
     }
   }
 }
+
+
+
+
+
+
+
+
 
 // default @media, this overwrite the container
 @media screen and (max-width: 880px) {
