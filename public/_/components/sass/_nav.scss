@@ -28,13 +28,12 @@ header {
 .pep-nav__utility-item {
   position: absolute;
   display: block;
-  right:75px;
+  right: 75px;
   height: 40px;
   width: 40px;
   top: 0px;
   overflow: hidden;
 }
-
 
 .pep-nav__utility-item.utility--global {
   width: 110px;
@@ -181,14 +180,26 @@ header {
 
 .mobile_menu {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   top: 50px;
-  right: 20px;
+  left: 55px;
   margin-left: -16px;
   background: url(../img/mobile/BURGER.png) no-repeat 0 0;
   background-size: contain;
   display: none;
+}
+.mobile_close {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 50px;
+  left: 55px;
+  margin-left: -16px;
+  background: url(../img/mobile/mobile_x.png) no-repeat 0 0;
+  background-size: contain;
+  display: block;
+  opacity: 0;
 }
 
 .mobile_search {
@@ -203,26 +214,17 @@ header {
   display: none;
 }
 
-.mobile_close {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: 48px;
-  left: 47px;
-  margin-left: -16px;
-  background: url(../img/mobile/mobile_x.png) no-repeat 0 0;
-  background-size: contain;
-  display: block;
-  opacity: 0;
-}
+
 
 /* reset  list style */
 .cbp-tm-menu, .cbp-tm-menu ul {
   list-style: none;
 }
-.container{
+
+.container {
   height: 200px;
 }
+
 /* set menu position; change here to set to relative or float, etc. */
 .cbp-tm-menu {
   //display: block;
@@ -250,6 +252,7 @@ header {
     padding-right: 100px;
   }
 }
+
 .cbp-tm-menu > li.search_li {
   width: 100px;
   margin-top: 7px;
@@ -282,6 +285,7 @@ header {
 #menu_container.container {
   min-width: 100%;
 }
+
 .cbp-tm-menu {
   max-width: 1200px;
   margin-left: auto;
@@ -293,7 +297,7 @@ header {
   position: absolute;
   display: block;
   width: 100%;
-  padding: 6px 100px;
+  padding: 6px 0;
   visibility: hidden;
   opacity: 0;
   font-size: .9em;
@@ -359,6 +363,7 @@ header {
 .rido_title {
   position: relative;
 }
+
 .rido_title:after {
   position: absolute;
   width: 0;
@@ -376,131 +381,25 @@ header {
   // transform: scale(0.01);
   transform-origin: bottom;
 }
+
 .rido_title:last-child:after {
   display: none;
 }
+
 .is-open .rido_title:after {
   opacity: 1;
   // bottom: 18px;
   // transform: scale(1);
   transition: all 350ms ease-in;
   // transition-delay: bottom 50ms;
-  border-bottom-color: rgba(252,252,252,1);
+  border-bottom-color: rgba(252, 252, 252, 1);
 }
-
-// submenu(2nd) padding, starting point, arrow position
-// #rido_menu1 {
-//   max-width: 95vw;
-//   //left: -82%;
-//   left: -7em;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   //padding: 6px 70%;
-//   //padding: 6px 150px;
-//   &:after {
-//     //left: 13%;
-//     left: 10em;
-//   }
-// }
-
-// #rido_menu2 {
-//   max-width: 95vw;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   //left: -188%;
-//   left: -15em;
-//   //padding: 6px 70%;
-//   //padding: 6px 270px;
-//   &:after {
-//     //left: 24%;
-//     left: 18em;
-
-//   }
-// }
-
-// #rido_menu3 {
-//   max-width: 95vw;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   //left: -293%;
-//   left: -24em;
-//   //padding: 6px 550px;
-//   &:after {
-//     //left: 36%;
-//     left: 27em;
-
-//   }
-// }
-
-// #rido_menu4 {
-//   max-width: 95vw;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   //padding: 6px 300px;
-//   //left: -400%;
-//   left: -32em;
-//   &:after {
-//     //left: 47%;
-//     left: 35em;
-
-//   }
-// }
-
-// #rido_menu5 {
-//   max-width: 95vw;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-
-//   //padding-left: 200px;
-//   //left: -509%;
-//   left: -41em;
-//   &:after {
-//     //left: 59%;
-//     left: 44em;
-//   }
-// }
 
 .rido_subtitle {
   margin: 5px 8px 5px 10px;
   line-height: 18px;
   text-transform: uppercase;
 }
-
-// third menu position control
-// #rido_third1 {
-//   left: 0;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// }
-// #rido_third2 {
-//   left: 0;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// }
-// #rido_third3 {
-//   left: 0;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// }
-
-// #rido_third4 {
-//   left: 0;
-//   display: flex;
-//   justify-content: center;
-//   flex-wrap: wrap;
-// }
 
 #rido_menu6:after {
   left: 71%;
@@ -512,8 +411,8 @@ header {
 }
 
 .cbp-tm-submenu.rido_third_ul {
-  top: 100%;;
-  font-size: 15px;
+  top: 100%;
+  font-size: 16px;
   &:after {
     display: none;
   }
@@ -530,11 +429,14 @@ header {
     font-size: .9em;
     font-weight: 400;
     color: #797575;
-
+    opacity: 1;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
     z-index: 10;
+  }
+  &:hover{
+    color: white;
 
   }
 }
@@ -542,7 +444,7 @@ header {
 .no-touch .cbp-tm-submenu > li > a:hover,
 .no-touch .cbp-tm-submenu > li > a:active {
   //color: black;
-  color: dodgerblue;
+  opacity: .7;
 
 }
 
@@ -562,6 +464,7 @@ header {
   background: transparent;
   opacity: 0 !important;
 }
+
 .rido_third_ul-active {
   display: block;
   height: 400px;
@@ -574,18 +477,18 @@ header {
 //mobile
 .menu_close_icon {
   position: relative;
-  top: 2px !important;;
+  top: -1px !important;
   display: inline-block;
   background-size: cover;
   height: 10px;
   width: 10px;
   padding-right: 20px;
-  background: url(../img/close_menu1.png) no-repeat 5px 0px;
+  background: url(../img/dots.png) no-repeat 5px 0px;
 }
 
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
   li a {
-    font-size: 1em;
+    font-size: .9em;
     font-weight: 300;
 
     color: white;
@@ -596,13 +499,49 @@ header {
   }
 }
 
+
+
+@media screen and (max-width: 900px) {
+
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
+    font-size: .7em;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+  .cbp-tm-submenu li a{
+    font-size: .7em;
+  }
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
+    font-size: .65em;
+  }
+  .menu_close_icon{
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cbp-tm-submenu li a{
+    font-size: .9em;
+  }
+  .menu_close_icon{
+    top: 1px !important;
+  }
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
+    font-size: .75em;
+  }
+}
+
+
+
 /* small screen */
 @media screen and (max-width: 1000px) {
   #menu_container {
     max-width: 100%;
   }
   .cbp-tm-menu {
-    font-size: 95%;
+    font-size: .9em;
     padding: 0;
 
     > li {
@@ -619,51 +558,10 @@ header {
   .rido_title:after {
     bottom: 14px;
   }
-  // .cbp-tm-submenu {
-  //   //width: 100%;
-  //   max-width: 900px;
-  //   li {
-  //     //width: auto;
-  //   }
-  // }
-  // #rido_menu1 {
-  //   //max-width: 1000px;
-  //   //left: -231%;
-  //   //padding: 6px 100px;
-  //   //left: -244px;
-  //   &:after {
-  //     left: 23%;
-  //   }
-  // }
-  // #rido_menu2 {
-  //   max-width: 1000px;
-  //   //padding: 6px 238px;
-  //   left: -231%;
-  //   &:after {
-  //     left: 30%;
-  //   }
-  // }
-  // #rido_menu3 {
-  //   padding: 6px 522px;
-  //   left: -440px;
-  //   &:after {
-  //     left: 39%;
-  //   }
-  // }
-  // #rido_menu4 {
-  //   padding: 6px 254px;
-  //   left: -538px;
-  //   &:after {
-  //     left: 47%;
-  //   }
-  // }
-  // #rido_menu5 {
-  //   padding: 6px 100px;
-  //   left: -646px;
-  //   &:after {
-  //     left: 56%;
-  //   }
-  // }
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a{
+    font-size: .65em;
+  }
+
   .pep-nav__utility {
     position: relative;
     display: block;
@@ -676,7 +574,7 @@ header {
   .pep-nav__utility-item {
     position: absolute;
     display: block;
-    right:200px;
+    right: 200px;
     height: 40px;
     width: 40px;
     top: 0px;
@@ -699,7 +597,16 @@ header {
   .mobile_menu, .mobile_list, .mobile_search {
     display: block;
   }
-
+  .menu_close_icon {
+    position: relative;
+    top: -1px !important;
+    display: inline-block;
+    background-size: cover;
+    height: 17px;
+    width: 10px;
+    margin-left: 10px;
+    background: url(../img/M_DOTS.png) no-repeat 5px 0px;
+  }
   .pep-nav__utility {
     position: relative;
     display: block;
@@ -712,16 +619,12 @@ header {
   .pep-nav__utility-item {
     position: absolute;
     display: block;
-    right:68px;
+    right: 68px;
     height: 40px;
     width: 40px;
     top: 0px;
     overflow: hidden;
   }
-
-
-
-
 
   .pep-nav__utility--search__input {
     width: 100%;
@@ -748,7 +651,6 @@ header {
     width: 100vw;
     line-height: 18px;
     font-weight: 300 !important;
-
     a {
       position: absolute;
       display: block;
@@ -756,8 +658,9 @@ header {
       color: #B1B1B1;
     }
   }
-
-
+  .cbp-tm-submenu li a{
+    font-size: 1em;
+  }
   #rido_menu1,
   #rido_menu2, #rido_menu3,
   #rido_menu4, #rido_menu5 {
@@ -770,19 +673,50 @@ header {
     width: 100vw;
     padding-left: 2em;
     top: 0;
-    font-size: 1em;
-  
+    font-size: 2em;
+
   }
+  .cbp-tm-menu {
+    font-size: .8em;}
+
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
     position: relative;
-    height: auto; 
+    height: auto;
     opacity: 1;
-    li 
-    {
+    li {
       a {
         color: #7c7c7c;
       }
     }
+  }
+  .pep-nav__utility-item.utility--global{
+    width: 190px;
+    height: 36px;
+    border: 1px solid transparent;
+    padding: 1px 0;
+    text-transform: uppercase;
+    font-size: .9em;
+    color: black;
+    //opacity: .7;
+    top: 130px;
+    left: 21px;
+  }
+  .pep-nav__utility-item-icon {
+    position: absolute;
+    //display: block;
+    display: none;
+    width: 30px;
+    height: 53px;
+    top: 5px;
+    right: 25px;
+    border: 0;
+    /* background-size: 19px 25px; */
+    background: transparent no-repeat;
+    color: black;
+    outline: 0;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 999;
   }
 
   //burger open
@@ -861,8 +795,9 @@ header {
         clear: both;
         // float: left;
         padding-left: 2em;
-        &:hover{
-          color: dodgerblue !important;
+        font-weight: 300 !important;
+        &:hover {
+          color: rgb(177, 177, 177);
         }
       }
     }
@@ -877,23 +812,6 @@ header {
     //transition: opacity 2s ease !important;
   }
 
-  .cbp-tm-show .cbp-tm-show-below {
-  }
-  // .cbp-tm-submenu.rido_third_ul {
-  //   display: none;
-  //   position: relative;
-  //   float: left;
-  //   height: 0;
-  //   background: transparent;
-  //   font-size: 20px;
-  //   opacity: 0 !important;
-  //   li a {
-  //     color: #B1B1B1;
-  //     padding-left: 0;
-  //     left: 0;
-
-  //   }
-  // }
   .rido_third_ul-active {
     display: block;
     height: auto;
@@ -901,7 +819,8 @@ header {
   }
 
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
-    //color: black;
+    padding-left: 3em;
+    font-size: .8em;
     //opacity: .7;
     //font-weight:300;
   }
@@ -913,8 +832,8 @@ header {
   .cbp-tm-menu .cbp-tm-show-below {
     transition: all 1s;
   }
-  .cbp-tm-show-below .cbp-tm-submenu{
-    top:0;
+  .cbp-tm-show-below .cbp-tm-submenu {
+    top: 0;
   }
   .cbp-tm-menu .cbp-tm-show .cbp-tm-submenu {
     display: block;
@@ -926,48 +845,7 @@ header {
     padding: 0;
     transition: all 0.7s ease;
   }
-  // #rido_menu1 {
-  //   padding-left: 65px;
-  //   left: -130px;
-  //   &:after {
-  //     left: 13%;
-  //   }
-  // }
-  // #rido_menu2 {
-  //   padding-left: 150px;
-  //   left: -200px;
-  //   &:after {
-  //     left: 26%;
-  //   }
-  // }
-  // #rido_menu3 {
-  //   padding-left: 320px;
-  //   left: -320px;
-  //   &:after {
-  //     left: 37%;
-  //   }
-  // }
-  // #rido_menu4 {
-  //   padding-left: 150px;
-  //   left: -490px;
-  //   &:after {
-  //     left: 47%;
-  //   }
-  // }
-  // #rido_menu5 {
-  //   padding-left: 100px;
-  //   left: -590px;
-  //   &:after {
-  //     left: 58%;
-  //   }
-  // }
 }
-
-
-
-
-
-
 
 // default @media, this overwrite the container
 @media screen and (max-width: 880px) {
@@ -1010,7 +888,7 @@ header {
   #social {
     border-top: 0;
   }
-  .cbp-tm-menu>li:last-child {
+  .cbp-tm-menu > li:last-child {
     padding-right: 0;
   }
   .social-media-icons {
@@ -1059,7 +937,7 @@ header {
       }
     }
   }
-  
+
   #search_li {
     display: none;
   }

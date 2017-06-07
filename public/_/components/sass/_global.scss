@@ -55,8 +55,8 @@
   .global_sites_title {
     width: 50%;
     div {
-      margin-bottom: 0;
-      font-size: 1em;
+      margin-bottom: 3px;
+      font-size: 1.5em;
     }
     span {
       display: inline-block;
@@ -111,7 +111,7 @@
     .pep-container-map {
       max-width: 100%;
       position: relative;
-      //max-height: 300px;
+      margin-top:16px;
     }
 
     .pep-languages__image {
@@ -184,6 +184,7 @@
   height: 1.5rem;
   line-height: 1rem;
   cursor: pointer;
+  font-family: Cabin;
   &:hover {
     color: #0080b9;
   }
@@ -286,7 +287,6 @@
       opacity: 0;
     }
   }
-
 }
 
 

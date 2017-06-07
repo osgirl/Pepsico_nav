@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: compass.
 
 1: @import "compass";
 2: @import "compass/reset";
-3:  @import "susyone";
+3:  // @import "susyone";
 4: 
 5: @import "variables";
 6: @import "mixins";
@@ -53,4 +53,4 @@ style.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A         on line 1 of style.scss\A \A 1: @import \"compass\";\A 2: @import \"compass/reset\";\A 3:  @import \"susyone\";\A 4: \A 5: @import \"variables\";\A 6: @import \"mixins\";"; }
+  content: "Error: File to import not found or unreadable: compass.\A         on line 1 of style.scss\A \A 1: @import \"compass\";\A 2: @import \"compass/reset\";\A 3:  // @import \"susyone\";\A 4: \A 5: @import \"variables\";\A 6: @import \"mixins\";"; }
