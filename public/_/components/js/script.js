@@ -115,11 +115,11 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			Timelines['search'].set(_this.primaryNav, {display: 'none'});
 
 			//width of the search bar
-			if($(window).width() < 1200) {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 635, ease: Power0.easeOut});
+			if($(window).width() < 1000) {
+				Timelines['search'].to(_this.searchContainer, 0.3, {width: 625, ease: Power0.easeOut});
 			}
 			else {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 920, ease: Power0.easeOut});
+				Timelines['search'].to(_this.searchContainer, 0.3, {width: 910, ease: Power0.easeOut});
 			}
 			Timelines['search'].set(_this.searchInput, {display: 'block'});
 
