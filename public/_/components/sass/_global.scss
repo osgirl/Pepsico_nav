@@ -40,14 +40,11 @@
   height: inherit;
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .pep-languages__container {
   margin: 50px 150px 10px 150px;
   color: dimgray;
-  //width: 70%;
-  //height: 80%;
 }
 
 .global_sites_header {
@@ -94,8 +91,8 @@
   float: left;
   width: 100%;
   height: 30%;
-
   font-weight: 300;
+
   .pep_language_list_left {
     display: inline-block;
     float: left;
@@ -184,7 +181,7 @@
   height: 1.5rem;
   line-height: 1rem;
   cursor: pointer;
-  font-family: Cabin;
+  font-family: Cabin, serif;
   &:hover {
     color: #0080b9;
   }
@@ -214,9 +211,7 @@
 @media screen and (max-width: 760px) {
 
   .pep-languages.open {
-    //top:100%;
     max-height: 100%;
-
   }
   .global_sites_title {
     width: 100% !important;

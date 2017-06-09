@@ -1,5 +1,3 @@
-// TODO: adjust margin/padding of sub check the submenu's margin/padding and fix it as a 0
-// TODO: submenu, set first one left ... overflow: visible $(this).width(), .css()
 header {
   position: relative;
   display: block;
@@ -31,7 +29,7 @@ header {
   right: 75px;
   height: 40px;
   width: 40px;
-  top: 0px;
+  top: 0;
   overflow: hidden;
 }
 
@@ -55,7 +53,6 @@ header {
   right: 50px;
   &:active {
     background-color: white;
-
   }
 }
 
@@ -90,7 +87,6 @@ header {
   outline: 0;
   cursor: pointer;
   z-index: 999;
-  //mask: url(../img/search_m.svg);
   #globalsite {
     color: white;
     opacity: 1;
@@ -165,7 +161,6 @@ header {
   height: 2vh;
 }
 
-// list click -> open -> image appear!
 .mobile_list {
   position: absolute;
   width: 25px;
@@ -214,8 +209,6 @@ header {
   display: none;
 }
 
-
-
 /* reset  list style */
 .cbp-tm-menu, .cbp-tm-menu ul {
   list-style: none;
@@ -242,7 +235,7 @@ header {
   text-transform: uppercase;
 }
 
-///* first level menu items */
+/* first level menu items */
 .cbp-tm-menu > li {
   display: inline-block;
   position: static;
@@ -261,14 +254,13 @@ header {
 
 //menu control
 .cbp-tm-menu > li > a {
-  //margin-top: -80px;
-  line-height: 4em;
-  padding: 0 0.3em;
-  font-size: 1.2em;
-  //display: block;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  line-height: 4em;
+  padding: 0 0.3em;
+  font-size: 1.2em;
+
   opacity: 1;
   &:hover {
     -webkit-transition: all 0.2s;
@@ -277,7 +269,6 @@ header {
 
 .no-touch .cbp-tm-menu > li > a:hover,
 .no-touch .cbp-tm-menu > li > a:active {
-  /*transform: scale(1.2);*/
   font-weight: 300;
   color: white;
 }
@@ -316,8 +307,6 @@ header {
   background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00fcfcfc', GradientType=1);
-  //justify-content: center;
-  //left: 0;
 }
 
 .cbp-tm-submenu .cbp-tm-submenu {
@@ -374,12 +363,11 @@ header {
   margin-left: -8px;
   content: " ";
   pointer-events: none;
-  z-index: 0 !important;
   transition: all 50ms ease-in;
-  transition-delay: 0;
+  transition-delay: 0s;
   opacity: 0;
-  // transform: scale(0.01);
   transform-origin: bottom;
+  z-index: 0 !important;
 }
 
 .rido_title:last-child:after {
@@ -388,11 +376,8 @@ header {
 
 .is-open .rido_title:after {
   opacity: 1;
-  // bottom: 18px;
-  // transform: scale(1);
   transition: all 350ms ease-in;
-  // transition-delay: bottom 50ms;
-  border-bottom-color: rgba(252, 252, 252, 1);
+  border-bottom-color: rgba(252, 252, 252, .8);
 }
 
 .rido_subtitle {
@@ -437,7 +422,6 @@ header {
   }
   &:hover{
     color: white;
-
   }
 }
 
@@ -445,7 +429,6 @@ header {
 .no-touch .cbp-tm-submenu > li > a:active {
   //color: black;
   opacity: .7;
-
 }
 
 .cbp-tm-submenu li a:before {
@@ -477,13 +460,14 @@ header {
 //mobile
 .menu_close_icon {
   position: relative;
-  top: -1px !important;
+  top: 0px !important;
   display: inline-block;
   background-size: cover;
-  height: 10px;
+  height: 13px;
   width: 10px;
   padding-right: 20px;
-  background: url(../img/dots.png) no-repeat 5px 0px;
+  background: url(../img/M_DOTS.png) no-repeat 5px 0px;
+  background-size: contain;
 }
 
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
@@ -499,28 +483,7 @@ header {
   }
 }
 
-
-
-@media screen and (max-width: 900px) {
-
-  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
-    font-size: .7em;
-  }
-
-}
-
-@media screen and (max-width: 1000px) {
-  .cbp-tm-submenu li a{
-    font-size: .7em;
-  }
-  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
-    font-size: .65em;
-  }
-  .menu_close_icon{
-
-  }
-}
-
+// menu font control
 @media screen and (max-width: 1200px) {
   .cbp-tm-submenu li a{
     font-size: .9em;
@@ -533,9 +496,26 @@ header {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
+    font-size: .7em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cbp-tm-submenu li a{
+    font-size: .7em;
+  }
+  .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
+    font-size: .65em;
+  }
+  .menu_close_icon{
+    height: 8px !important;;
+  }
+}
 
 
-/* small screen */
+/* tablet screen */
 @media screen and (max-width: 1000px) {
   #menu_container {
     max-width: 100%;
@@ -579,6 +559,9 @@ header {
     width: 40px;
     top: 0px;
     overflow: hidden;
+  }
+  .menu_close_icon {
+    height: 13px;
   }
 }
 
@@ -634,18 +617,14 @@ header {
     float: left;
     width: 100% !important;
   }
-  #pep-nav__utility--search {
-  }
   #social {
     height: 77px;
     opacity: 1;
     display: inline-block;
   }
   .rido_title {
-    //font-size: 30px;
     color: #414141;
   }
-
   .rido_subtitle {
     display: inline-block;
     width: 100vw;
@@ -674,10 +653,10 @@ header {
     padding-left: 2em;
     top: 0;
     font-size: 2em;
-
   }
   .cbp-tm-menu {
-    font-size: .8em;}
+    font-size: .8em;
+  }
 
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
     position: relative;
@@ -697,20 +676,17 @@ header {
     text-transform: uppercase;
     font-size: .9em;
     color: black;
-    //opacity: .7;
     top: 130px;
     left: 21px;
   }
   .pep-nav__utility-item-icon {
     position: absolute;
-    //display: block;
     display: none;
     width: 30px;
     height: 53px;
     top: 5px;
     right: 25px;
     border: 0;
-    /* background-size: 19px 25px; */
     background: transparent no-repeat;
     color: black;
     outline: 0;
@@ -735,7 +711,6 @@ header {
       display: block;
       width: 100%;
       margin: 0;
-      //width: 100px;
       border-top: .1px solid #B1B1B1;
       overflow: hidden;
 
@@ -752,9 +727,6 @@ header {
         font-size: 2em;
         color: black;
         opacity: .7;
-      }
-      &:first-child {
-        //border-top: 1px solid #3793ca;
       }
     }
   }
@@ -774,7 +746,6 @@ header {
     position: relative;
     display: none;
     float: left;
-
     left: 0;
     width: 100vw;
     height: 0;
@@ -809,7 +780,7 @@ header {
     display: block;
     opacity: 1;
     height: auto;
-    //transition: opacity 2s ease !important;
+    //transition: opacity 2s ease;
   }
 
   .rido_third_ul-active {
@@ -821,8 +792,6 @@ header {
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
     padding-left: 3em;
     font-size: .8em;
-    //opacity: .7;
-    //font-weight:300;
   }
 
   .pep-nav__utility__close {
@@ -920,20 +889,6 @@ header {
         display: block;
         height: 45px;
         cursor: pointer;
-        // background-color: silver;
-      }
-      a.facebook {
-        // background-color: blue;
-      }
-      a.twitter {
-        // background-color: peachpuff;
-      }
-      a.linkedIn {
-        // background: red;
-      }
-      a.pinterest {
-      }
-      a.instagram {
       }
     }
   }

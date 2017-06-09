@@ -111,22 +111,20 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		function createTimelineSearch(){
 			Timelines['search'].clear();
 			Timelines['search'].addCallback(_this.setToggleState);
-			Timelines['search'].to(_this.primaryNav, 0.3, {opacity: 0});
-			Timelines['search'].set(_this.primaryNav, {display: 'none'});
+			Timelines['search'].to(_this.primaryNav, 0.3, {opacity: 0},'-.2');
+			Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.1');
 
 			//width of the search bar
 			if($(window).width() < 1000) {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 625, ease: Power0.easeOut});
+				Timelines['search'].to(_this.searchContainer, 0.3, {width: 625, ease: Power0.easeIn});
 			}
 			else {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 910, ease: Power0.easeOut});
+				Timelines['search'].to(_this.searchContainer, 0.3, {width: 910, ease: Power0.easeIn});
 			}
 			Timelines['search'].set(_this.searchInput, {display: 'block'});
-
 			Timelines['search'].to(_this.whiteglass, 0.2, {fill: "gray"});
-			Timelines['search'].to(_this.searchBoard, 0.1, {background: 'white'}, '-.5');
-
-			Timelines['search'].set(_this.searchClose, {display: 'block'});
+			Timelines['search'].to(_this.searchBoard, 0.1, {background: 'white'},'+.2');
+			Timelines['search'].set(_this.searchClose, {display: 'block'},'+.2');
 			Timelines['search'].to(_this.searchClose, 0.3, {opacity: 1});
 			Timelines['search'].addCallback(_this.searchInputFocus);
 			Timelines['search'].restart();
@@ -284,8 +282,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.globalClose.on('click', this.toggleMobileMenu);
 	};
 
-
-	//base.scss starts from 460
 	var Map = function Map() {
 		var _this4 = this;
 		this.mapToggleState = false;
@@ -397,7 +393,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.mobile_x = $('.mobile_close');
 		this.mobile_mask = $('.mobile_mask');
 
-		// TODO: hover on mobile is click
 		// this.mobileList.on('click', function (e, explicit) {
 		//     $('.cbp-tm-submenu').removeAttr('style');
 		// });
@@ -438,22 +433,16 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				_this5.mobilelToggleState = false;
 			}
 		};
-
-
 		this.mobile_burger_btn.on('click', this.toggleMobileMenu);
 		this.mobile_x.on('click', this.toggleMobileMenu);
-
 	};
 
 	$(window).on('load', function () {
-		
-
 		var SEARCH = new Search();
 		var SOCIAL = new Social();
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
-
 		var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
 	});
 })();

@@ -56,13 +56,16 @@
             Array.prototype.slice.call(this.menuItems).forEach(function (el, i) {
                 var trigger = el.querySelector('a');
                 if (self.touch) {
-                    trigger.addEventListener('click', function (ev) {
-                        self._handleClick(this, ev);
+                    // click
+                    trigger.addEventListener('mouseover', function (ev) {
+                        //handleclick
+                        self.isMouseLeaveOrEnter(this, ev);
                     });
                 }
                 else {
                     if(trigger){
-                        trigger.addEventListener('click', function (ev) {
+                        //click
+                        trigger.addEventListener('mouseover', function (ev) {
                             // if it's a link with a submenu
                             if (this.classList.contains('rido_title')) {
                                 // click on a title link with an other submenu
