@@ -70,7 +70,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 (function () {
 
-
 	var Timelines = [];
 
 	var Search = function Search() {
@@ -91,11 +90,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.thirdNav_ul = $('.rido_third_ul');
 		this.firstNav = $('.rido_title'); // About
 
-
 		function getSearchFieldWidth()  {
 			return ($('.cbp-tm-menu li').width() * $('.cbp-tm-menu > li:visible').length);
 		}
-
 		// this.search_size = getSearchFieldWidth();
 
 		this.searchInputFocus = function () {
@@ -111,8 +108,8 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		function createTimelineSearch(){
 			Timelines['search'].clear();
 			Timelines['search'].addCallback(_this.setToggleState);
-            Timelines['search'].to(_this.primaryNav, 0.3, {opacity: 0},'-.2');
-            Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.1');
+			Timelines['search'].to(_this.primaryNav, 0, {opacity: 0});
+			Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.1');
 
 			//width of the search bar
 			if($(window).width() < 1000) {
@@ -122,20 +119,21 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				Timelines['search'].to(_this.searchContainer, 0.3, {width: 910, ease: Power0.easeIn});
 			}
 			Timelines['search'].set(_this.searchInput, {display: 'block'});
-            Timelines['search'].to(_this.whiteglass, 0.2, {fill: "gray"});
-            Timelines['search'].to(_this.searchBoard, 0.1, {background: 'white'},'+.2');
-            Timelines['search'].set(_this.searchClose, {display: 'block'},'+.2');
-            Timelines['search'].to(_this.searchClose, 0.3, {opacity: 1});
-            Timelines['search'].addCallback(_this.searchInputFocus);
-            Timelines['search'].restart();
+			Timelines['search'].to(_this.whiteglass, 0.2, {fill: "gray"});
+			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'});
+			Timelines['search'].set(_this.searchClose, {display: 'block'},'+.2');
+			Timelines['search'].to(_this.searchClose, 0, {opacity: 1});
+			Timelines['search'].addCallback(_this.searchInputFocus);
+			Timelines['search'].restart();
 			// Timelines['search'].play();
+
 		}
 
 		// on rezise, close the serach bar
 		$(window).smartresize(function(){
 			Timelines['search'].tweenTo(0).duration(0.8);
-			// Timelines['search'].to(_this.whiteglass, 0.1, {fill: "white"});
-		});
+        	Timelines['search'].to(_this.whiteglass, 0.1, {fill: "white"});
+	    });
 
 		this.toggleSearchInput = function (e, explicit) {
 			_this.search_size = getSearchFieldWidth();
@@ -158,8 +156,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			} else {
 				//search bar transition time
 				Timelines['search'].tweenTo(0).duration(0.8);
-                // Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
-                // Timelines['search'].to(_this.searchBoard, 0, {background: 'transparent'});
+				Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
 				this.searchToggleState = false;
 			}
 		};
@@ -342,8 +339,11 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 			// rest of pins unclickable by css, .pin__svg--active
 			$(pinId).toggleClass('pin__popover--active');
-			$('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
-			$(copy).toggleClass('popover__copy--active');
+			// $('.pin .pin__svg').css('display', 'block');
+            $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
+            // $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
+
+            $(copy).toggleClass('popover__copy--active');
 		};
 
 		this.ListPinToggle = function (e, explicit) {

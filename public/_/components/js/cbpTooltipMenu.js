@@ -66,6 +66,7 @@
                     if(trigger){
                         //click
                         trigger.addEventListener('mouseover', function (ev) {
+
                             // if it's a link with a submenu
                             if (this.classList.contains('rido_title')) {
                                 // click on a title link with an other submenu
@@ -101,14 +102,14 @@
                                     console.log('===  cbpTooltipMenu.js [submenu click] ===');
                                     // submenu 
                                     if(this.parentNode.classList.contains('rido_subtitle')) {
-                                        console.log('===  cbpTooltipMenu.js [subtitle] ===');
+                                        // console.log('===  cbpTooltipMenu.js [subtitle] ===');
                                     }
                                     // ev.preventDefault();
                                 }
                             }
 
                             if(this.parentNode.classList.contains('rido_subtitle')) {
-                                console.log('===  cbpTooltipMenu.js [109] ===');
+                                // console.log('===  cbpTooltipMenu.js [109] ===');
                             }
 
                             else {

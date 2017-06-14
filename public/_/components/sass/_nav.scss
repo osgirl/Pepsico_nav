@@ -44,7 +44,8 @@ header {
   span {
     width: inherit;
     height: inherit;
-    margin: -4px -43px 0 0;
+    width: 71px;
+    margin: 0 -5px;
   }
 }
 
@@ -110,7 +111,7 @@ header {
 
 #pep-nav__utility__search-form {
   height: 50px;
-  // transition: 70ms ease;
+   //transition: 50ms ease;
 }
 
 .pep-nav__utility--search__input {
@@ -173,7 +174,7 @@ header {
   position: absolute;
   width: 22px;
   height: 22px;
-  top: 50px;
+  top: 37px;
   left: 55px;
   margin-left: -16px;
   background: url(../img/mobile/BURGER.png) no-repeat 0 0;
@@ -184,7 +185,7 @@ header {
   position: absolute;
   width: 22px;
   height: 22px;
-  top: 50px;
+  top: 37px;
   left: 55px;
   margin-left: -16px;
   background: url(../img/mobile/mobile_x.png) no-repeat 0 0;
@@ -244,7 +245,7 @@ header {
 
 .cbp-tm-menu > li.search_li {
   width: 100px;
-  margin-top: 7px;
+  margin-top: -28px;
   margin-right: 0 !important;
 }
 
@@ -253,7 +254,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  line-height: 4em;
+  line-height: 1em;
   padding: 0 0.3em;
   font-size: 1.2em;
 
@@ -277,6 +278,7 @@ header {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 33px;
 }
 
 /* submenu with transitions */
@@ -322,7 +324,7 @@ header {
 }
 
 .cbp-tm-show-below .cbp-tm-submenu {
-  top: 80%;
+  top: 150%;
   opacity: .9;
 }
 
@@ -354,7 +356,7 @@ header {
   width: 0;
   height: 0;
   left: 50%;
-  bottom: 18px;
+  bottom: -13px;
   border: 8px solid transparent;
   margin-left: -8px;
   content: " ";
@@ -380,6 +382,7 @@ header {
   margin: 5px 8px 5px 10px;
   line-height: 18px;
   text-transform: uppercase;
+
 }
 
 #rido_menu6:after {
@@ -469,23 +472,53 @@ header {
 .cbp-tm-submenu.rido_third_ul.rido_third_ul-active {
   li a {
     font-size: .9em;
-    font-weight: 300;
-
+    font-weight: normal;
     color: white;
     opacity: 1;
+    float: left;
+    left: -275px;
     &:hover {
       opacity: .7;
     }
   }
 }
 
+
+#rido_third2 li a{
+  float: left;
+  left: -170px;
+}
+#rido_third4 li a{
+  float: left;
+  left: 342px;
+}
+
+
+.pep-nav__utility-item.utility--career{
+  float: right;
+  display: block;
+  padding: 4px 22px;
+  border: 1px solid white;
+  margin-right: 140px;
+  color: white;
+  width: 86px;
+  height: 35px;
+  font-family: Oswald,serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: .7;
+  a:hover{
+    color: white;
+  }
+}
 // menu font control
 @media screen and (max-width: 1200px) {
   .cbp-tm-submenu li a{
     font-size: .9em;
   }
   .menu_close_icon{
-    top: 1px !important;
+    //top: 1px !important;
   }
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a {
     font-size: .75em;
@@ -506,7 +539,7 @@ header {
     font-size: .65em;
   }
   .menu_close_icon{
-    height: 8px !important;;
+    //height: 20px !important;;
   }
 }
 
@@ -526,13 +559,14 @@ header {
   }
   .cbp-tm-menu > li.search_li {
     width: 80px;
+    display: none;
     .pep-nav__utility-item.utility--search {
       top: 8px;
       right: 30px;
     }
   }
   .rido_title:after {
-    bottom: 14px;
+    bottom: -10px;
   }
   .cbp-tm-submenu.rido_third_ul.rido_third_ul-active li a{
     font-size: .65em;
@@ -556,8 +590,8 @@ header {
     top: 0px;
     overflow: hidden;
   }
-  .menu_close_icon {
-    height: 13px;
+  .search_li{
+    display: none;
   }
 }
 
@@ -578,13 +612,13 @@ header {
   }
   .menu_close_icon {
     position: relative;
-    top: -1px !important;
+    //top: -1px !important;
     display: inline-block;
-    background-size: cover;
-    height: 17px;
-    width: 10px;
-    margin-left: 10px;
+    height: 23px;
+    width: 16px;
+    margin-left: 3px;
     background: url(../img/M_DOTS.png) no-repeat 5px 0px;
+    background-size: contain;
   }
   .pep-nav__utility {
     position: relative;
@@ -604,7 +638,9 @@ header {
     top: 0px;
     overflow: hidden;
   }
-
+  .pep-nav__utility-item.utility--career{
+    display: none;
+  }
   .pep-nav__utility--search__input {
     width: 100%;
   }
@@ -665,16 +701,26 @@ header {
     }
   }
   .pep-nav__utility-item.utility--global{
-    width: 190px;
-    height: 36px;
-    border: 1px solid transparent;
-    padding: 1px 0;
-    text-transform: uppercase;
-    font-size: .9em;
-    color: black;
-    top: 130px;
-    left: 21px;
+       width: 190px;
+       height: 36px;
+       border: 1px solid transparent;
+       padding: 1px 0;
+       text-transform: uppercase;
+       font-size: .9em;
+       color: black;
+       top: 130px;
+       left: 21px;
+     }
+
+  .pep-nav__utility-item.utility--career{
+    display: none;
+    float: right;
+    padding: 5px 35px;
+    border: 1px solid white;
+    margin-right: 210px;
+    color: white;
   }
+
   .pep-nav__utility-item-icon {
     position: absolute;
     display: none;
@@ -730,6 +776,9 @@ header {
   //menu title control
   .cbp-tm-menu.open {
     opacity: 1;
+  }
+  #rido_third2 li a, #rido_third4 li a, #rido_third1 li a{
+    left: 0;
   }
 
   li.cbp-tm-show > a,
@@ -810,6 +859,24 @@ header {
     padding: 0;
     transition: all 0.7s ease;
   }
+  .search_li .pep-nav__utility{
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 // default @media, this overwrite the container
@@ -868,7 +935,7 @@ header {
     font-size: 12px;
     opacity: 1;
     background: url(../img/mobile/menu_social.png) no-repeat center 0;
-    background-size: 90% auto;
+    background-size: 100% auto;
     li {
       width: 18%;
       display: block;
