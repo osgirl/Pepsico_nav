@@ -153,6 +153,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
 				this.searchToggleState = false;
 			}
+
+			// in case the nav is open hide secondary 
+			$('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
 		};
 
 
@@ -192,7 +195,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 		this.toggleBtn.on('click', this.toggleSearchInput);
 		this.searchForm.on('submit', this.disableForm);
-		this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);

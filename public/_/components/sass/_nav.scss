@@ -743,6 +743,30 @@ header.main {
 	}
 	.rido_title {
 		color: #414141;
+		&:after {
+			position: absolute;
+			right: 25px;
+			top: 50%;
+			margin-top: -7px;
+			content: "";
+			display: block;
+			width: 21px;
+			height: 14px;
+			border: 0;
+			opacity: 1;
+			left: auto;
+			background-image: url(../img/mobile_submenu_indicator.png);
+			background-size: 21px 14px;
+			transform: scaleY(-1);
+			transform-origin: 50%
+		}
+	}
+	.is-open {
+		.rido_title {
+			&:after {
+				transform: scaleY(1);
+			}
+		}
 	}
 	.rido_subtitle {
 		display: inline-block;
@@ -1046,9 +1070,7 @@ header.main {
 		height: auto;
 		background: #f0f0f0;
 	}
-	.rido_title:after {
-		display: none;
-	}
+	
 	#menu_container {
 		max-width: 100%;
 		height: 0;
