@@ -585,9 +585,9 @@ header.main {
 	}
 	.cbp-tm-menu > li.search_li {
 		width: 80px;
-		display: none;
+		// display: none;
 		.pep-nav__utility-item.utility--search {
-			top: 8px;
+			top: 0;
 			right: 30px;
 		}
 	}
