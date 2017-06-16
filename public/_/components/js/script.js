@@ -86,9 +86,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.primaryNav = $('#pep-nav__primary');
 		this.searchForm = $('#pep-nav__utility__search-form');
 		// nav
+		this.firstNav = $('.rido_title'); // About
 		this.thirdNav = $('.rido_third');
 		this.thirdNav_ul = $('.rido_third_ul');
-		this.firstNav = $('.rido_title'); // About
 
 		function getSearchFieldWidth()  {
 			return ($('.cbp-tm-menu li').width() * $('.cbp-tm-menu > li:visible').length);
@@ -117,25 +117,25 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
 			}
 
-            Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.9');
-            Timelines['search'].set(_this.searchInput, {display: 'block'},'-.9');
-            Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.9');
+			Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.9');
+			Timelines['search'].set(_this.searchInput, {display: 'block'},'-.9');
+			Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.9');
 			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'});
 			Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.9');
 			Timelines['search'].to(_this.searchClose, 0, {opacity: 1});
 			Timelines['search'].addCallback(_this.searchInputFocus);
 			Timelines['search'].restart();
-            // Timelines['search'].to(_this.searchBoard, 0, {background: 'transparent'}, '-.9');
+			// Timelines['search'].to(_this.searchBoard, 0, {background: 'transparent'}, '-.9');
 
-            Timelines['search'].play();
+			Timelines['search'].play();
 
 		}
 
 		// on rezise, close the serach bar
 		$(window).smartresize(function(){
 			Timelines['search'].tweenTo(0).duration(0.5);
-        	Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
-	    });
+			Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
+		});
 
 		this.toggleSearchInput = function (e, explicit) {
 			_this.search_size = getSearchFieldWidth();
@@ -161,28 +161,32 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 
 		this.firstToggle = function (e, explicit) {
+			console.log('===  script.js [164] ===');
 			//this = .rido_title
-			e.preventDefault();
+			// e.preventDefault();
 			var parent_id = $(this).attr("href");// veggie_sbumenu1
 			var a_name = $(this).attr("name");// veggie_sbumenu1
 
 			$('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
 			$('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
+			
 			if( $('.cbp-tm-submenu').attr('id') !== a_name ){
 				$('.rido_third_ul-active').removeClass('rido_third_ul-active');
 			}
 			$('.rido_third_ul-active').toggleClass('rido_third_ul');// close third
-			$('cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
+			$('.cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
 		};
 
 
 		this.thirdToggle = function (e, explicit) {
-			e.preventDefault();// this = .rido_third, active= 1
+			alert('third');
+			// e.preventDefault();// this = .rido_third, active= 1
 
 			var thirdNavId = $(this).attr("href"); // #veggie_third1
 			var parent_id = $(this).attr("name");
 
 			$(thirdNavId).toggleClass('rido_third_ul-active');
+console.log('===  script.js [186] ===', thirdNavId);
 			$('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
 		};
 
@@ -198,6 +202,10 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);
 
+		$('.rido_third').on('click', function(){
+			alert('fgggg');f
+		})
+		console.log('=== $().length script.js [204] ===', $('.rido_third').length);
 	};
 
 
@@ -254,9 +262,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		};
 
 		Timelines['global'] = new TimelineMax({delay: 0}).pause();
-        Timelines['global'].clear();
+		Timelines['global'].clear();
 
-        Timelines['global'].addCallback(this.toggleOpenClass);
+		Timelines['global'].addCallback(this.toggleOpenClass);
 		Timelines['global'].to(this.languagesList, 0.4, {opacity: 1});
 
 		this.toggleMobileMenu = function (e, explicit) {
@@ -340,10 +348,10 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			// rest of pins unclickable by css, .pin__svg--active
 			$(pinId).toggleClass('pin__popover--active');
 			// $('.pin .pin__svg').css('display', 'block');
-            $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
-            // $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
+			$('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
+			// $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
 
-            $(copy).toggleClass('popover__copy--active');
+			$(copy).toggleClass('popover__copy--active');
 		};
 
 		this.ListPinToggle = function (e, explicit) {
@@ -393,10 +401,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.menu = $('#cbp-tm-menu');
 		this.mobile_x = $('.mobile_close');
 		this.mobile_mask = $('.mobile_mask');
-        this.career = $('.pep-nav__utility-item.utility--career');
-        this.global = $('#globalsite');
-
-
+		this.career = $('#career-btn');
+		this.global = $('#globalsite');
+		this.headerMain = $('header.main');
 
 		// this.mobileList.on('click', function (e, explicit) {
 		//     $('.cbp-tm-submenu').removeAttr('style');
@@ -414,14 +421,14 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			_this5.mobilelToggleState = !_this5.mobilelToggleState;
 		};
 
-		Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
-		Timelines['mobile1'].addCallback(this.toggleOpenClass);
-		Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: .95});
-        Timelines['mobile1'].to(this.global, 0, {display: 'block'});
-        Timelines['mobile1'].to(this.career, 0, {display: 'block'});
-		Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
-        Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
-        Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
+		// Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
+		// Timelines['mobile1'].addCallback(this.toggleOpenClass);
+		// Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: .95});
+  //       Timelines['mobile1'].to(this.global, 0, {display: 'block'});
+  //       Timelines['mobile1'].to(this.career, 0, {display: 'block'});
+		// Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
+  //       Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
+  //       Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
 
 		this.toggleMobileMenu = function (e, explicit) {
 			if (!_this5.mobilelToggleState && !explicit) {
@@ -433,16 +440,28 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				if (Timelines['social'].progress() !== 0) {
 					Timelines['social'].tweenTo(0).duration(0.25);
 				}
-				Timelines['mobile1'].play();
+				// Timelines['mobile1'].play();
+				// headerMain.addClass('mobileMenuOpen');
 				_this5.mobilelToggleState = true;
 			} else {
-				Timelines['mobile1'].reverse(0.4);
+				// Timelines['mobile1'].reverse(0.4);
+				// headerMain.removeClass('mobileMenuOpen');
 				_this5.mobilelToggleState = false;
 			}
+			_this5.headerMain.toggleClass('mobileMenuOpen');
 		};
 		this.mobile_burger_btn.on('click', this.toggleMobileMenu);
 		this.mobile_x.on('click', this.toggleMobileMenu);
 	};
+	
+	var Navigation = function Navigation() {
+		$('#menu_container > ul > li').on('mouseenter', function(){
+			if($(this).hasClass('rido_show'))
+			{
+
+			}
+		});
+	}
 
 	$(window).on('load', function () {
 		var SEARCH = new Search();
@@ -450,6 +469,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
-		var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
+		var MENU = new Navigation();
+		// var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
 	});
 })();

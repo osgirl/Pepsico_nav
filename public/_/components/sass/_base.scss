@@ -11,40 +11,6 @@ body {
   background-size: cover;
 }
 
-.hero_mask {
-  position: absolute;
-  height: 150px;
-  top: -124px;
-
-  opacity: .5;
-  z-index: -1;
-
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6000000', endColorstr='#00000000', GradientType=0);
-}
-
-#pepsico_logo {
-  display: block;
-  position: relative;
-  z-index: -1;
-  width: 50%;
-  max-width: 190px;
-  height: 35px;
-  margin: auto;
-}
-.hero {
-  margin: auto;
-  width: 100%;
-}
-
-.hero_1 {
-position: relative;
-display: inline-block;
-  width: 100%;
-  //margin-bottom: 18px;
-}
 
 footer {
   @include clearfix;
@@ -60,14 +26,12 @@ footer {
 }
 
 
-@media screen and (max-width: 760px) {
-
+@media screen and (max-width: 767px) {
   body {
     background-color: #D7D6D3;
-    //background: url("../img/mobile/mobile_background.png") no-repeat;
+    background: url(../img/mobile/mobile_background.png) no-repeat 0 0;
     background-size: cover;
   }
-
 }
 
 

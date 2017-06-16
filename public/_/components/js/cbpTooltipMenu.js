@@ -25,13 +25,14 @@
         return el.getBoundingClientRect();
     }
     function isMouseLeaveOrEnter(e, handler) {
-        // if( $(window).width() > 760 ) {
-        if (e.type != 'mouseout' && e.type != 'mouseover') return false;
-        var reltg = e.relatedTarget ? e.relatedTarget :
-            e.type == 'mouseout' ? e.toElement : e.fromElement;
-        while (reltg && reltg != handler) reltg = reltg.parentNode;
-        return (reltg != handler);
-         // }
+        // if( $(window).width() > 767 ) {
+            if (e.type != 'mouseout' && e.type != 'mouseover') return false;
+            
+            var reltg = e.relatedTarget ? e.relatedTarget :
+                e.type == 'mouseout' ? e.toElement : e.fromElement;
+            while (reltg && reltg != handler) reltg = reltg.parentNode;
+            return (reltg != handler);
+        // }
     }
 
     function cbpTooltipMenu(el, options) {
@@ -48,8 +49,9 @@
         _init: function () {
             this.touch = Modernizr.touch;
             this.menuItems = document.querySelectorAll('#' + this.el.id + ' > li');
-            // if( $(window).width() > 760 ) {
+            // if( $(window).width() > 767 ) {
             this._initEvents();
+            console.log('=== cbpTooltipMenu cbpTooltipMenu.js [54] ===');
             // }
         },
 
@@ -59,73 +61,71 @@
                 var trigger = el.querySelector('a');
                 if (self.touch) {
                     // click
-                    trigger.addEventListener('mouseover', function (ev) {
+                    trigger.addEventListener('click', function (ev) {
                         //handleclick
                         self.isMouseLeaveOrEnter(this, ev);
                     });
                 }
                 else {
-                    if(trigger){
-                        //click
-                        trigger.addEventListener('mouseover', function (ev) {
+                    
+                        if(trigger){
+                            //click
+                            trigger.addEventListener('mouseenter', function (ev) {
 
-                            // if it's a link with a submenu
-                            if (this.classList.contains('rido_title')) {
-                                // click on a title link with an other submenu
-                                if(this.parentNode.classList.contains('rido_show')) {
-                                    // if it has the class open, close the menu
-                                    if(this.parentNode.classList.contains('is-open')) {
-                                        // console.log('===  cbpTooltipMenu.js [close menu] ===');
-                                        self._closeMenu(this.parentNode);
-                                        this.parentNode.classList.remove('is-open');
+                                // if it's a link with a submenu
+                                if (this.classList.contains('rido_title')) {
+                                    // click on a title link with an other submenu
+                                    if(this.parentNode.classList.contains('rido_show')) {
+                                        // if it has the class open, close the menu
+                                        if(this.parentNode.classList.contains('is-open')) {
+                                            // console.log('===  cbpTooltipMenu.js [close menu] ===');
+                                            self._closeMenu(this.parentNode);
+                                            this.parentNode.classList.remove('is-open');
+                                        }
+                                        else {
+                                            // check if any other opened
+                                            var title = document.querySelectorAll(".is-open");
+                                            for (var i = title.length - 1; i >= 0; i--) {
+                                                // console.log('===  cbpTooltipMenu.js [71] ===', title);
+                                                self._closeMenu(title[i]);
+                                                title[i].classList.remove('is-open');
+                                            };
+
+                                            // remove all sub submenu open on level third if we close a level 1 or 2
+                                            var sub_title = document.querySelectorAll(".rido_third_ul-active");
+                                            for (var i = sub_title.length - 1; i >= 0; i--) {
+                                                sub_title[i].classList.remove('rido_third_ul-active');
+                                            };
+
+                                            // if it doens't have the class open, close the menu
+                                            // console.log('===  cbpTooltipMenu.js [open menu] ===');
+                                            self._openMenu(this.parentNode);
+                                            this.parentNode.classList.add('is-open');
+                                        }
                                     }
                                     else {
-                                        // check if any other opened
-                                        var title = document.querySelectorAll(".is-open");
-                                        for (var i = title.length - 1; i >= 0; i--) {
-                                            // console.log('===  cbpTooltipMenu.js [71] ===', title);
-                                            self._closeMenu(title[i]);
-                                            title[i].classList.remove('is-open');
-                                        };
-
-                                        // remove all sub submenu open on level third if we close a level 1 or 2
-                                        var sub_title = document.querySelectorAll(".rido_third_ul-active");
-                                        for (var i = sub_title.length - 1; i >= 0; i--) {
-                                            sub_title[i].classList.remove('rido_third_ul-active');
-                                        };
-
-                                        // if it doens't have the class open, close the menu
-                                        // console.log('===  cbpTooltipMenu.js [open menu] ===');
-                                        self._openMenu(this.parentNode);
-                                        this.parentNode.classList.add('is-open');
+                                        console.log('===  cbpTooltipMenu.js [submenu click] ===');
+                                        // submenu
+                                        if(this.parentNode.classList.contains('rido_subtitle')) {
+                                            // console.log('===  cbpTooltipMenu.js [subtitle] ===');
+                                        }
+                                        // ev.preventDefault();
                                     }
                                 }
-                                else {
-                                    console.log('===  cbpTooltipMenu.js [submenu click] ===');
-                                    // submenu
-                                    if(this.parentNode.classList.contains('rido_subtitle')) {
-                                        // console.log('===  cbpTooltipMenu.js [subtitle] ===');
-                                    }
-                                    // ev.preventDefault();
-                                }
-                            }
 
-                            if(this.parentNode.classList.contains('rido_subtitle')) {
-                                // console.log('===  cbpTooltipMenu.js [109] ===');
-                            }
+                            });
 
-                            else {
-                                // normal link, do nothing
-                            }
+                            trigger.addEventListener('mouseover', function (ev) {
 
-                        });
-                        // el.addEventListener('mouseenter', function (ev) {
-                        //     // if (isMouseLeaveOrEnter(ev, this)) self._openMenu(this);
-                        // });
-                        // el.addEventListener('mouseout', function (ev) {
-                        //     if (isMouseLeaveOrEnter(ev, this)) self._closeMenu(this);
-                        // });
-                    }
+                            });
+                            // el.addEventListener('mouseenter', function (ev) {
+                            //     // if (isMouseLeaveOrEnter(ev, this)) self._openMenu(this);
+                            // });
+                            // el.addEventListener('mouseout', function (ev) {
+                            //     if (isMouseLeaveOrEnter(ev, this)) self._closeMenu(this);
+                            // });
+                        }
+                    
                 }
             });
         },
