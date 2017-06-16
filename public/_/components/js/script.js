@@ -179,14 +179,12 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 
 		this.thirdToggle = function (e, explicit) {
-			alert('third');
-			// e.preventDefault();// this = .rido_third, active= 1
+			e.preventDefault();// this = .rido_third, active= 1	
 
 			var thirdNavId = $(this).attr("href"); // #veggie_third1
 			var parent_id = $(this).attr("name");
 
 			$(thirdNavId).toggleClass('rido_third_ul-active');
-console.log('===  script.js [186] ===', thirdNavId);
 			$('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
 		};
 
@@ -201,11 +199,15 @@ console.log('===  script.js [186] ===', thirdNavId);
 		this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);
-
-		$('.rido_third').on('click', function(){
-			alert('fgggg');f
-		})
-		console.log('=== $().length script.js [204] ===', $('.rido_third').length);
+		
+		if( $(window).width() > 767 ) {
+			this.firstNav.on('mouseenter', function() {
+				_this.firstToggle();
+			});
+			this.firstNav.on('mouseleave', function() {
+				_this.firstToggle();
+			});
+		}
 	};
 
 
