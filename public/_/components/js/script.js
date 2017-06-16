@@ -143,18 +143,21 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				if (Timelines['social'].progress() !== 0) {
 					Timelines['social'].reverse();
 				}
-				console.log('===  script.js [play timline] ===');
+				console.log('===  script.js [play timeline] ===');
 				createTimelineSearch();
-				this.searchToggleState = true;
+				_this.searchToggleState = true;
+				$('.cbp-tm-menu').addClass('forceHideNav');
 			} else {
 				//search bar transition time
 				Timelines['search'].tweenTo(0).duration(0.8);
 				Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
-				this.searchToggleState = false;
+				_this.searchToggleState = false;
+
+				// in case the nav is open hide secondary 
+				$('.cbp-tm-menu').removeClass('forceHideNav');
 			}
 
-			// in case the nav is open hide secondary 
-			$('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
+			
 		};
 
 		this.firstToggle = function (e, explicit) {

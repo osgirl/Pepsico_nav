@@ -273,6 +273,12 @@ header.main {
 	z-index: 1000;
 	text-transform: uppercase;
 }
+// force hide when the search is open
+.cbp-tm-menu.forceHideNav {
+	.cbp-tm-submenu.cbp-tm-submenu-active {
+		display: none;
+	}
+}
 
 /* first level menu items */
 .cbp-tm-menu > li {
@@ -422,7 +428,6 @@ header.main {
 	padding: 5px 8px 5px 10px;
 	line-height: 18px;
 	text-transform: uppercase;
-
 }
 
 #rido_menu6:after {
