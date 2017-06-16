@@ -1007,7 +1007,10 @@ header.main {
 			}
 		}
 	}
-	.cbp-tm-menu, .mobile_mask, .mobile_menu, .pep-nav__utility-item.utility--career, .pep-nav__utility-item.utility--global span {
+	.cbp-tm-menu, 
+	.mobile_mask, 
+	.mobile_menu
+	{
 		transition: opacity 300ms ease-in-out;
 	}
 	.mobile_mask {

@@ -207,7 +207,13 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		// won't work on windows resize
 		if( $(window).width() > 767 ) {
 			this.firstNav.on('mouseenter', function(e) {
-				$(this).trigger("click");
+
+				if($(this).parents('li').hasClass('is-open')) {
+					// if menu item already open do nothing on rollover
+				}
+				else {
+					$(this).trigger("click");
+				}
 			});
 			// $('header.main').on('mouseout', function(e) {
 				// $('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
