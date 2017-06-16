@@ -1,8 +1,9 @@
-header {
+header.main {
 	position: relative;
 	display: block;
 	width: 100vw;
 	height: auto;
+	padding-bottom: 90px; // safe area
 }
 
 .mobile_mask {
@@ -324,7 +325,7 @@ header {
 /* submenu with transitions */
 .cbp-tm-submenu {
 	position: absolute;
-	display: block;
+	display: none;
 	width: 100%;
 	padding: 6px 0;
 	// visibility: hidden;
@@ -345,7 +346,9 @@ header {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(252, 252, 252, 1) 10%, rgba(252, 252, 252, 1) 50%, rgba(255, 255, 255, 1) 90%, rgba(252, 252, 252, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#00fcfcfc', GradientType=1);
 }
-
+.cbp-tm-submenu.cbp-tm-submenu-active {
+	display: block;
+}
 .cbp-tm-submenu .cbp-tm-submenu {
 	background: none;
 }
@@ -395,30 +398,28 @@ header {
 	width: 0;
 	height: 0;
 	left: 50%;
-	bottom: -13px;
+	bottom: -15px;
 	border: 8px solid transparent;
 	margin-left: -8px;
 	content: " ";
 	pointer-events: none;
-	transition: all 50ms ease-in;
+	// transition: all 50ms ease-in;
 	transition-delay: 0s;
 	opacity: 0;
 	transform-origin: bottom;
 	z-index: 0 !important;
 }
-
+.is-open .rido_title:after {
+	opacity: 1;
+	// transition: all 350ms ease-in;
+	border-bottom-color: rgba(252, 252, 252, .9);
+}
 .rido_title:last-child:after {
 	display: none;
 }
 
-.is-open .rido_title:after {
-	opacity: 1;
-	transition: all 350ms ease-in;
-	border-bottom-color: rgba(252, 252, 252, .8);
-}
-
 .rido_subtitle {
-	margin: 5px 8px 5px 10px;
+	padding: 5px 8px 5px 10px;
 	line-height: 18px;
 	text-transform: uppercase;
 

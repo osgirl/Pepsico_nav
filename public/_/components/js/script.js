@@ -72,7 +72,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 	var Timelines = [];
 
-	var Search = function Search() {
+	var MainNavigationAndSearch = function MainNavigationAndSearch() {
 		var _this = this;
 		this.searchToggleState = false;
 
@@ -161,11 +161,14 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 
 		this.firstToggle = function (e, explicit) {
-			console.log('===  script.js [164] ===');
-			//this = .rido_title
-			// e.preventDefault();
 			var parent_id = $(this).attr("href");// veggie_sbumenu1
 			var a_name = $(this).attr("name");// veggie_sbumenu1
+
+			// DESKTOP
+			// reset all is open
+			$('#cbp-tm-menu > li').not($(this).parents('li')).removeClass('is-open cbp-tm-show cbp-tm-show-below');
+			$(this).parents('li').toggleClass('is-open cbp-tm-show cbp-tm-show-below');
+			
 
 			$('.cbp-tm-submenu').toggleClass('cbp-tm-submenu-active');
 			$('.cbp-tm-submenu-active[id!="' +a_name+ '"]').removeClass('cbp-tm-submenu-active');
@@ -192,21 +195,23 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			_this.searchForm.children('input').remove();
 		};
 
-
 		this.toggleBtn.on('click', this.toggleSearchInput);
 		this.searchForm.on('submit', this.disableForm);
 		this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);
-		
+
+		var self = this;
+
+		// won't work on windows resize
 		if( $(window).width() > 767 ) {
-			this.firstNav.on('mouseenter', function() {
-				_this.firstToggle();
+			this.firstNav.on('mouseenter', function(e) {
+				$(this).trigger("click");
 			});
-			this.firstNav.on('mouseleave', function() {
-				_this.firstToggle();
-			});
+			// $('header.main').on('mouseout', function(e) {
+				// $('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
+			// });
 		}
 	};
 
@@ -456,22 +461,22 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.mobile_x.on('click', this.toggleMobileMenu);
 	};
 	
-	var Navigation = function Navigation() {
-		$('#menu_container > ul > li').on('mouseenter', function(){
-			if($(this).hasClass('rido_show'))
-			{
+	// var Navigation = function Navigation() {
+	// 	$('#menu_container > ul > li').on('mouseenter', function(){
+	// 		if($(this).hasClass('rido_show'))
+	// 		{
 
-			}
-		});
-	}
+	// 		}
+	// 	});
+	// }
 
 	$(window).on('load', function () {
-		var SEARCH = new Search();
+		var SEARCH = new MainNavigationAndSearch();
 		var SOCIAL = new Social();
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
-		var MENU = new Navigation();
+		// var MENU = new Navigation();
 		// var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
 	});
 })();
