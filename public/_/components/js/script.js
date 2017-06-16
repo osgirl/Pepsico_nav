@@ -82,9 +82,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.searchClose = $('#pep-nav__utility__search-close');
 		this.searchBoard = $('#pep-nav__utility__search-form');
 		this.whiteglass = $('.cls-1');
+		this.whiteglassLeft = $('.search_li_left');
 		this.primaryNav = $('#pep-nav__primary');
 		this.searchForm = $('#pep-nav__utility__search-form');
-
 		// nav
 		this.thirdNav = $('.rido_third');
 		this.thirdNav_ul = $('.rido_third_ul');
@@ -101,38 +101,40 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.setToggleState = function () {
 			_this.searchToggleState = !_this.searchToggleState;
 		};
-
-
 		Timelines['search'] = new TimelineMax();
 		
 		function createTimelineSearch(){
 			Timelines['search'].clear();
 			Timelines['search'].addCallback(_this.setToggleState);
-			Timelines['search'].to(_this.primaryNav, 0, {opacity: 0});
-			Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.1');
+			Timelines['search'].to(_this.primaryNav, 0, {opacity: 0},'-.2');
+			Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.2');
 
 			//width of the search bar
 			if($(window).width() < 1000) {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 625, ease: Power0.easeIn});
+				Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.7');
 			}
 			else {
-				Timelines['search'].to(_this.searchContainer, 0.3, {width: 910, ease: Power0.easeIn});
+				Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
 			}
-			Timelines['search'].set(_this.searchInput, {display: 'block'});
-			Timelines['search'].to(_this.whiteglass, 0.2, {fill: "gray"});
+
+            Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.9');
+            Timelines['search'].set(_this.searchInput, {display: 'block'},'-.9');
+            Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.9');
 			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'});
-			Timelines['search'].set(_this.searchClose, {display: 'block'},'+.2');
+			Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.9');
 			Timelines['search'].to(_this.searchClose, 0, {opacity: 1});
 			Timelines['search'].addCallback(_this.searchInputFocus);
 			Timelines['search'].restart();
-			// Timelines['search'].play();
+            // Timelines['search'].to(_this.searchBoard, 0, {background: 'transparent'}, '-.9');
+
+            Timelines['search'].play();
 
 		}
 
 		// on rezise, close the serach bar
 		$(window).smartresize(function(){
-			Timelines['search'].tweenTo(0).duration(0.8);
-        	Timelines['search'].to(_this.whiteglass, 0.1, {fill: "white"});
+			Timelines['search'].tweenTo(0).duration(0.5);
+        	Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
 	    });
 
 		this.toggleSearchInput = function (e, explicit) {
@@ -147,11 +149,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				}
 
 				console.log('===  script.js [play timline] ===');
-				// createTimelineSearch();
-
 				createTimelineSearch();
-				
-
 				this.searchToggleState = true;
 			} else {
 				//search bar transition time
@@ -256,7 +254,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		};
 
 		Timelines['global'] = new TimelineMax({delay: 0}).pause();
-		Timelines['global'].addCallback(this.toggleOpenClass);
+        Timelines['global'].clear();
+
+        Timelines['global'].addCallback(this.toggleOpenClass);
 		Timelines['global'].to(this.languagesList, 0.4, {opacity: 1});
 
 		this.toggleMobileMenu = function (e, explicit) {
@@ -393,6 +393,10 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.menu = $('#cbp-tm-menu');
 		this.mobile_x = $('.mobile_close');
 		this.mobile_mask = $('.mobile_mask');
+        this.career = $('.pep-nav__utility-item.utility--career');
+        this.global = $('#globalsite');
+
+
 
 		// this.mobileList.on('click', function (e, explicit) {
 		//     $('.cbp-tm-submenu').removeAttr('style');
@@ -413,9 +417,11 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
 		Timelines['mobile1'].addCallback(this.toggleOpenClass);
 		Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: .95});
+        Timelines['mobile1'].to(this.global, 0, {display: 'block'});
+        Timelines['mobile1'].to(this.career, 0, {display: 'block'});
 		Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
-		Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
-		Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
+        Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
+        Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
 
 		this.toggleMobileMenu = function (e, explicit) {
 			if (!_this5.mobilelToggleState && !explicit) {
@@ -430,7 +436,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				Timelines['mobile1'].play();
 				_this5.mobilelToggleState = true;
 			} else {
-				Timelines['mobile1'].reverse(0.5);
+				Timelines['mobile1'].reverse(0.4);
 				_this5.mobilelToggleState = false;
 			}
 		};

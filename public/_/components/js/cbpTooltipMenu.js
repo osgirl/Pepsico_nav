@@ -25,11 +25,13 @@
         return el.getBoundingClientRect();
     }
     function isMouseLeaveOrEnter(e, handler) {
+        // if( $(window).width() > 760 ) {
         if (e.type != 'mouseout' && e.type != 'mouseover') return false;
         var reltg = e.relatedTarget ? e.relatedTarget :
             e.type == 'mouseout' ? e.toElement : e.fromElement;
         while (reltg && reltg != handler) reltg = reltg.parentNode;
         return (reltg != handler);
+         // }
     }
 
     function cbpTooltipMenu(el, options) {
@@ -46,13 +48,13 @@
         _init: function () {
             this.touch = Modernizr.touch;
             this.menuItems = document.querySelectorAll('#' + this.el.id + ' > li');
+            // if( $(window).width() > 760 ) {
             this._initEvents();
+            // }
         },
 
         _initEvents: function () {
-
             var self = this;
-
             Array.prototype.slice.call(this.menuItems).forEach(function (el, i) {
                 var trigger = el.querySelector('a');
                 if (self.touch) {
@@ -100,7 +102,7 @@
                                 }
                                 else {
                                     console.log('===  cbpTooltipMenu.js [submenu click] ===');
-                                    // submenu 
+                                    // submenu
                                     if(this.parentNode.classList.contains('rido_subtitle')) {
                                         // console.log('===  cbpTooltipMenu.js [subtitle] ===');
                                     }
@@ -150,13 +152,16 @@
         },
 
         _closeMenu: function (el) {
-
-            clearTimeout(this.omtimeout);
-            // var submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
-            var submenu = el.querySelector('ul.cbp-tm-submenu');
-            if (submenu) {
-                el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show" + "(\\s+|$)"), ' ');
-                el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show-below" + "(\\s+|$)"), ' ');
+            if( $(window).width() < 900 ) {
+                //fucking here!
+                console.log('window width cal');
+                clearTimeout(this.omtimeout);
+                // var submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
+                var submenu = el.querySelector('ul.cbp-tm-submenu');
+                if (submenu) {
+                    el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show" + "(\\s+|$)"), ' ');
+                    el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show-below" + "(\\s+|$)"), ' ');
+                }
             }
             // if (submenu_third) {
             //     // based on https://github.com/desandro/classie/blob/master/classie.js
@@ -170,12 +175,14 @@
             var item = el.parentNode,
                 items = Array.prototype.slice.call(this.menuItems),
                 submenu = item.querySelector('ul.cbp-tm-submenu');
-                // submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
+            // submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
+
+
             // first close any opened one..
-            if(typeof this.current !== 'undefined' && items.indexOf(item) !== this.current) {
+            if (typeof this.current !== 'undefined' && items.indexOf(item) !== this.current) {
                 this._closeMenu(this.el.children[this.current]);
                 this.el.children[this.current].querySelector('ul.cbp-tm-submenu').setAttribute('data-open', 'false');
-            }
+
 
             if (submenu) {
                 ev.preventDefault();
@@ -190,6 +197,7 @@
                     submenu.setAttribute('data-open', 'true');
                 }
             }
+        }
 
             // if (submenu_third) {
             //     ev.preventDefault();

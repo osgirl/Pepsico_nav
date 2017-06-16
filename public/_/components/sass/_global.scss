@@ -113,9 +113,6 @@
 
     .pep-languages__image {
       max-width: 100%;
-      //max-height: 300px;
-      //margin: 36px 0 50px 0;
-      //background-image: url(/img/MAP.png);
       background-size: contain;
       background: no-repeat right top;
     }
@@ -219,32 +216,39 @@
   .pep-languages__container {
     width: 100vw;
     height: 100vh;
-    margin: 0;
+    margin: 30px 25px;
     padding: 0;
     top: 0;
     left: 0;
     position: relative;
     display: block;
   }
-  .pep_language_list_right, .global_sites_title div {
-    opacity: 0;
-  }
+
   .pep_language_list_left {
     overflow: visible;
     display: block;
-
     position: absolute;
     width: 100% !important;
     float: left;
     margin-right: 0
   }
+  .pep-languages__close{
+    right: 20px;
+    top: 5px;
+
+  }
   .pep_language_list_right {
     position: relative;
-    display: block;
+    display: none;
     float: left;
     height: 0;
     width: 0;
-
+  }
+  .pep_language_list_right .pep-languages__image{
+    display: none;
+  }
+  .pep_language_list_right, .global_sites_title div {
+    display: none;
   }
   .pep-languages-list {
     width: 100% !important;
@@ -257,10 +261,6 @@
     display: block;
     height: 420px;
     width: 100%;
-  }
-  .pep_language_list_right, .pep-languages__image {
-    position: absolute;
-    width: 100% !important;
   }
   .pep_languages_list2 {
     position: relative;

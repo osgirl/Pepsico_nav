@@ -3,14 +3,10 @@
   width: 20px;
   opacity: 1;
   z-index: 3;
-
-  -webkit-transform: translate(-48%, -100%);
-  -moz-transform: translate(-48%, -100%);
-  -ms-transform: translate(-48%, -100%);
-  -o-transform: translate(-48%, -100%);
   transform: translate(-48%, -100%);
   .pin__svg {
     position: relative;
+    display: none;
     width: 100%;
     height: 100%;
     z-index: 3;
@@ -18,26 +14,10 @@
     cursor: pointer;
 
     transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-
     transform-origin: center bottom;
-    -webkit-transform-origin: center bottom;
-    -moz-transform-origin: center bottom;
-    -ms-transform-origin: center bottom;
-    -o-transform-origin: center bottom;
-
     transition: transform 150ms 150ms ease-in-out;
-    -webkit-transition: -webkit-transform 150ms 150ms ease-in-out;
-    -moz-transition: -moz-transform 150ms 150ms ease-in-out;
     img:hover {
       transform: scale(1.2);
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
     }
   }
 }
@@ -165,11 +145,6 @@
   left: 50%;
   width: 100px;
   cursor: pointer;
-
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -223,10 +198,6 @@
 
 @media (min-width: 360px) {
   .map {
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
     transform: translateX(-50%)
   }
 }
@@ -238,10 +209,6 @@
   .map {
     padding: 0 0 30px;
     left: 0;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
     transform: none;
   }
 }
@@ -266,6 +233,7 @@
     margin: 0 0 0 10px;
     width: 160px;
   }
+
   //disable the map
   .pin__svg {
     content: '';
