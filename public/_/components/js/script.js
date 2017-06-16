@@ -117,19 +117,16 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
 			}
 
-			Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.9');
-			Timelines['search'].set(_this.searchInput, {display: 'block'},'-.9');
-			Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.9');
-			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'});
-			Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.9');
-			Timelines['search'].to(_this.searchClose, 0, {opacity: 1});
+			Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.7');
+			Timelines['search'].set(_this.searchInput, {display: 'block'},'-.2');
+			Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.1');
+			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.2');
+			Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.2');
+			Timelines['search'].to(_this.searchClose, 0, {opacity: 1}, '-.2');
 			Timelines['search'].addCallback(_this.searchInputFocus);
 			Timelines['search'].restart();
-			// Timelines['search'].to(_this.searchBoard, 0, {background: 'transparent'}, '-.9');
-
-			Timelines['search'].play();
-
-		}
+            Timelines['search'].set(_this.whiteglass, {display: 'block'},'-.9');
+        }
 
 		// on rezise, close the serach bar
 		$(window).smartresize(function(){
@@ -179,7 +176,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			$('.rido_third_ul-active').toggleClass('rido_third_ul');// close third
 			$('.cbp-tm-show[id!="' + a_name + '"]').removeClass('cbp-tm-show'); // close second
 		};
-
 
 		this.thirdToggle = function (e, explicit) {
 			e.preventDefault();// this = .rido_third, active= 1	
@@ -275,6 +271,12 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		Timelines['global'].to(this.languagesList, 0.4, {opacity: 1});
 
 		this.toggleMobileMenu = function (e, explicit) {
+
+            //close opened pop up
+            $('.pin__popover').removeClass('pin__popover--active');
+            $('.popover__copy--active').removeClass('popover__copy--active');
+            $('.pin__svg--active').removeClass('pin__svg--active');
+
 			if (!_this3.mobilelToggleState && !explicit) {
 				e.preventDefault();
 
@@ -355,7 +357,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			// rest of pins unclickable by css, .pin__svg--active
 			$(pinId).toggleClass('pin__popover--active');
 			// $('.pin .pin__svg').css('display', 'block');
-			$('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
+			$('.pin__svg[name="' + parent_id + '"]').addClass('pin__svg--active');
 			// $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
 
 			$(copy).toggleClass('popover__copy--active');
@@ -377,7 +379,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			}
 
 			$(a).addClass('pin__popover--active');
-			$('.pin__svg[name!="' + a2 + '"]').addClass('pin__svg--active');
+			$('.pin__svg[name="' + a2 + '"]').addClass('pin__svg--active');
 			$(copy).addClass('popover__copy--active');
 		};
 		/*
@@ -385,8 +387,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		 */
 		this.ContinentToggle = function (e, explicit) {
 			var header_id = $(this).attr("id");
-			// console.log(header_id);
-
 			$('.pin__svg[continent*="' + header_id + '"]').show(1000);
 			$('.pin__svg[continent!="' + header_id + '"]').hide(1000);
 		};

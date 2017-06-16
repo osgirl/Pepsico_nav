@@ -5,12 +5,12 @@
   z-index: 3;
   transform: translate(-48%, -100%);
   .pin__svg {
-    position: relative;
-    display: none;
+    //position: relative;
+    display:none;
     width: 100%;
     height: 100%;
     z-index: 3;
-    opacity: 1;
+    //opacity: 1;
     cursor: pointer;
 
     transform: scale(1);
@@ -21,15 +21,14 @@
     }
   }
 }
-//disable
-.pin__svg--active {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  visibility: hidden;
+//able
+.pin__svg.pin__svg--active {
+  //position: absolute;
+  //left: 0;
+  //right: 0;
+  //top: 0;
+  //bottom: 0;
+  display: block;
   background: transparent;
   z-index: 1;
 

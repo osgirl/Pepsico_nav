@@ -152,9 +152,8 @@
         },
 
         _closeMenu: function (el) {
-            if( $(window).width() < 900 ) {
-                //fucking here!
-                console.log('window width cal');
+            //fucking here! hover only on larger screen
+            if( $(window).width() > 760 ) {
                 clearTimeout(this.omtimeout);
                 // var submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
                 var submenu = el.querySelector('ul.cbp-tm-submenu');
@@ -163,11 +162,6 @@
                     el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show-below" + "(\\s+|$)"), ' ');
                 }
             }
-            // if (submenu_third) {
-            //     // based on https://github.com/desandro/classie/blob/master/classie.js
-            //     el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show" + "(\\s+|$)"), ' ');
-            //     el.className = el.className.replace(new RegExp("(^|\\s+)" + "cbp-tm-show-below" + "(\\s+|$)"), ' ');
-            // }
         },
 
 
@@ -176,7 +170,6 @@
                 items = Array.prototype.slice.call(this.menuItems),
                 submenu = item.querySelector('ul.cbp-tm-submenu');
             // submenu_third = el.querySelector('ul.cbp-tm-submenu.rido_third_ul');
-
 
             // first close any opened one..
             if (typeof this.current !== 'undefined' && items.indexOf(item) !== this.current) {
