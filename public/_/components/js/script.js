@@ -111,16 +111,16 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
             //width of the search bar
             if($(window).width() < 1000) {
-                Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.7');
+                Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.9');
             }
             else {
-                Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
+                Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.9');
             }
 
-            Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.2');
-            Timelines['search'].set(_this.searchInput, {display: 'block'},'-.2');
+            Timelines['search'].set(_this.whiteglass, {display: 'none'});
+            Timelines['search'].set(_this.searchInput, {display: 'block'});
             Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.1');
-            Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.2');
+            Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.7');
             Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.2');
             Timelines['search'].to(_this.searchClose, 0, {opacity: 1}, '-.2');
             Timelines['search'].addCallback(_this.searchInputFocus);
@@ -143,7 +143,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				if (Timelines['social'].progress() !== 0) {
 					Timelines['social'].reverse();
 				}
-
 				console.log('===  script.js [play timline] ===');
 				createTimelineSearch();
 				this.searchToggleState = true;
@@ -157,7 +156,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			// in case the nav is open hide secondary 
 			$('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
 		};
-
 
 		this.firstToggle = function (e, explicit) {
 			var parent_id = $(this).attr("href");// veggie_sbumenu1
@@ -212,9 +210,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 					$(this).trigger("click");
 				}
 			});
-			// $('header.main').on('mouseout', function(e) {
-				// $('#cbp-tm-menu > li').removeClass('is-open cbp-tm-show cbp-tm-show-below');
-			// });
+
 		}
 	};
 
