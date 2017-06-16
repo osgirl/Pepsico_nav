@@ -304,6 +304,9 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 	};
 
 	var Map = function Map() {
+		console.log('Map function');
+
+
 		var _this4 = this;
 		this.mapToggleState = false;
 		this.countryListitem = $('.pep-languages-list__item');
