@@ -102,29 +102,29 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			_this.searchToggleState = !_this.searchToggleState;
 		};
 		Timelines['search'] = new TimelineMax();
-		
-		function createTimelineSearch(){
-			Timelines['search'].clear();
-			Timelines['search'].addCallback(_this.setToggleState);
-			Timelines['search'].to(_this.primaryNav, 0, {opacity: 0},'-.2');
-			Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.2');
 
-			//width of the search bar
-			if($(window).width() < 1000) {
-				Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.7');
-			}
-			else {
-				Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
-			}
+        function createTimelineSearch(){
+            Timelines['search'].clear();
+            Timelines['search'].addCallback(_this.setToggleState);
+            Timelines['search'].to(_this.primaryNav, 0, {opacity: 0},'-.2');
+            Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.2');
 
-			Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.7');
-			Timelines['search'].set(_this.searchInput, {display: 'block'},'-.2');
-			Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.1');
-			Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.2');
-			Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.2');
-			Timelines['search'].to(_this.searchClose, 0, {opacity: 1}, '-.2');
-			Timelines['search'].addCallback(_this.searchInputFocus);
-			Timelines['search'].restart();
+            //width of the search bar
+            if($(window).width() < 1000) {
+                Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.7');
+            }
+            else {
+                Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.7');
+            }
+
+            Timelines['search'].set(_this.whiteglass, {display: 'none'},'-.2');
+            Timelines['search'].set(_this.searchInput, {display: 'block'},'-.2');
+            Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.1');
+            Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.2');
+            Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.2');
+            Timelines['search'].to(_this.searchClose, 0, {opacity: 1}, '-.2');
+            Timelines['search'].addCallback(_this.searchInputFocus);
+            Timelines['search'].restart();
             Timelines['search'].set(_this.whiteglass, {display: 'block'},'-.9');
         }
 
