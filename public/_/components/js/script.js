@@ -137,7 +137,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.toggleSearchInput = function (e, explicit) {
 			_this.search_size = getSearchFieldWidth();
 
-
 			if (!_this.searchToggleState && !explicit) {
 				e.preventDefault();
 				
@@ -437,14 +436,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			_this5.mobilelToggleState = !_this5.mobilelToggleState;
 		};
 
-		// Timelines['mobile1'] = new TimelineMax({delay: 0}).pause();
-		// Timelines['mobile1'].addCallback(this.toggleOpenClass);
-		// Timelines['mobile1'].to(this.mobile_mask, 0.4, {opacity: .95});
-  //       Timelines['mobile1'].to(this.global, 0, {display: 'block'});
-  //       Timelines['mobile1'].to(this.career, 0, {display: 'block'});
-		// Timelines['mobile1'].to(this.mobileList, 0.4, {opacity: 1});
-  //       Timelines['mobile1'].to(this.mobile_x, 0.4, {opacity: 1});
-  //       Timelines['mobile1'].to(this.mobile_burger_btn, 0.4, {opacity: 0});
 
 		this.toggleMobileMenu = function (e, explicit) {
 			if (!_this5.mobilelToggleState && !explicit) {
@@ -456,12 +447,8 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				if (Timelines['social'].progress() !== 0) {
 					Timelines['social'].tweenTo(0).duration(0.25);
 				}
-				// Timelines['mobile1'].play();
-				// headerMain.addClass('mobileMenuOpen');
 				_this5.mobilelToggleState = true;
 			} else {
-				// Timelines['mobile1'].reverse(0.4);
-				// headerMain.removeClass('mobileMenuOpen');
 				_this5.mobilelToggleState = false;
 			}
 			_this5.headerMain.toggleClass('mobileMenuOpen');
@@ -470,14 +457,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.mobile_x.on('click', this.toggleMobileMenu);
 	};
 	
-	// var Navigation = function Navigation() {
-	// 	$('#menu_container > ul > li').on('mouseenter', function(){
-	// 		if($(this).hasClass('rido_show'))
-	// 		{
-
-	// 		}
-	// 	});
-	// }
 
 	$(window).on('load', function () {
 		var SEARCH = new MainNavigationAndSearch();
@@ -485,7 +464,5 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
-		// var MENU = new Navigation();
-		// var menu = new cbpTooltipMenu(document.getElementById('cbp-tm-menu'));
 	});
 })();
