@@ -93,7 +93,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		function getSearchFieldWidth()  {
 			return ($('.cbp-tm-menu li').width() * $('.cbp-tm-menu > li:visible').length);
 		}
-		// this.search_size = getSearchFieldWidth();
+		this.search_size = getSearchFieldWidth();
 
 		this.searchInputFocus = function () {
 			_this.searchInput.focus();
@@ -157,8 +157,28 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 				$('.cbp-tm-menu').removeClass('forceHideNav');
 			}
 
-			
 		};
+
+        // search toggle open
+        if($('#website_search').length> 0) {
+
+            $('.toggleOpenSearch').on('click', function(){
+                $('.searchform_li').toggleClass('show-search');
+
+                if($('.searchform_li').hasClass('show-search')) {
+                    $('.cbp-tm-menu').addClass('forceHideNav');
+                    $('#main_search_field').focus();
+                }
+                else {
+                    $('.cbp-tm-menu').removeClass('forceHideNav');
+                }
+            });
+
+            // submit the form
+            $('#website_search .bt-submit').on('click', function(){
+                $('#website_search').submit();
+            });
+        }
 
 		this.firstToggle = function (e, explicit) {
 			var parent_id = $(this).attr("href");// veggie_sbumenu1
@@ -212,7 +232,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 					$(this).trigger("click");
 				}
 			});
-
 		}
 	};
 
@@ -464,5 +483,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
+
+		
 	});
 })();
