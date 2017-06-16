@@ -278,6 +278,16 @@ header.main {
 	.cbp-tm-submenu.cbp-tm-submenu-active {
 		display: none;
 	}
+	.cbp-tm-menu>li>a {
+		&:after {
+			display: none;
+		}
+	}
+	.rido_title {
+		&:after {
+			display: none;
+		}
+	}
 }
 
 /* first level menu items */
@@ -1146,8 +1156,9 @@ header.main {
 }
 
 
-
-
+// ==========================================================
+// ==========		 SEARCH + SEARCH BREAK POINTS    ============
+// ==========================================================
 
 .cbp-tm-menu>li.searchform_li {
 	display: inline-block;
