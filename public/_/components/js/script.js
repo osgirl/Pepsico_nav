@@ -60,10 +60,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
 
-
-
-
-
 //imageMapster
 //# sourceMappingURL=main.js.map
 'use strict';
@@ -75,89 +71,12 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 	var MainNavigationAndSearch = function MainNavigationAndSearch() {
 		var _this = this;
 		this.searchToggleState = false;
-
-		// this.searchContainer = $('#pep-nav__utility--search');
-		// this.toggleBtn = $('#pep-nav__utility--search .pep-nav__utility-item-icon');
-		// this.searchInput = $('#pep-nav__utility--search__input');
-		// this.searchClose = $('#pep-nav__utility__search-close');
-		// this.searchBoard = $('#pep-nav__utility__search-form');
-		// this.whiteglass = $('.cls-1');
-		// this.whiteglassLeft = $('.search_li_left');
-		// this.primaryNav = $('#pep-nav__primary');
-		// this.searchForm = $('#pep-nav__utility__search-form');
-		// nav
 		this.firstNav = $('.rido_title'); // About
 		this.thirdNav = $('.rido_third');
-		// this.thirdNav_ul = $('.rido_third_ul');
 
-		// function getSearchFieldWidth()  {
-		// 	return ($('.cbp-tm-menu li').width() * $('.cbp-tm-menu > li:visible').length);
-		// }
-		// this.search_size = getSearchFieldWidth();
-
-		// this.searchInputFocus = function () {
-		// 	_this.searchInput.focus();
-		// };
 		this.setToggleState = function () {
 			_this.searchToggleState = !_this.searchToggleState;
 		};
-		// Timelines['search'] = new TimelineMax();
-
-        // function createTimelineSearch(){
-        //     Timelines['search'].clear();
-        //     Timelines['search'].addCallback(_this.setToggleState);
-        //     Timelines['search'].to(_this.primaryNav, 0, {opacity: 0},'-.2');
-        //     Timelines['search'].set(_this.primaryNav, {display: 'none'},'-.2');
-
-        //     //width of the search bar
-        //     if($(window).width() < 1000) {
-        //         Timelines['search'].to(_this.searchContainer, 0, {width: 625},'-.9');
-        //     }
-        //     else {
-        //         Timelines['search'].to(_this.searchContainer, 0, {width: 910},'-.9');
-        //     }
-
-        //     Timelines['search'].set(_this.whiteglass, {display: 'none'});
-        //     Timelines['search'].set(_this.searchInput, {display: 'block'});
-        //     Timelines['search'].set(_this.whiteglassLeft, {display: 'block'},'-.1');
-        //     Timelines['search'].to(_this.searchBoard, 0, {background: 'white'}, '-.7');
-        //     Timelines['search'].set(_this.searchClose, {display: 'block'}, '-.2');
-        //     Timelines['search'].to(_this.searchClose, 0, {opacity: 1}, '-.2');
-        //     Timelines['search'].addCallback(_this.searchInputFocus);
-        //     Timelines['search'].restart();
-        //     Timelines['search'].set(_this.whiteglass, {display: 'block'},'-.9');
-        // }
-
-		// on rezise, close the serach bar
-		// $(window).smartresize(function(){
-		// 	Timelines['search'].tweenTo(0).duration(0.5);
-		// 	Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
-		// });
-
-		// this.toggleSearchInput = function (e, explicit) {
-		// 	_this.search_size = getSearchFieldWidth();
-
-		// 	if (!_this.searchToggleState && !explicit) {
-		// 		e.preventDefault();
-				
-		// 		if (Timelines['social'].progress() !== 0) {
-		// 			Timelines['social'].reverse();
-		// 		}
-		// 		console.log('===  script.js [play timeline] ===');
-		// 		createTimelineSearch();
-		// 		_this.searchToggleState = true;
-		// 		$('.cbp-tm-menu').addClass('forceHideNav');
-		// 	} else {
-		// 		//search bar transition time
-		// 		Timelines['search'].tweenTo(0).duration(0.8);
-		// 		Timelines['search'].to(_this.whiteglass, 0, {fill: "white"});
-		// 		_this.searchToggleState = false;
-
-		// 		// in case the nav is open hide secondary 
-		// 		$('.cbp-tm-menu').removeClass('forceHideNav');
-		// 	}
-
-		// };
 
         // search toggle open
         if($('#website_search').length> 0) {
@@ -210,13 +129,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			$('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
 		};
 
-		// this.disableForm = function () {
-		// 	_this.searchForm.children('input').remove();
-		// };
-
-		// this.toggleBtn.on('click', this.toggleSearchInput);
-		// this.searchForm.on('submit', this.disableForm);
-		// this.searchClose.on('click', this.toggleSearchInput.bind(null, true));
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);
 
@@ -234,42 +146,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			});
 		}
 	};
-
-
-	// var Social = function Social() {
-	// 	var _this2 = this;
-	// 	this.socialContainer = $('#pep-nav__utility--social');
-	// 	this.socialBtn = $('#pep-nav__utility--social .pep-nav__utility-item-icon');
-	// 	this.socialToggleState = false;
-	// 	this.socialClose = $('#pep-nav__utility__social-close');
-	// 	this.nonSocialUtilities = $('.pep-nav__utility-item:not(.utility--share)');
-	// 	this.socialItems = $('#pep-nav__share-list');
-    //
-	// 	Timelines['social'] = new TimelineMax({delay: 0}).pause();
-	// 	Timelines['social'].set(this.socialBtn, {display: 'block'});
-	// 	Timelines['social'].set(this.socialBtn, {display: 'none'});
-	// 	Timelines['social'].to(this.socialContainer, 0.1, {width: 220, ease: Expo.easeOut});
-	// 	Timelines['social'].set(this.socialClose, {display: 'block'});
-	// 	Timelines['social'].to(this.socialClose, 0.2, {opacity: 1});
-	// 	Timelines['social'].set(this.socialItems, {display: 'block'}, "-=0.2");
-	// 	Timelines['social'].to(this.socialItems, 0.2, {opacity: 1}, "-=0.2");
-    //
-	// 	this.toggleSocialLinks = function (e, explicit) {
-	// 		if (!_this2.socialToggleState && !explicit) {
-	// 			e.preventDefault();
-	// 			// if (Timelines['search'].progress() !== 0) {
-	// 			// 	Timelines['search'].tweenTo(0).duration(0.2);
-	// 			// }
-	// 			Timelines['social'].play();
-	// 			_this2.socialToggleState = true;
-	// 		} else {
-	// 			Timelines['social'].tweenTo(0).duration(0.15);
-	// 			_this2.socialToggleState = false;
-	// 		}
-	// 	};
-	// 	this.socialBtn.on('click', this.toggleSocialLinks);
-	// 	this.socialClose.on('click', this.toggleSocialLinks);
-	// };
 
 
 	var Global = function Global() {
