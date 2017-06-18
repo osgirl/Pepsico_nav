@@ -1,0 +1,268 @@
+@mixin title-font {
+  font-family: Oswald, serif;
+}
+
+@mixin title-font-bold {
+  font-family: Oswald, serif;
+}
+
+@mixin title-font-regular {
+  font-family: Oswald, serif;
+}
+@mixin util-font-regular {
+  font-family: Oswald;
+  font-size: .9em;
+  color: white;
+}
+
+@mixin body-font {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+}
+
+@mixin nav-font-bold {
+  font-family: Oswald;
+  font-size: .8em;
+}
+
+@mixin box-sizing {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin no-pointer-events {
+  pointer-events: none;
+}
+
+@mixin prdb {
+  position: relative;
+  display: block;
+}
+@mixin mobile_burger_position {
+  width: 22px;
+  height: 22px;
+  top: 37px;
+  left: 55px;
+  margin-left: -16px;
+}
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin zero_left_right{
+  left: 0;
+  right: 0;
+}
+@mixin prdt {
+  position: relative;
+  display: table;
+}
+@mixin psdib{
+  position: static;
+  display: inline-block;
+}
+@mixin prdtc {
+  position: relative;
+  display: table-cell;
+}
+
+@mixin prdn {
+  position: relative;
+  display: none;
+}
+
+@mixin prdib {
+  position: relative;
+  display: inline-block;
+}
+
+@mixin padb {
+  position: absolute;
+  display: block;
+}
+
+@mixin padn {
+  position: absolute;
+  display: none;
+}
+
+@mixin pa {
+  position: absolute;
+}
+
+@mixin pfdb {
+  position: fixed;
+  display: block;
+}
+
+@mixin pfdn {
+  position: fixed;
+  display: none;
+}
+
+@mixin pr {
+  position: relative;
+}
+
+@mixin dt {
+  display: table;
+}
+
+@mixin db {
+  display: block;
+}
+
+@mixin dib {
+  display: inline-block;
+}
+
+@mixin pf {
+  position: fixed;
+}
+
+@mixin dn {
+  display: none;
+}
+
+@mixin box-shadow($horizontal, $vertical, $blur, $spread, $rgba) {
+  -webkit-box-shadow: $horizontal $vertical $blur $spread $rgba;
+  -moz-box-shadow: $horizontal $vertical $blur $spread $rgba;
+  -ms-box-shadow: $horizontal $vertical $blur $spread $rgba;
+  -o-box-shadow: $horizontal $vertical $blur $spread $rgba;
+  box-shadow: $horizontal $vertical $blur $spread $rgba;
+}
+
+@mixin text-shadow($horizontal, $vertical, $blur, $rgba) {
+  -webkit-text-shadow: $horizontal $vertical $blur $rgba;
+  -moz-text-shadow: $horizontal $vertical $blur $rgba;
+  -ms-text-shadow: $horizontal $vertical $blur $rgba;
+  -o-text-shadow: $horizontal $vertical $blur $rgba;
+  text-shadow: $horizontal $vertical $blur $rgba;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transform-origin($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  transform-origin: $origin;
+}
+@mixin transform_y($number_px){
+  transform: translateY($number_px);
+  -o-transform: translateY($number_px);
+  -webkit-transform: translateY($number_px);
+  -moz-transform: translateY($number_px);
+  -ms-transform: translateY($number_px);
+}
+
+@mixin perspective($perspective) {
+  -webkit-perspective: $perspective;
+  -moz-perspective: $perspective;
+  -ms-perspective: $perspective;
+  -o-perspective: $perspective;
+  perspective: $perspective;
+}
+
+@mixin preserve3d {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+@mixin backface-vis($val) {
+  -webkit-backface-visibility: $val;
+  -moz-backface-visibility: $val;
+  -ms-backface-visibility: $val;
+  -o-backface-visibility: $val;
+  backface-visibility: $val;
+}
+
+@mixin opacityz($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -ms-opacity: $opacity;
+  -o-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin middle-align($height) {
+  vertical-align: middle;
+  line-height: $height;
+}
+
+@mixin blurz($blurz) {
+  -webkit-filter: blur($blurz);
+  -moz-filter: blur($blurz);
+  -ms-filter: blur($blurz);
+  -o-filter: blur($blurz);
+  filter: blur($blurz);
+}
+
+@mixin highness {
+  z-index: 995 !important;
+}
+
+@mixin nearly-ontop {
+  z-index: 999 !important;
+}
+
+@mixin ontop {
+  z-index: 1000 !important;
+}
+
+@mixin ontop-absolut {
+  z-index: 9999 !important;
+}
+
+@mixin square($dim) {
+  height: $dim;
+  width: $dim;
+}
+
+@mixin cover {
+  @include padb;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin unstyled-anchor {
+  &:link, &:visited, &:active {
+    text-decoration: none;
+  }
+}
+@mixin zero_p_m{
+  padding: 0;
+  margin: 0;
+}
+@mixin global-link($color) {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color;
+  }
+}

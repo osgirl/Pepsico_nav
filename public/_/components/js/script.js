@@ -244,13 +244,15 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			var copy = $(pinId + '_copy');// #argentina_copy
 			var parent_id = $(this).parent().attr("id");//argentina_pin
 
+            if (_this4.popover.hasClass('pin__popover--active')) {
+                _this4.popover.removeClass('pin__popover--active');
+            }
+            if (_this4.map_pin.hasClass('pin__svg--active')) {
+                _this4.map_pin.removeClass('pin__svg--active');
+            }
 			// rest of pins unclickable by css, .pin__svg--active
 			$(pinId).toggleClass('pin__popover--active');
-			// $('.pin .pin__svg').css('display', 'block');
-			$('.pin__svg[name="' + parent_id + '"]').addClass('pin__svg--active');
-			// $('.pin__svg[name!="' + parent_id + '"]').toggleClass('pin__svg--active');
-
-			$(copy).toggleClass('popover__copy--active');
+            $(copy).toggleClass('popover__copy--active');
 		};
 
 		this.ListPinToggle = function (e, explicit) {
@@ -258,8 +260,8 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 			var a = $(this).attr("href");// #argentina
 			var copy = $(a + '_copy');// #argentina_copy
-			var a1 = $(this).text().toLowerCase();
-			var a2 = a1 + '_pin';//argentina_pin
+			var pin_lowercase = $(this).text().toLowerCase();
+			var country_pin = pin_lowercase + '_pin';//argentina_pin
 
 			if (_this4.popover.hasClass('pin__popover--active')) {
 				_this4.popover.removeClass('pin__popover--active');
@@ -269,46 +271,41 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			}
 
 			$(a).addClass('pin__popover--active');
-			$('.pin__svg[name="' + a2 + '"]').addClass('pin__svg--active');
+			$('.pin__svg[name="' + country_pin + '"]').addClass('pin__svg--active');
 			$(copy).addClass('popover__copy--active');
 		};
 		/*
-		 country id : lowercase, exceptions: Slovak Republic -> slovak, Czech Republic -> czech, uk, us
+		 country id : lowercase, exceptions: Slovak Republic -> slovak,
+		 									 Czech Republic -> czech, uk, us
 		 */
 		this.ContinentToggle = function (e, explicit) {
 			var header_id = $(this).attr("id");
-			$('.pin__svg[continent*="' + header_id + '"]').show(1000);
+            //$('.pep-languages__header') = this
+            if (_this4.popover.hasClass('pin__popover--active')) {
+                _this4.popover.removeClass('pin__popover--active');
+            }
+            if (_this4.map_pin.hasClass('pin__svg--active')) {
+                _this4.map_pin.removeClass('pin__svg--active');
+            }
+
+            $('.pin__svg[continent*="' + header_id + '"]').show(1000);
 			$('.pin__svg[continent!="' + header_id + '"]').hide(1000);
 		};
 
-		// TODO: color continent
 		this.lang_header.on('click', this.ContinentToggle);
 		this.map_pin.on('click', this.MapPinToggle);
 		this.countryListitem.on('click', this.ListPinToggle);
 		this.closeButton.on('click', this.toggleCloseClass);
-
 	};
 
 	var Mobile = function Mobile() {
 		var _this5 = this;
 		this.mapToggleState = false;
-		this.mobileList = $('.rido_title');
-		this.mobileListIcon = $('.mobile_list');
 		this.mobile_burger_btn = $('.mobile_menu');
 		this.menu = $('#cbp-tm-menu');
 		this.mobile_x = $('.mobile_close');
-		this.mobile_mask = $('.mobile_mask');
-		this.career = $('#career-btn');
 		this.global = $('#globalsite');
 		this.headerMain = $('header.main');
-
-		// this.mobileList.on('click', function (e, explicit) {
-		//     $('.cbp-tm-submenu').removeAttr('style');
-		// });
-		// this.mobileListIcon.on('click', function (e, explicit) {
-		//     $('.cbp-tm-show .cbp-tm-show-below').toggleClass('');
-		// });
-
 		this.mobilelToggleState = false;
 
 		this.toggleOpenClass = function () {
@@ -318,21 +315,21 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			_this5.mobilelToggleState = !_this5.mobilelToggleState;
 		};
 
-
 		this.toggleMobileMenu = function (e, explicit) {
 			if (!_this5.mobilelToggleState && !explicit) {
 				e.preventDefault();
-
 				_this5.mobilelToggleState = true;
+
 			} else {
 				_this5.mobilelToggleState = false;
 			}
 			_this5.headerMain.toggleClass('mobileMenuOpen');
 		};
+
 		this.mobile_burger_btn.on('click', this.toggleMobileMenu);
 		this.mobile_x.on('click', this.toggleMobileMenu);
 	};
-	
+
 
 	$(window).on('load', function () {
 		var SEARCH = new MainNavigationAndSearch();

@@ -1,16 +1,14 @@
 .pin {
-  position: absolute;
+  @include pa;
   width: 20px;
-  opacity: 1;
-  z-index: 3;
-  transform: translate(-48%, -100%);
+  opacity: 1 ;
+  z-index: 3 ;
+  transform: translate(-48%, -100%) ;
   .pin__svg {
-    //position: relative;
     display:none;
     width: 100%;
     height: 100%;
     z-index: 3;
-    //opacity: 1;
     cursor: pointer;
 
     transform: scale(1);
@@ -21,20 +19,12 @@
     }
   }
 }
+
 //able
 .pin__svg.pin__svg--active {
-  //position: absolute;
-  //left: 0;
-  //right: 0;
-  //top: 0;
-  //bottom: 0;
-  display: block;
+  @include db;
   background: transparent;
   z-index: 1;
-
-  //-webkit-transition: -webkit-transform 150ms 0ms ease-in-out;
-  //-moz-transition: -moz-transform 150ms 0ms ease-in-out;
-  //transition: transform 150ms 0ms ease-in-out
 }
 
 .pin__popover {
@@ -44,12 +34,8 @@
   opacity: 0;
   top: 0;
   visibility: hidden;
+@include transform_y(30px);
 
-  transform: translateY(30px);
-  -o-transform: translateY(30px);
-  -webkit-transform: translateY(30px);
-  -moz-transform: translateY(30px);
-  -ms-transform: translateY(30px);
 
   -webkit-transition: visibility 0ms 100ms linear, opacity 150ms 0ms linear, -webkit-transform 150ms 0ms linear;
   -moz-transition: visibility 0ms 100ms linear, opacity 150ms 0ms linear, -moz-transform 150ms 0ms linear;
@@ -59,19 +45,15 @@
 }
 
 .pin__popover--active {
+  @include pa;
   content: '';
-  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   background: transparent;
 
-  transform: translateY(0);
-  -webkit-transform: translateY(0);
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
+  @include transform_y(0);
 
   -webkit-transition: visibility 0ms 100ms linear, opacity 150ms 100ms linear, -webkit-transform 150ms 120ms linear;
   -moz-transition: visibility 0ms 100ms linear, opacity 150ms 100ms linear, -moz-transform 150ms 120ms linear;
@@ -83,7 +65,6 @@
 }
 
 .popover {
-  //border: 1px solid #fff;
   position: absolute;
   width: 100%;
   height: inherit;
@@ -103,8 +84,6 @@
     }
   }
   &:after {
-    //clear: both;
-    //display: table;
     content: "";
     position: absolute;
     height: 0;
@@ -112,7 +91,6 @@
     left: 8%;
     margin-left: auto;
     border: 16px solid transparent;
-
     pointer-events: none;
     z-index: 0;
   }
@@ -152,8 +130,6 @@
   width: 100%;
   padding: 15px;
   height: inherit;
-  //margin: 10px 0 0 0;
-  //text-align: center;
   box-sizing: border-box;
   opacity: 0;
 
@@ -164,7 +140,6 @@
   .popover__title {
     margin-top: -10px;
     font-family: 'Oswald', sans-serif;
-
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
@@ -235,8 +210,8 @@
 
   //disable the map
   .pin__svg {
-    content: '';
     position: absolute;
+    content: '';
     left: 0;
     right: 0;
     top: 0;
@@ -244,10 +219,6 @@
     visibility: hidden;
     background: transparent;
     z-index: 1;
-
-    //-webkit-transition: -webkit-transform 150ms 0ms ease-in-out;
-    //-moz-transition: -moz-transform 150ms 0ms ease-in-out;
-    //transition: transform 150ms 0ms ease-in-out
   }
   .modal__window--popover {
     max-width: 960px !important;
@@ -256,10 +227,6 @@
   .modal__window {
     position: absolute;
     top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
 }
