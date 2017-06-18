@@ -150,7 +150,7 @@ header.main {
 
 #pep-nav__utility__search-form {
 	height: 50px;
-	transition: 1000ms ease;
+	//transition: 1000ms ease;
 }
 
 .pep-nav__utility--search__input {
@@ -682,17 +682,9 @@ header.main {
 	.search_li {
 		display: none;
 	}
-  .cbp-tm-menu>li.search_li{
-      height: 80px;
-      position: absolute;
-      display: block;
-      background-color: red;
-      top: -50px;
-      float: left;
 
-  }
   .cbp-tm-submenu.cbp-tm-submenu-active  {
-    top:120%
+    top:142%
   }
 }
 
@@ -1148,11 +1140,45 @@ header.main {
 			}
 		}
 	}
-
 	.cbp-tm-submenu {
 		padding-left: 10px !important;
 		left: 0 !important;
 	}
+	.cbp-tm-menu>li.search_li{
+		height: 80px;
+		position: absolute;
+		display: block;
+		//background-color: red;
+		top: -50px;
+		float: left;
+	}
+	.search_li {
+		display: block;
+		.pep-nav__utility{
+			display: block;
+		}
+	}
+	#search_mobile{
+		position: absolute;
+		display: block;
+		//background-color: red;
+		width: 50px;
+		height: 50px;
+		float: left;
+		top: 106px;
+		left: 25px;
+		.search_li_left{
+			display: block;
+		}
+	}
+	.pep-nav__utility-item.utility--search{
+		top: 2px;
+		right: 3px;
+	}
+	.search_li_left{
+		width: 31px;
+	}
+
 }
 
 

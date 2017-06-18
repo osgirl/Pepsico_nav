@@ -212,7 +212,7 @@
   .pep-languages__container {
     width: 100vw;
     height: 100vh;
-    margin: 30px 25px;
+    margin: 62px 37px;
     padding: 0;
     top: 0;
     left: 0;
@@ -252,17 +252,52 @@
     position: relative;
   }
 
+
   .pep_languages_list1 {
     position: relative;
     display: block;
-    height: 420px;
+    height: 350px;
     width: 100%;
   }
   .pep_languages_list2 {
     position: relative;
     display: block;
     float: left;
+    height: 200px;
   }
+  .pep-languages.open{
+    overflow: scroll;
+  }
+  .pep-languages-set.pep-unlistify{
+    font-size: 1.5em;
+  }
+  .pep-languages__header{
+    font-size: 25px;
+  }
+  .pep-languages-list.pep-languages-list--europe.pep-languages-set{
+    width: 100% !important;
+  }
+  .pep-languages-set.pep-unlistify{
+    width: 100% !important;
+  }
+  .pep-languages-list__item{
+    margin-bottom: 10px;
+  }
+  .pep-languages-list.pep-languages-list--europe{
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 145px;
+    height: auto;
+    float: left;
+  }
+  .popover{
+    display: none;
+  }
+  .pep-languages-list.pep-languages-list--asia-africa{
+    z-index: 1010;
+  }
+
 }
 
 

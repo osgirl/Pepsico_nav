@@ -236,40 +236,40 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 	};
 
 
-	var Social = function Social() {
-		var _this2 = this;
-		this.socialContainer = $('#pep-nav__utility--social');
-		this.socialBtn = $('#pep-nav__utility--social .pep-nav__utility-item-icon');
-		this.socialToggleState = false;
-		this.socialClose = $('#pep-nav__utility__social-close');
-		this.nonSocialUtilities = $('.pep-nav__utility-item:not(.utility--share)');
-		this.socialItems = $('#pep-nav__share-list');
-
-		Timelines['social'] = new TimelineMax({delay: 0}).pause();
-		Timelines['social'].set(this.socialBtn, {display: 'block'});
-		Timelines['social'].set(this.socialBtn, {display: 'none'});
-		Timelines['social'].to(this.socialContainer, 0.1, {width: 220, ease: Expo.easeOut});
-		Timelines['social'].set(this.socialClose, {display: 'block'});
-		Timelines['social'].to(this.socialClose, 0.2, {opacity: 1});
-		Timelines['social'].set(this.socialItems, {display: 'block'}, "-=0.2");
-		Timelines['social'].to(this.socialItems, 0.2, {opacity: 1}, "-=0.2");
-
-		this.toggleSocialLinks = function (e, explicit) {
-			if (!_this2.socialToggleState && !explicit) {
-				e.preventDefault();
-				// if (Timelines['search'].progress() !== 0) {
-				// 	Timelines['search'].tweenTo(0).duration(0.2);
-				// }
-				Timelines['social'].play();
-				_this2.socialToggleState = true;
-			} else {
-				Timelines['social'].tweenTo(0).duration(0.15);
-				_this2.socialToggleState = false;
-			}
-		};
-		this.socialBtn.on('click', this.toggleSocialLinks);
-		this.socialClose.on('click', this.toggleSocialLinks);
-	};
+	// var Social = function Social() {
+	// 	var _this2 = this;
+	// 	this.socialContainer = $('#pep-nav__utility--social');
+	// 	this.socialBtn = $('#pep-nav__utility--social .pep-nav__utility-item-icon');
+	// 	this.socialToggleState = false;
+	// 	this.socialClose = $('#pep-nav__utility__social-close');
+	// 	this.nonSocialUtilities = $('.pep-nav__utility-item:not(.utility--share)');
+	// 	this.socialItems = $('#pep-nav__share-list');
+    //
+	// 	Timelines['social'] = new TimelineMax({delay: 0}).pause();
+	// 	Timelines['social'].set(this.socialBtn, {display: 'block'});
+	// 	Timelines['social'].set(this.socialBtn, {display: 'none'});
+	// 	Timelines['social'].to(this.socialContainer, 0.1, {width: 220, ease: Expo.easeOut});
+	// 	Timelines['social'].set(this.socialClose, {display: 'block'});
+	// 	Timelines['social'].to(this.socialClose, 0.2, {opacity: 1});
+	// 	Timelines['social'].set(this.socialItems, {display: 'block'}, "-=0.2");
+	// 	Timelines['social'].to(this.socialItems, 0.2, {opacity: 1}, "-=0.2");
+    //
+	// 	this.toggleSocialLinks = function (e, explicit) {
+	// 		if (!_this2.socialToggleState && !explicit) {
+	// 			e.preventDefault();
+	// 			// if (Timelines['search'].progress() !== 0) {
+	// 			// 	Timelines['search'].tweenTo(0).duration(0.2);
+	// 			// }
+	// 			Timelines['social'].play();
+	// 			_this2.socialToggleState = true;
+	// 		} else {
+	// 			Timelines['social'].tweenTo(0).duration(0.15);
+	// 			_this2.socialToggleState = false;
+	// 		}
+	// 	};
+	// 	this.socialBtn.on('click', this.toggleSocialLinks);
+	// 	this.socialClose.on('click', this.toggleSocialLinks);
+	// };
 
 
 	var Global = function Global() {
