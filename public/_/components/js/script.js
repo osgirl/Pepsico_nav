@@ -60,6 +60,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 	jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 })(jQuery,'smartresize');
 
+
 //imageMapster
 //# sourceMappingURL=main.js.map
 'use strict';
@@ -128,7 +129,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			$(thirdNavId).toggleClass('rido_third_ul-active');
 			$('.rido_third_ul-active[id!="' + parent_id + '"]').removeClass('rido_third_ul-active');
 		};
-
 		this.firstNav.on('click', this.firstToggle);
 		this.thirdNav.on('click', this.thirdToggle);
 
@@ -180,12 +180,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			if (!_this3.mobilelToggleState && !explicit) {
 				e.preventDefault();
 
-				// if (Timelines['search'].progress() !== 0) {
-				// 	Timelines['search'].reverse();
-				// }
-				if (Timelines['social'].progress() !== 0) {
-					Timelines['social'].tweenTo(0).duration(0.25);
-				}
 				Timelines['global'].play();
 				_this3.mobilelToggleState = true;
 			} else {
@@ -235,12 +229,7 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 		this.toggleMapMenu = function (e, explicit) {
 			if (!_this4.mapToggleState && !explicit) {
 				e.preventDefault();
-				// if (Timelines['search'].progress() !== 0) {
-				// 	Timelines['search'].reverse();
-				// }
-				if (Timelines['social'].progress() !== 0) {
-					Timelines['social'].tweenTo(0).duration(0.25);
-				}
+
 				Timelines['map'].play();
 				_this4.mapToggleState = true;
 			} else {
@@ -334,12 +323,6 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 			if (!_this5.mobilelToggleState && !explicit) {
 				e.preventDefault();
 
-				// if (Timelines['search'].progress() !== 0) {
-				// 	Timelines['search'].reverse();
-				// }
-				if (Timelines['social'].progress() !== 0) {
-					Timelines['social'].tweenTo(0).duration(0.25);
-				}
 				_this5.mobilelToggleState = true;
 			} else {
 				_this5.mobilelToggleState = false;
@@ -353,11 +336,8 @@ f=new sa(C,u,C[u],D,f),u in A&&(f.e=A[u]),f.xs0=0,f.plugin=h,d._overwriteProps.p
 
 	$(window).on('load', function () {
 		var SEARCH = new MainNavigationAndSearch();
-		var SOCIAL = new Social();
 		var GLOBAL = new Global();
 		var MAP = new Map();
 		var MOBILE = new Mobile();
-
-		
 	});
 })();
