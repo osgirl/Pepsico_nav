@@ -46,25 +46,53 @@
   pointer-events: none;
 }
 
-@mixin prdb {
-  position: relative;
-  display: block;
-}
 @mixin mobile_burger_position {
   width: 22px;
   height: 22px;
-  top: 37px;
-  left: 55px;
+  top: 34px;
+  left: 50px;
   margin-left: -16px;
 }
+
 @mixin wh($width, $height) {
   width: $width;
   height: $height;
 }
+
 @mixin zero_left_right{
   left: 0;
   right: 0;
 }
+@mixin zero_left_right_top_bottom{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+@mixin top_left($top,$left){
+  top: $top;
+  left: $left;
+}
+@mixin top_right($top,$right){
+  top: $top;
+  right: $right;
+}
+
+@mixin db_opacity_zero{
+  display: block;
+  opacity: 0;
+}
+
+@mixin db_opacity_one{
+  display: block;
+  opacity: 1;
+}
+
+@mixin prdb {
+  position: relative;
+  display: block;
+}
+
 @mixin prdt {
   position: relative;
   display: table;

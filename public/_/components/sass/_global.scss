@@ -1,8 +1,6 @@
 .pep-languages {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100vh;
+  @include padb;
+  @include wh(100%, 100vh);
   max-height: 0;
   bottom: 0;
   left: 0;
@@ -10,20 +8,19 @@
   font: $font-primary;
   font-weight: 300;
   color: dimgray;
-  background-color: #d7d6d3;;
-
-  overflow: hidden;
-  z-index: 9999;
+  background-color: #d7d6d3;
 
   -webkit-transition: 0.7s ease max-height;
   -moz-transition: 0.7s ease max-height;
   -ms-transition: 0.7s ease max-height;
   -o-transition: 0.7s ease max-height;
   transition: 0.7s ease max-height;
+
+  overflow: hidden;
+  z-index: 9999;
 }
 
 .pep-languages.open {
-  //top:100%;
   max-height: calc(100% - 100px);
 
   -webkit-transition: 0.7s ease max-height;
@@ -34,8 +31,7 @@
 }
 
 .container {
-  position: relative;
-  display: block;
+  @include prdb;
   max-width: 90%;
   height: inherit;
   margin-left: auto;
@@ -64,20 +60,26 @@
 }
 
 .pep-languages__close {
-  position: absolute;
-  display: block;
+  @include padb;
+  @include wh(20px, 20px);
+  @include top_right(0, 30px);
   float: right;
-  width: 20px;
-  height: 20px;
-  right: 90px;
-  top: 0;
   background: url(/img/close.png) no-repeat center;
   background-size: contain;
   cursor: pointer;
 }
 
 .pep-languages__header {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #0080b9;
+  border-top: 1px solid #0080b9;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-bottom: 15px;
   font-weight: 400;
+  &:hover {
+    color: #0080b9;
+  }
 }
 
 .pep-languages-list__item {
@@ -88,9 +90,8 @@
 
 .pep_languages_list1 {
   position: relative;
+  @include wh(100%, 22%);
   float: left;
-  width: 100%;
-  height: 30%;
   font-weight: 300;
 
   .pep_language_list_left {
@@ -99,18 +100,17 @@
     width: 50%;
   }
   .pep_language_list_right {
-    position: relative;
-    display: inline-block;
+    @include prdib;
+    @include wh(50%, 300px);
+    height: auto;
+    padding: 24px;
     float: right;
-    width: 50%;
-    height: 300px;
 
     .pep-container-map {
-      max-width: 100%;
       position: relative;
+      max-width: 100%;
       margin-top:16px;
     }
-
     .pep-languages__image {
       max-width: 100%;
       background-size: contain;
@@ -119,26 +119,22 @@
   }
 }
 
-.pep_languages_list2 {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 30%;
-}
-
 .pep-languages-list {
-  position: relative;
-  display: inline-block;
-  margin-right: 3%;
+  @include prdib;
+  margin-right: 5%;
   margin-top: 20px;
-
   opacity: 0;
   vertical-align: top;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 }
+.pep_languages_list2 {
+  position: relative;
+  @include wh(100%, 30%);
+  float: left;
+}
 
 .pep-languages-list.pep-languages-list--americas {
-  width: 25%;
+  width: 45%;
 }
 
 .pep-languages-list.pep-languages-list--asia-africa {
@@ -147,32 +143,14 @@
 }
 
 .pep-languages-list.pep-languages-list--europe {
-  width: 37%;
+  width: 48%;
   margin-top: 35px;
-}
-
-.pep-languages-list.pep-languages-list--europe .pep-languages-set {
-  position: relative;
-  display: inline-block;
-  width: 30%;
-  margin: 0;
-  vertical-align: top;
-}
-
-.pep-languages__header {
-  padding: 0.6rem 0;
-  margin: 1rem 0;
-  border-bottom: 1px solid #0080b9;
-  border-top: 1px solid #0080b9;
-  text-transform: uppercase;
-  cursor: pointer;
-  &:hover {
-    color: #0080b9;
+  .pep-languages-set {
+    @include prdib;
+    width: auto;
+    margin-right: 25px;
+    vertical-align: top;
   }
-}
-
-.pep-languages__header * {
-  margin: 0;
 }
 
 .pep-languages-list__item {
@@ -187,118 +165,127 @@
 
 //popup-close button
 .pep-languages__close2 {
-  position: absolute;
-  display: block;
-  width: 12px;
-  height: 12px;;
-  right: 20px;
-  top: 15px;
+  @include padb;
+  @include wh(12px, 12px);
+  @include top_right(15px, 20px);
 
   color: white;
-  background-size: contain;
   background: url(/img/close_white.png) no-repeat center;
+  background-size: contain;
   cursor: pointer;
   z-index: 1001;
 }
+//ipad
+@media screen and (max-width: 900px) {
+  .pep_languages_list1 .pep_language_list_right  {
+    display: none;
+  }
+  .pep_languages_list1 .pep_language_list_left{
+    width: 100%;
+  }
+  .pep-languages-list.pep-languages-list--americas{
+    width: 44%;
+    margin-right: 5%;
+  }
+  .pep-languages-list.pep-languages-list--asia-africa{
+    width: 50%;
+  }
+  .pep-languages__close{
+    right: 0px;
+  }
+  .pep-languages-list.pep-languages-list--europe{
+    width: 100%;
+  }
+  .pep-languages-list.pep-languages-list--europe .pep-languages-set{
+    margin-right: 25px;
+  }
+  .pep-languages-list{
+    margin-right: 0;
+  }
 
-
+}
+// mobile
 @media screen and (max-width: 767px) {
-
   .pep-languages.open {
     max-height: 100%;
+    overflow: scroll;
+  }
+  .pep-languages__close{
+    @include top_right(5px, 20px);
+  }
+
+  .pep-languages__container {
+    @include prdb;
+    @include wh(100vw, 100vh);
+    @include top_left(0,0);
+    margin: 62px 37px;
+    padding: 0;
   }
   .global_sites_title {
     width: 100% !important;
   }
-  .pep-languages__container {
-    width: 100vw;
-    height: 100vh;
-    margin: 62px 37px;
-    padding: 0;
-    top: 0;
-    left: 0;
-    position: relative;
-    display: block;
-  }
 
   .pep_language_list_left {
+    @include padb;
+    width: 100% !important;
+    float: left;
+    margin-right: 0;
     overflow: visible;
-    display: block;
-    position: absolute;
-    width: 100% !important;
-    float: left;
-    margin-right: 0
   }
-  .pep-languages__close{
-    right: 20px;
-    top: 5px;
 
-  }
   .pep_language_list_right {
-    position: relative;
+    @include prdn;
     display: none;
+    @include wh(0, 0);
     float: left;
-    height: 0;
-    width: 0;
+    .pep-languages__image{
+      display: none;
+    }
+    .global_sites_title div {
+      display: none;
+    }
   }
-  .pep_language_list_right .pep-languages__image{
-    display: none;
-  }
-  .pep_language_list_right, .global_sites_title div {
-    display: none;
-  }
+
   .pep-languages-list {
+    @include prdb;
     width: 100% !important;
-    display: block;
-    position: relative;
   }
-
-
   .pep_languages_list1 {
-    position: relative;
-    display: block;
-    height: 350px;
-    width: 100%;
+    @include prdb;
+    @include wh(100%, 350px);
   }
   .pep_languages_list2 {
-    position: relative;
-    display: block;
+    @include prdb;
     float: left;
     height: 200px;
   }
-  .pep-languages.open{
-    overflow: scroll;
-  }
+
   .pep-languages-set.pep-unlistify{
     font-size: 1.5em;
+    width: 100% !important;
   }
   .pep-languages__header{
     font-size: 25px;
   }
-  .pep-languages-list.pep-languages-list--europe.pep-languages-set{
-    width: 100% !important;
+  .pep-languages-list.pep-languages-list--asia-africa{
+    z-index: 1010;
   }
-  .pep-languages-set.pep-unlistify{
+  .pep-languages-list.pep-languages-list--europe{
+    @include padb;
+    float: left;
+    height: auto;
+    top: 145px;
+    opacity: 1;
+  }
+  .pep-languages-list.pep-languages-list--europe.pep-languages-set{
     width: 100% !important;
   }
   .pep-languages-list__item{
     margin-bottom: 10px;
   }
-  .pep-languages-list.pep-languages-list--europe{
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: 145px;
-    height: auto;
-    float: left;
-  }
   .popover{
     display: none;
   }
-  .pep-languages-list.pep-languages-list--asia-africa{
-    z-index: 1010;
-  }
-
 }
 
 

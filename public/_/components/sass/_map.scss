@@ -6,8 +6,7 @@
   transform: translate(-48%, -100%) ;
   .pin__svg {
     display:none;
-    width: 100%;
-    height: 100%;
+    @include wh(100%, 100%);
     z-index: 3;
     cursor: pointer;
 
@@ -29,30 +28,22 @@
 
 .pin__popover {
   position: absolute;
-  width: 200px;
-  height: 120px;
-  opacity: 0;
+  @include wh(200px, 120px);
   top: 0;
+  opacity: 0;
   visibility: hidden;
-@include transform_y(30px);
-
-
+  @include transform_y(30px);
   -webkit-transition: visibility 0ms 100ms linear, opacity 150ms 0ms linear, -webkit-transform 150ms 0ms linear;
   -moz-transition: visibility 0ms 100ms linear, opacity 150ms 0ms linear, -moz-transform 150ms 0ms linear;
   transition: visibility 0ms 100ms linear, opacity 150ms 0ms linear, transform 150ms 0ms linear;
   z-index: 10;
-
 }
 
 .pin__popover--active {
   @include pa;
+  @include zero_left_right_top_bottom;
   content: '';
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   background: transparent;
-
   @include transform_y(0);
 
   -webkit-transition: visibility 0ms 100ms linear, opacity 150ms 100ms linear, -webkit-transform 150ms 120ms linear;
@@ -66,8 +57,7 @@
 
 .popover {
   position: absolute;
-  width: 100%;
-  height: inherit;
+  @include wh(100%, inherit);
   background: #188ac8;
   color: #fff;
   box-shadow: 10px 10px 5px #b0b0b0;
@@ -80,14 +70,12 @@
     span.undr {
       text-decoration: none;
       font-family: 'Cabin', sans-serif;
-
     }
   }
   &:after {
     content: "";
     position: absolute;
-    height: 0;
-    width: 0;
+    @include wh(0, 0);
     left: 8%;
     margin-left: auto;
     border: 16px solid transparent;
@@ -99,8 +87,7 @@
 .popover__resource {
   position: relative;
   float: left;
-  width: 100%;
-  height: 300px;
+  @include wh(100%, 300px);
   opacity: 0;
   overflow: hidden;
 
@@ -109,7 +96,8 @@
   transition: opacity 150ms 0ms ease-in-out;
 }
 
-.popover__resource--active, .water-map-modal .popover__resource {
+.popover__resource--active,
+.water-map-modal .popover__resource {
   -webkit-transition: opacity 150ms 200ms ease-in-out;
   -moz-transition: opacity 150ms 200ms ease-in-out;
   transition: opacity 150ms 200ms ease-in-out;
@@ -118,25 +106,22 @@
 
 .popover__play-btn {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100px;
+  @include top_left(50%, 50%);
   cursor: pointer;
   transform: translate(-50%, -50%);
 }
 
 .popover__copy {
   float: left;
-  width: 100%;
+  @include wh(100%, inherit);
   padding: 15px;
-  height: inherit;
   box-sizing: border-box;
   opacity: 0;
 
   -webkit-transition: opacity 150ms 0ms ease-in-out;
   -moz-transition: opacity 150ms 0ms ease-in-out;
   transition: opacity 150ms 0ms ease-in-out;
-
   .popover__title {
     margin-top: -10px;
     font-family: 'Oswald', sans-serif;
@@ -151,23 +136,22 @@
   }
 }
 
-.popover__copy--active, .water-map-modal .popover__copy {
+.popover__copy--active,
+.water-map-modal .popover__copy {
+  height: inherit;
+  opacity: 1;
   -webkit-transition: opacity 150ms 300ms ease-in-out;
   -moz-transition: opacity 150ms 300ms ease-in-out;
   transition: opacity 150ms 300ms ease-in-out;
-  opacity: 1;
-  height: inherit;
   z-index: 1001;
 }
 
 .modal__close-btn {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  right: -10px;
-  top: -10px;
+  @include wh(20px, 20px);
+  @include top_right(-10px,-10px);
   cursor: pointer;
-  z-index: 100001
+  z-index: 10001
 }
 
 @media (min-width: 360px) {
@@ -189,13 +173,11 @@
 
 @media (max-width: 760px) {
   .pin__popover {
-    width: 160px;
-    height: 120px;
+    @include wh(160px, 120px);
     z-index: 10;
   }
   .popover {
-    width: 180px;
-    height: 120px;
+    @include wh(180px, 120px);
   }
   .popover__resource {
     width: 200px
@@ -207,15 +189,11 @@
     margin: 0 0 0 10px;
     width: 160px;
   }
-
   //disable the map
   .pin__svg {
     position: absolute;
     content: '';
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    @include zero_left_right_top_bottom;
     visibility: hidden;
     background: transparent;
     z-index: 1;

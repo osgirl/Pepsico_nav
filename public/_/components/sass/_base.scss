@@ -9,7 +9,6 @@ body {
   background-size: cover;
 }
 
-
 footer {
   @include clearfix;
   .socialmediaicons {
@@ -22,7 +21,6 @@ footer {
     }
   }
 }
-
 
 @media screen and (max-width: 767px) {
   body {
